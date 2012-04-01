@@ -51,6 +51,7 @@
 		
 	</xsl:template>
 	<xsl:template match="teacher_disc/item">
+	123a
 		<div class="item">
 			<xsl:value-of select="disciplines" />
 		</div>
