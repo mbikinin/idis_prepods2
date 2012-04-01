@@ -77,7 +77,7 @@ class teachers_Page extends View {
 				$array[$i] = 
 					array(
 					"disciplines"=>(isset($response->return->disciplines[$i]->name)) ?
-					mb_strtolower(mb_strtolower($response->return->disciplines[$i]->name)) : null
+					mb_strtolower(mb_strtoupper($response->return->disciplines[$i]->name)) : null
 					);
 			}
 			else {
