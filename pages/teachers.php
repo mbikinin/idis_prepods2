@@ -18,8 +18,13 @@ class teachers_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-    	$id = !empty($id) ? $id : $id;
- 		self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
+    	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+    	self::$page['content'] = "";
+    	self::$page['content']['teachers'] = 
+    		self::getPrepodsByLetter(self::setLetter("$id")) ? 
+    		self::getPrepodsByLetter(self::setLetter("$id")) :
+    		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
+  		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
  		self::showXSLT('pages/teachers/index');
     }
 	public static function getPrepods($Request){
@@ -45,14 +50,44 @@ class teachers_Page extends View {
 	public static function viewAction($id) {
     	$id = !empty($id) ? $id : $id;
  		self::$page['content']['teacher_info'] = self::getPrepodsInfo(self::setTeacherId($id));
- 		Debug::dump(self::$page['content']['teacher_info']);
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
- 		Debug::dump(self::$page['content']['teacher_disc']);
  		self::$page['content']['teacher_pub'] = self::getPublication(self::setTeacherId($id));
- 		self::$page['content']['teacher_foto'] = "https://89.232.109.231/Education//public/TeacherPhoto?par_personid=$id";
- 		Debug::dump(self::$page['content']['teacher_foto']);
+ 		self::$page['content']['teacher_foto'] = "https://89.232.109.231/Education//public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
     }
+public static function getPrepodsByLetter($Request){
+
+		$response = self::connectWsdl()->getTeachersByFIO($Request);
+		if(isset($response->return)){
+			if (count($response->return) == 1){
+				$array[] = 
+				array(
+				"familyName"=>$response->return->familyName,
+				"firstName"=>$response->return->firstName,
+				"id" =>$response->return->id,
+				"secondName"=>$response->return->secondName,
+				"position"=>$response->return->position,
+				"department"=>$response->return->department			
+				);
+			}
+			else{
+				for($i=0; $i<count($response->return); $i++){
+					$array[$i] = 
+					array(
+					"familyName"=>$response->return[$i]->familyName,
+					"firstName"=>$response->return[$i]->firstName,
+					"id" =>$response->return[$i]->id,
+					"secondName"=>$response->return[$i]->secondName,
+					"position"=>$response->return[$i]->position,
+					"department"=>$response->return[$i]->department			
+					);
+				}
+			}
+			return $array;
+		}
+		else return false;
+		
+	}
 	public static function getPrepodsInfo($Request){
 		$response = self::connectWsdl()->getTeacherInfo($Request);
 		$array = 
@@ -62,8 +97,10 @@ class teachers_Page extends View {
 			"id" =>$response->return->id,
 			"secondName"=>$response->return->secondName,
 			"position"=>$response->return->position,
-			"acadegree"=>$response->return->acadegree_short,
-			"science_short"=>$response->return->science_short,
+			"acadegree"=>!empty($response->return->acadegree_short) ?
+			$response->return->acadegree_short : null,
+			"science_short"=>!empty($response->return->science_short) ? 
+			$response->return->science_short : null,
 			"department"=>$response->return->department,
 			
 			);
@@ -77,7 +114,7 @@ class teachers_Page extends View {
 				$array[$i] = 
 					array(
 					"disciplines"=>(isset($response->return->disciplines[$i]->name)) ?
-					mb_strtolower(mb_strtoupper($response->return->disciplines[$i]->name)) : null
+					$response->return->disciplines[$i]->name : null
 					);
 			}
 			else {
@@ -123,6 +160,13 @@ class teachers_Page extends View {
  	public static function setTeacherId($id){
 		$Request = new stdClass();
 		$Request->teacherid=$id;
+		return $Request;		
+	}
+	public static function setLetter($id){
+		
+		$Request = new stdClass();
+		
+		$Request->familyname="$id";
 		return $Request;		
 	}
 	private static function connectWsdl(){

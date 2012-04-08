@@ -17,6 +17,7 @@
 
 	<xsl:template match="content">
 	<h1>Начало</h1>
+		<p><xsl:value-of select ="message" /></p>
 		<ul class="teachers_ul">
 		<xsl:apply-templates select="teachers/item" />
 		</ul>
@@ -29,7 +30,7 @@
 					<xsl:value-of select="familyName" />&#160;
 					<xsl:value-of select="firstName" />&#160; 
 					<xsl:value-of select="secondName" /> 
-				</a>&#160;
+				</a><br/>
 				<span class="gray">(<xsl:value-of select="position" />)</span>
 			</li>
 			
