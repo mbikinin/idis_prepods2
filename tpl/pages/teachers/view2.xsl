@@ -18,7 +18,9 @@
 	<xsl:template match="content">
 		<div class="teacher_box">
 			<div class="photo">
+			<a href="{teacher_foto}" title="" rel="group">
 				<img src="{teacher_foto}" alt="" title="{teacher_info/familyName} {teacher_info/firstName} {teacher_info/secondName}" />
+			</a>
 			</div>
 			<div class="information">
 				<table class="prepod_table">
@@ -40,19 +42,52 @@
 						<td class="b title">Кафедра</td><td>
 							<xsl:value-of select="teacher_info/department" /></td>
 					</tr>
+					<tr>
+						<td class="b title">Количество публикаций</td><td>
+							<xsl:value-of select="count(teacher_pub/item)" /></td>
+					</tr>
 				</table>
 			</div>
 			<div class="clear"></div>
-			<div class="disciplines_list_item">
-				<xsl:apply-templates select="teacher_disc/item" />
+			<div class="padding"></div>
+			<xsl:if test="count(teacher_disc/item)!=0">
+			<a href="#" class="disciplines_href">Преподаваемые дисциплины</a>
+			<div class="disciplines_list_item hideBlock">
+				<ul class="teachers_ul">
+					<xsl:apply-templates select="teacher_disc/item" />
+				</ul>
 			</div>
+			</xsl:if>
+			<div class="clear"></div>
+			<xsl:if test="count(teacher_pub/item)!=0">
+			<a href="#" class="publications_href">Публикации и статьи</a>
+			<div class="publications_list_item hideBlock">
+				<ul class="teachers_ul">
+					<xsl:apply-templates select="teacher_pub/item" />
+				</ul>
+			</div>
+			</xsl:if>
 		</div>
+	
 	<div class="clear"></div>
 		
 	</xsl:template>
 	<xsl:template match="teacher_disc/item">
-		<div class="item">
+		<li>
 			<xsl:value-of select="disciplines" />
-		</div>
+		</li>
+	</xsl:template>
+	<xsl:template match="teacher_pub/item">
+		<li>
+			<xsl:value-of select="proceedings_name" />
+				<xsl:if test="pages != ''"><span class="gray">&#160;(стр.<xsl:value-of select="pages" />)</span></xsl:if>
+				<br/>
+			<span class="description gray">
+				Автор: <xsl:value-of select="author " />,&#160;
+				<xsl:value-of select="type" /> &#160;
+				<xsl:if test="vak = 'Y'">(ВАК),&#160;</xsl:if>
+				<xsl:value-of select="year" /> г.
+			</span>
+		</li>
 	</xsl:template>
 </xsl:stylesheet>

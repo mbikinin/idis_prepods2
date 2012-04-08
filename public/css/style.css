@@ -65,13 +65,11 @@ blockquote,q {
 a {
 	text-decoration: underline;
 	font-size: inherit;
-	color:black;
 }
 
 a:hover,a.no_decoration {
 	text-decoration: none;
-        font-size: inherit;
-	color:black;
+    font-size: inherit;
 }
 
 table td {
@@ -105,6 +103,51 @@ img {
 }
 .clear{
 	clear: both;
+}
+.padding{
+	padding: 10px 0;
+}
+.lable {
+    color: #717171;
+    font-size: 12px;
+    font-style: italic;
+}
+/**
+Поиск препода
+*/
+.alphbet{
+	height: 30px;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.alphbet a{
+	font-size: 18px;
+	color: #0077bb;
+	padding: 2px;
+}
+
+table.search_teacher tr td{
+	padding: 2px;
+	vertical-align: middle;
+	
+}
+.search_teacher .title {
+	padding-right:15px;
+}
+.find_teacher{
+	padding: 4px 5px;
+	width: 200px;
+	background: #eeeeee;
+}
+.find_teacher_extended{
+	color: #0077bb;
+	margin-left: 40px;
+}
+.search_button {
+    margin-top: 20px;
+    padding: 3px 0;
+    width: 100px;
 }
 #conteiner{
 	padding: 10px 10px 10px 40px;
@@ -167,6 +210,9 @@ ul.parrent li.low .oter{
 .teachers_ul {
     list-style-image: url("/public/images/list-style-img.png");
 }
+.teachers_ul li{
+	padding: 2px 0;
+}
 .abbr_info{
 	padding-bottom: 5px;
 }
@@ -180,6 +226,10 @@ ul.parrent li.low .oter{
 	color: #0077bb;
 }
 .teacher_box{
+	padding: 30px 20px;
+}
+.teacher_menu{
+	float:left;
 }
 .teacher_box .photo, .teacher_box .information{
 	float: left;
@@ -203,11 +253,12 @@ ul.parrent li.low .oter{
 .prepod_table  .title{
 	text-align: right;
 	padding-right: 50px;
-	width: 110px;
+	width: 130px;
 }
 .prepod_table tr td {
     padding: 2px 0;
-    width: 175px;
+    vertical-align: middle;
+    width: 180px;
 }
 .prepod_table .info_in_row{
 	padding: 5px 20px;
@@ -217,4 +268,13 @@ ul.parrent li.low .oter{
 ***/
 .teacher_box .disciplines_list_item{
 	
+}
+.teacher_box .disciplines_href, .teacher_box .publications_href{
+	text-decoration: none;
+	color: #0077bb;
+	font-size: 20px;
+	border-bottom: 1px dashed;
+}
+.teacher_box .disciplines_href:hover, .teacher_box .publications_href:hover{
+	border-bottom: 0px dashed;
 }

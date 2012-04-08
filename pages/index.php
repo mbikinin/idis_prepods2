@@ -18,8 +18,10 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-		self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
-		//Debug::dump(self::$page['content']['facultets']);
+    	self::$page['content'] = "";
+    	self::$page['content']['alphabet'] = $alphabet=  array('А','Б','В','Г','Д','Е','Ж','З',
+    	'И','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Щ','Ш','Э','Ю','Я');
+		//self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
         self::showXSLT('pages/index/index');
     }
  	public static function getFaculties($Request){  
