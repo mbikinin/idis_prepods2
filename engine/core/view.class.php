@@ -190,7 +190,7 @@ class View {
         $doc->loadXML($xml);
         $xsl = new DomDocument();
         $xsl->load(Config::getValue('path', 'tpl') . $tpl . '.xsl');
-
+			ini_set('display_errors','On'); 
         $proc = new XsltProcessor();
         $xsl = $proc->importStylesheet($xsl);
         return $proc->transformToXML($doc);
