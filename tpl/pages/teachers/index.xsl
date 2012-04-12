@@ -21,6 +21,7 @@
 		<ul class="teachers_ul">
 		<xsl:apply-templates select="teachers/item" />
 		</ul>
+		<div class="clear"></div>
 	</xsl:template>
 
 	<xsl:template match="teachers/item">
@@ -34,9 +35,9 @@
 				<span class="gray">(<xsl:value-of select="position" />)</span>
 			</li>
 			
-	
+	<!-- 
 	<div class="abbr_info">
-		<!-- <span class="abbr_disc"><a href="#">краткая информация</a></span> -->
-	</div>
+		<span class="abbr_disc"><a href="#">краткая информация</a></span>
+	</div> -->
 	</xsl:template>
 </xsl:stylesheet>

@@ -13,7 +13,7 @@ html, body {
 }
 body {
 	font-size: 14px;
-	font-family: Georgia, Arial;
+	font-family: Arial,Helvetica,sans-serif;
 	color: #000;
 }
 
@@ -112,6 +112,14 @@ img {
     font-size: 12px;
     font-style: italic;
 }
+.rounded {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.border{
+	border: solid 1px #cccccc;
+}
 /**
 Поиск препода
 */
@@ -121,10 +129,10 @@ img {
 	vertical-align: middle;
 }
 
-.alphbet a{
-	font-size: 18px;
-	color: #0077bb;
-	padding: 2px;
+.alphbet a {
+    color: #0077BB;
+    font-size: 16px;
+    padding: 2px;
 }
 
 table.search_teacher tr td{
@@ -207,11 +215,15 @@ ul.parrent li.low .oter{
 /**
 преподаватели 
 */
-.teachers_ul {
+.teachers_ul, .teachers_disc_ul, .teachers_pub_ul {
     list-style-image: url("/public/images/list-style-img.png");
 }
-.teachers_ul li{
-	padding: 2px 0;
+.teachers_ul li {
+    float: left;
+    min-width: 300px;
+}
+.teachers_ul li, .teachers_pub_ul li{
+    padding: 5px 0;
 }
 .abbr_info{
 	padding-bottom: 5px;
@@ -262,6 +274,19 @@ ul.parrent li.low .oter{
 }
 .prepod_table .info_in_row{
 	padding: 5px 20px;
+}
+.sort_by_year {
+    margin: 30px 37px;
+}
+.sort_by_year span{
+	background: #eeeeee;
+	padding: 5px;
+	cursor: pointer;
+}
+.sort_by_year  span#active{
+	padding: 7px;
+	font-size:16px;
+	font-weight: bold;
 }
 /**
 	Дисциплины
