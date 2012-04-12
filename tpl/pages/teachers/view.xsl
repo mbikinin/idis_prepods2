@@ -42,18 +42,18 @@
 						<td class="b title">Кафедра</td><td>
 							<xsl:value-of select="teacher_info/department" /></td>
 					</tr>
-					<tr>
+					<!--<tr>
 						<td class="b title">Количество публикаций</td><td>
 							<xsl:value-of select="count(teacher_pub/item)" /></td>
 					</tr>
-				</table>
+				--></table>
 			</div>
 			<div class="clear"></div>
 			<div class="padding"></div>
 			<xsl:if test="count(teacher_disc/item)!=0">
 			<a href="#" class="disciplines_href">Преподаваемые дисциплины</a>
 			<div class="disciplines_list_item hideBlock">
-				<ul class="teachers_ul">
+				<ul class="teachers_disc_ul">
 					<xsl:apply-templates select="teacher_disc/item" />
 				</ul>
 			</div>
@@ -62,7 +62,11 @@
 			<xsl:if test="count(teacher_pub/item)!=0">
 			<a href="#" class="publications_href">Публикации и статьи</a>
 			<div class="publications_list_item hideBlock">
-				<ul class="teachers_ul">
+				<div class="sort_by_year">
+					<xsl:apply-templates select="years_array/item"/>
+					<span class="rounded border pub_year" rel="all">Все</span>
+				</div>
+				<ul class="teachers_pub_ul">
 					<xsl:apply-templates select="teacher_pub/item" />
 				</ul>
 			</div>
@@ -70,24 +74,39 @@
 		</div>
 	
 	<div class="clear"></div>
+	<script>
 		
+	</script>
 	</xsl:template>
 	<xsl:template match="teacher_disc/item">
 		<li>
 			<xsl:value-of select="disciplines" />
 		</li>
 	</xsl:template>
+	<xsl:template match="years_array/item">
+		<xsl:if test="5 > position()">
+			<xsl:choose>
+			<xsl:when test="position() = 1">
+				<span id="active" class="rounded border pub_year" rel="{text()}"><xsl:value-of select="text()" /></span>
+			</xsl:when>
+			<xsl:otherwise>
+				<span class="rounded border pub_year" rel="{text()}"><xsl:value-of select="text()" /></span>
+			</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
 	<xsl:template match="teacher_pub/item">
-		<li>
+		<li class="hideBlock">
 			<xsl:value-of select="proceedings_name" />
-				<xsl:if test="pages != ''"><span class="gray">&#160;(стр.<xsl:value-of select="pages" />)</span></xsl:if>
-				<br/>
-			<span class="description gray">
-				Автор: <xsl:value-of select="author " />,&#160;
-				<xsl:value-of select="type" /> &#160;
-				<xsl:if test="vak = 'Y'">(ВАК),&#160;</xsl:if>
-				<xsl:value-of select="year" /> г.
-			</span>
+					<xsl:if test="pages != ''"><span class="gray">&#160;(стр.<xsl:value-of select="pages" />)</span></xsl:if>
+					<br/>
+				<span class="description gray">
+					Автор: <xsl:value-of select="author " />,&#160;
+					<xsl:value-of select="type" /> &#160;
+					<xsl:if test="vak = 'Y'">(ВАК),&#160;</xsl:if>
+					<xsl:value-of select="year" /> г.
+				</span>
+				
 		</li>
 	</xsl:template>
 </xsl:stylesheet>

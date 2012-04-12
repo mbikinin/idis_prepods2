@@ -51,7 +51,8 @@ class teachers_Page extends View {
     	$id = !empty($id) ? $id : $id;
  		self::$page['content']['teacher_info'] = self::getPrepodsInfo(self::setTeacherId($id));
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
- 		self::$page['content']['teacher_pub'] = self::getPublication(self::setTeacherId($id));
+ 		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
+ 		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
  		self::$page['content']['teacher_foto'] = "https://89.232.109.231/Education//public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
     }
@@ -107,8 +108,7 @@ public static function getPrepodsByLetter($Request){
 		return $array;
 	}
 	public static function getDisciplin($Request){
-		setlocale(LC_ALL, 'ru_RU.CP1251');
-		$response = self::connectWsdl()->getTeacherDisc($Request);
+		$response =self::connectWsdl()->getTeacherDisc($Request);
 		for($i=0; $i<count($response->return->disciplines); $i++){
 			if(isset($response->return->disciplines) && count($response->return->disciplines) >1){
 				$array[$i] = 
@@ -151,7 +151,15 @@ public static function getPrepodsByLetter($Request){
 		}
 		else return false;
 	}	
-	
+	public static function setYearsArray($array){
+		$i = 0;
+		$return = array();
+		foreach($array as $val){
+			$return [$i++]= $val['year'];
+		}		
+		return array_unique($return);
+		
+	}
 	 public static function setRequest($id){
 		$Request = new stdClass();
 		$Request->department=$id;
