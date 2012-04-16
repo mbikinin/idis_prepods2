@@ -16,6 +16,7 @@
 
 
 	<xsl:template match="content">
+	<a class="gray" href="javascript: history.go(-1)">назад</a>
 		<div class="teacher_box">
 			<div class="photo">
 			<a href="{teacher_foto}" title="" rel="group">
