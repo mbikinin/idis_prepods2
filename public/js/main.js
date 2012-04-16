@@ -8,24 +8,26 @@ $(document).ready(function () {
 			$(val).find('span:contains('+start_year+')').parents('li').attr('class','showBlock'); 
 		});		
 	}
-	$('.pub_year').click(function(){
+	$('.pub_year').live("click", function(){
+		if($(this).attr("id") == 'active') return false
+		else{
 		year = $(this).attr("rel");
 		$(this).parent().find('span').removeAttr("id");
 		$(this).attr('id','active')
 		if(year == "all"){
 			$('.teachers_pub_ul li').each(function(key, val) {
-				if($(val).hasClass('hideBlock'))
 					$(val).attr('class','showBlock');
 			});
 		}
 		else{
 			$('.teachers_pub_ul li').each(function(key, val) {
 				if($(val).find('span:contains('+year+')').parents('li').hasClass('hideBlock'))
-					$(val).find('span:contains('+year+')').parents('li').attr('class','showBlock');
+					$(val).find('span').parents('li').attr('class','showBlock');
 				else
 					$(val).find('span').parents('li').attr('class','hideBlock');
 					
 			});
+		}
 		}
 	});
 			
