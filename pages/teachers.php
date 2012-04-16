@@ -53,11 +53,10 @@ class teachers_Page extends View {
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
- 		self::$page['content']['teacher_foto'] = "https://89.232.109.231/Education//public/TeacherPhoto?par_personid=$id"; 		
+ 		self::$page['content']['teacher_foto'] = "https://89.232.109.231/Education/public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
     }
-public static function getPrepodsByLetter($Request){
-
+	public static function getPrepodsByLetter($Request){
 		$response = self::connectWsdl()->getTeachersByFIO($Request);
 		if(isset($response->return)){
 			if (count($response->return) == 1){
@@ -154,6 +153,7 @@ public static function getPrepodsByLetter($Request){
 	public static function setYearsArray($array){
 		$i = 0;
 		$return = array();
+		if(!empty($array))
 		foreach($array as $val){
 			$return [$i++]= $val['year'];
 		}		

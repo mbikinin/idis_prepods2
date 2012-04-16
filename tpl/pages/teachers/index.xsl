@@ -16,7 +16,7 @@
 
 
 	<xsl:template match="content">
-	<h1>Начало</h1>
+		<xsl:call-template name="search_block" />
 		<p><xsl:value-of select ="message" /></p>
 		<ul class="teachers_ul">
 		<xsl:apply-templates select="teachers/item" />

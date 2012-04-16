@@ -60,7 +60,8 @@ class View {
 		//$news = DB::FetchAll("SELECT title, uri, anounce, DATE_FORMAT( `date` , '%d' ) AS date_day, DATE_FORMAT( `date` , '%m' ) AS month, DATE_FORMAT( `date` , '%Y' ) AS year FROM news ORDER BY `date` DESC LIMIT 0,3") or die(View::showError());
        // foreach ($news as & $item) $item['month'] = String::toMonth($item['month']);
        // self::$page['newsblock'] = $news;
-        
+        self::$page['alphabet'] = array('А','Б','В','Г','Д','Е','Ж','З',
+    	'И','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Щ','Ш','Э','Ю','Я');
        //self::$page['header']['menu'] = MenuPlugin::getMenu();
       // self::$page['submenu'] = MD_Catalog::getMenu();    		
        // self::$page['footer'] = '';
