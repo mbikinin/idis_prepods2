@@ -7,7 +7,6 @@
 
 		
 	<xsl:template name="search_block">
-		<a class="gray" href="javascript: history.go(-1)">назад</a>
 		<form method="get" action="/teachers/index/">
 		<table class="search_teacher">
 		<tr><td></td><td><div class="alphbet">

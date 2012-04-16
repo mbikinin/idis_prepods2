@@ -16,6 +16,7 @@
 
 
 	<xsl:template match="content">
+		<a class="gray" href="javascript: history.go(-1)">назад</a>	
 		<xsl:call-template name="search_block" />
 		<p><xsl:value-of select ="message" /></p>
 		<ul class="teachers_ul">
