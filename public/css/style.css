@@ -249,7 +249,10 @@ ul.parrent li.low .oter{
 }
 .teacher_box .photo{
 	border: solid 1px #717171;
-	padding: 10px;
+    min-height: 132px;
+    min-width: 100px;
+    padding: 10px;
+    background: url(../images/no_avatar.jpg) #e1e1e1;
 }
 .teacher_box .photo img{
 	max-width: 150px;
