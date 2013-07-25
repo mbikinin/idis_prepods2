@@ -230,6 +230,7 @@ class View {
     public static function assign($name, $value) {
         self::$_vars[$name] = $value;
     }
+	
 
     /**
      * РћС‚РѕР±СЂР°Р·РёС‚СЊ СЃС‚СЂР°РЅРёС†Сѓ
