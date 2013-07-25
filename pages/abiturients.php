@@ -68,7 +68,6 @@ class abiturients_Page extends View {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				$array[$i] = array("id" => $response -> return[$i] -> id, "specialityName" => $response -> return[$i] -> specialityName);
-
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;
