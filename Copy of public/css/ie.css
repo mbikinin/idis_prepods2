@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+a {
+	color: #000;
+}
+
+.clear {
+	clear: both;
+	height: 1px;
+}
+
+.rounded {
+	border-radius: 3px;
+	/*behavior: url(/public/css/border-radius.htc); */
+}
+
+.box_shadow {
+	filter: progid : DXImageTransform.Microsoft.Shadow ( color = '#969696',
+		Direction = 145, Strength = 3 );
+}
+
+.subMenu {
+	padding-top: 0;
+	margin-bottom: 10px;
+}
+
+.subMenu a {
+	padding-bottom: 1px;
+}
+
+#header .left_col {
+	border-style: 0 px solid;
+	width: 20%;
+	height: 120px;
+}
+.logo {
+	padding-right: 20px;
+}
+ul.dropMenu {
+	font-size: 14px;
+	padding-left: 30px;
+	margin: 0 0 0 -7px;
+	list-style-type: disc;
+	color: #fff;
+}
+.dropMenu li:hover a,.dropMenu li.current li.hover a {
+	text-decoration: none;
+	color: #fff;
+	margin-left: 0px;
+}
+.dropMenu li:hover ul a {
+	text-decoration: underline;
+	margin-left: 0px;
+}
+#partners_list .padding {
+	padding:0px;
+}

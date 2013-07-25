@@ -1,0 +1,329 @@
+﻿@charset "utf-8";
+
+:focus {
+	outline: 0;
+}
+.loading{
+	display: inline-block;
+	margin-left:46px;
+}
+html, body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+
+
+body {
+	font-size: 14px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #000;
+}
+
+
+
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 35px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: normal;
+	color:#0086CE;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: normal;
+	color:#0086CE;
+	margin: 15px 0 6px;
+}
+
+span.paragraf {
+	padding-left: 20px;
+}
+
+p {
+	line-height: 18px;
+}
+ol,ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border: none;
+	empty-cells: show;
+	border-spacing: 0;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: "";
+}
+
+blockquote,q {
+	quotes: "" "";
+}
+
+a {
+	text-decoration: underline;
+	font-size: inherit;
+}
+
+a:hover,a.no_decoration {
+	text-decoration: none;
+    font-size: inherit;
+}
+
+table td {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+img {
+	border: 0;
+}
+.logo {
+    bottom: 80px;
+    left: 145px;
+    position: absolute;
+}
+.left{
+	float: left;
+}
+.showBlock{
+	display: block;
+}
+.hideBlock{
+	display: none;
+}
+.red{
+	color: #b60404;
+}
+.gray{
+	color: #717171;
+}
+.clear{
+	clear: both;
+}
+.padding{
+	padding: 10px 0;
+}
+.lable {
+    color: #717171;
+    font-size: 12px;
+    font-style: italic;
+}
+.rounded {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.border{
+	border: solid 1px #cccccc;
+}
+/**
+Поиск препода
+*/
+.alphbet{
+	height: 30px;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.alphbet a {
+    color: #0077BB;
+    font-size: 16px;
+    padding: 2px;
+}
+
+table.search_teacher tr td{
+	padding: 2px;
+	vertical-align: middle;
+	
+}
+.search_teacher .title {
+	padding-right:15px;
+}
+.find_teacher{
+	padding: 4px 5px;
+	width: 200px;
+	background: #eeeeee;
+}
+.find_teacher_extended{
+	color: #0077bb;
+	margin-left: 40px;
+}
+.search_button {
+    margin-top: 20px;
+    padding: 3px 0;
+    width: 100px;
+}
+#conteiner{
+	padding: 10px 10px 10px 40px;
+
+}
+/**
+	UL LI prepods
+*/
+.show_child{
+	padding: 10px 0;
+}
+.parrent li {
+    max-width: 270px;
+    padding: 11px 0;
+}
+ul.parrent {
+    font-size: 16px;
+    margin-left: 70px;
+}
+ul.parrent li ul li {
+    font-size: 14px;
+    padding: 5px 0;
+}
+ul.parrent li ul li{
+	list-style-image: url("/public/images/list-style-img.png");
+}
+
+ul.parrent li ul li a{
+    color: #717171;
+}
+ul.parrent li .icon {
+    background: url("/public/images/css-sprite.png") repeat scroll 0 0 transparent;
+    height: 40px;
+    margin: -10px 0 0 -56px;
+    position: absolute;
+    width: 40px;
+}
+ul.parrent li.economy .icon{
+	background-position: -4px 3px;
+}
+ul.parrent li.menegment .icon{
+	background-position: -126px 3px;
+}
+ul.parrent li.psychologic .icon{
+	background-position: -90px 0px;
+}
+ul.parrent li.food .icon{
+	background-position: -167px 0px;
+}
+ul.parrent li.low .icon{
+	background-position: -45px 0px;
+}
+ul.parrent li.low .oter{
+	background-position: -209px 2px;
+}
+
+/**
+преподаватели 
+*/
+.teachers_ul, .teachers_disc_ul, .teachers_pub_ul {
+    list-style-image: url("/public/images/list-style-img.png");
+}
+.teachers_ul li {
+    float: left;
+    min-width: 300px;
+}
+.teachers_ul li, .teachers_pub_ul li{
+    padding: 5px 0;
+}
+.abbr_info{
+	padding-bottom: 5px;
+}
+.abbr_disc a{
+	text-decoration: underline;
+	color: #0077bb;
+	font-size: 12px;
+}
+.abbr_disc a:hover{
+	text-decoration: none;
+	color: #0077bb;
+}
+.teacher_box{
+	padding: 30px 20px;
+}
+.teacher_menu{
+	float:left;
+}
+.teacher_box .photo, .teacher_box .information{
+	float: left;
+}
+.teacher_box .photo {
+    background: url("../images/no_avatar.jpg") no-repeat scroll center center #FFFFFF;
+    border: 1px solid #717171;
+    min-height: 133px;
+    min-width: 150px;
+    padding: 10px;
+}
+.teacher_box .photo img{
+	max-width: 150px;
+}
+.teacher_box .information{
+	padding: 10px 20px;
+}
+.prepod_table{
+	
+}
+.prepod_table .b{
+	font-weight: bold;
+}
+.prepod_table  .title{
+	text-align: right;
+	padding-right: 50px;
+	width: 130px;
+}
+.prepod_table tr td {
+    padding: 2px 0;
+    vertical-align: middle;
+    width: 180px;
+}
+.prepod_table .info_in_row{
+	padding: 5px 20px;
+}
+.sort_by_year {
+    margin: 30px 37px;
+}
+.sort_by_year span{
+	background: #eeeeee;
+	padding: 5px;
+	cursor: pointer;
+}
+.sort_by_year  span#active{
+	padding: 7px;
+	font-size:16px;
+	font-weight: bold;
+}
+/**
+	Дисциплины
+***/
+.teacher_box .disciplines_list_item{
+	
+}
+.teacher_box .disciplines_href, .teacher_box .publications_href{
+	text-decoration: none;
+	color: #0077bb;
+	font-size: 20px;
+	border-bottom: 1px dashed;
+}
+.teacher_box .disciplines_href:hover, .teacher_box .publications_href:hover{
+	border-bottom: 0px dashed;
+}
+
+/**
+ * Abbiturients 	
+ * */
+.div_s4 table{
+	border: solid 1px #e1e1e1;
+}
+.div_s4 table th{
+	border: solid 1px #e1e1e1;
+}
+.div_s4 table tr td{
+	border: solid 1px #e1e1e1;
+	padding: 2px 5px;
+}
