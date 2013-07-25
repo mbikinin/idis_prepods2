@@ -20,7 +20,10 @@
 			<script type="text/javascript" src="/public/js/main.js"></script>
 			<script type="text/javascript" src="/public/js/system.js"></script>
 			<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+<<<<<<< HEAD
 			<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css" />
+=======
+>>>>>>> 33767a45f60e3997f3e0d3738ec63107afa53951
 			<link rel="stylesheet" type="text/css" href="/public/css/inner.css" />
 			<script type="text/javascript" src="/public/js/libs/jquery.fancybox-1.3.4.pack.js"></script>
 			<script type="text/javascript">

@@ -99,6 +99,7 @@ class View {
                 $pageClass = $page . '_Page';
 				if(method_exists($pageClass, $action . 'Action'))
                 		self::initView();
+
                 if (file_exists(Config::getValue('path', 'pages') . 'app.php')) {
                     include_once (Config::getValue('path', 'pages') . 'app.php');
                     if (method_exists('App', 'init'))

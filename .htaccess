@@ -1,3 +1,4 @@
+
 AddDefaultCharset UTF-8
 
 Options -Indexes
@@ -19,3 +20,4 @@ php_flag magic_quotes_gpc 0
 php_flag magic_quotes_runtime 0
 php_value short_open_tag On
 php_value output_buffering On
+

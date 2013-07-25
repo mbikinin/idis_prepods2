@@ -4,6 +4,7 @@
  * @package PapipuEngine
  * @author maks
  * @version 1
+
  * Главная страница, по умолчанию действие Index
  */
 class index_Page extends View {
