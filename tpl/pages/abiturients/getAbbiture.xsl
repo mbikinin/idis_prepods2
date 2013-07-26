@@ -55,7 +55,7 @@
 				<tr>
 					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
 					<xsl:if test="count(getDiscipline/item) != 0 ">						
-						<a href="#" class="ShowDisc"> дисциплины </a>
+						<a href="#" class="ShowDisc">  предметы  </a>
 						<table class="format" style="float:right; display: none;">
 						
 								<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
