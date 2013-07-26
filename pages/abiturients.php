@@ -38,7 +38,7 @@ class abiturients_Page extends View {
 	public static function getStudyFormsAjaxAction() {
 
 		$params = new stdClass();
-		$params -> branch = !empty(Session::get("filial")) ? Session::get("filial") : 1;
+		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
@@ -60,7 +60,7 @@ class abiturients_Page extends View {
 
 	public static function getEducPlansAjaxAction() {
 		$params = new stdClass();
-		$params -> branch = !empty(Session::get("filial")) ? Session::get("filial") : 1;
+		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
@@ -85,7 +85,7 @@ class abiturients_Page extends View {
 
 	public static function getStagesAjaxAction() {
 		$params = new stdClass();
-		$params -> branch = !empty(Session::get("filial")) ? Session::get("filial") : 1;
+		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 
