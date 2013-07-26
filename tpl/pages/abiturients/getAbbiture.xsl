@@ -18,7 +18,7 @@
 			<li>
 				<table>
 					<xsl:if test="count(getAbbiture/item) != 0 ">
-						<thead><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Документы</th></thead>
+						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th></thead>
 						<xsl:apply-templates select="getAbbiture/item" />
 					</xsl:if>
 				</table>
@@ -26,21 +26,43 @@
 		</ul>
 	</xsl:template>
 
-	<xsl:template match="getAbbiture/item">	
-				<tr>
+	<xsl:template match="getAbbiture/item">
+		<xsl:choose>
+			<xsl:when test="//content/budgetplaces >= position() ">
+				<tr class="in_budget"><td class="col"></td>
 					<td><xsl:value-of select = "familyname" /></td>
 					<td><xsl:value-of select = "firstname" /></td>
 					<td><xsl:value-of select = "secondname" /></td>
 					<td><xsl:value-of select = "resultScore" /></td>
 					<td><xsl:value-of select = "docOriginal" /></td>
 				</tr>
+			</xsl:when>
+			<xsl:when test="//content/budgetplaces = position() ">
+					<tr>
+						<td colspan="6">---------</td>
+					</tr>
+			</xsl:when>
+			<xsl:otherwise>
+				<tr><td class="col"></td>
+					<td><xsl:value-of select = "familyname" /></td>
+					<td><xsl:value-of select = "firstname" /></td>
+					<td><xsl:value-of select = "secondname" /></td>
+					<td><xsl:value-of select = "resultScore" /></td>
+					<td><xsl:value-of select = "docOriginal" /></td>
+				</tr>
+			</xsl:otherwise>
+		</xsl:choose>
 				<tr>
-					<td colspan="5" style="background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
-						<a href="#" class="HideDisc"> скрыть </a>
-						<table class="format" style="float:right">
-							<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
-							<xsl:apply-templates select="getDiscipline/item" />
+					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+					<xsl:if test="count(getDiscipline/item) != 0 ">						
+						<a href="#" class="ShowDisc"> дисциплины </a>
+						<table class="format" style="float:right; display: none;">
+						
+								<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
+								<xsl:apply-templates select="getDiscipline/item" />
+						
 						</table>
+					</xsl:if>
 					</td>
 				</tr>
 	</xsl:template>

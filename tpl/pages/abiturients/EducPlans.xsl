@@ -20,7 +20,9 @@
 				<a href="#" class="getEntrantsInfo" >
 					<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
 				</a>
+				<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 				<div class="resultAbbiture"></div>
+
 			</li>
 	</xsl:template>
 </xsl:stylesheet>

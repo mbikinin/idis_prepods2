@@ -16,11 +16,10 @@
 
 
 	<xsl:template match="content">
-		<a class="gray" href="javascript: history.go(-1)">назад</a>	
 		<p><xsl:value-of select ="message" /></p>
-		<h1>Ход приема абитуриентов 2013</h1>
 			<ul class="s1">
 				<li class="instityte" rel="1" >
+					
 						<a href="#" class="getStages">
 							<h4><span class="pluse">+ </span>Институт</h4>
 						</a>

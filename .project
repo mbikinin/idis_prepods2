@@ -1,34 +1,15 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>voter</name>
+	<name>ieml2</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<name>com.aptana.editor.php.aptanaPhpBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.dltk.core.scriptbuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.php.core.PHPNature</nature>
-	</natures>
-</projectDescription>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-	<name>prepod.iemlapp</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
 		<buildCommand>
 			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
@@ -36,8 +17,7 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.aptana.ruby.core.rubynature</nature>
+		<nature>com.aptana.editor.php.phpNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 </projectDescription>
->>>>>>> 33767a45f60e3997f3e0d3738ec63107afa53951

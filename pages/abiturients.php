@@ -10,21 +10,23 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_branch = 1;
 	private static $_year = 2013;
-
+	
 	public static function initController($action) {
+
 	}
 
 	/*
 	 * Главная страница сайта
 	 */
+	 
 	public static function indexAction($id) {
+		Session::set("filial", Router::getRouteParam('id'));
 		self::$page['content'] = "";
 		self::showXSLT('pages/abiturients/index');
 	}
 
-	public static function getFilialsAjaxAction() {
+	public static function getFilials() {
 		$response = self::connectWsdl("department?wsdl") -> getBranches();
 		for ($i = 0; $i < count($response -> return); $i++) {
 			$array[$i] = array("id" => $response -> return[$i] -> id, "city" => $response -> return[$i] -> city);
@@ -34,8 +36,9 @@ class abiturients_Page extends View {
 	}
 
 	public static function getStudyFormsAjaxAction() {
+
 		$params = new stdClass();
-		$params -> branch = self::$_branch;
+		$params -> branch = Session::get("filial");
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
@@ -57,7 +60,7 @@ class abiturients_Page extends View {
 
 	public static function getEducPlansAjaxAction() {
 		$params = new stdClass();
-		$params -> branch = self::$_branch;
+		$params -> branch = Session::get("filial");
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
@@ -67,7 +70,10 @@ class abiturients_Page extends View {
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
-				$array[$i] = array("id" => $response -> return[$i] -> id, "specialityName" => $response -> return[$i] -> specialityName);
+				$array[$i] = array(
+				"id" => $response -> return[$i] -> id, 
+				"specialityName" => $response -> return[$i] -> specialityName,
+				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null);
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;
@@ -79,7 +85,7 @@ class abiturients_Page extends View {
 
 	public static function getStagesAjaxAction() {
 		$params = new stdClass();
-		$params -> branch = self::$_branch;
+		$params -> branch = Session::get("filial");
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 
@@ -118,13 +124,16 @@ class abiturients_Page extends View {
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
-				for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
-					$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
-					$array2[$ii] = array(
-						"disciplineName" => $res2->disciplineName,
-						"score" => $res2->score
-					);
+				if(isset($res->extExamScore) && !empty($res->extExamScore)){
+					for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
+						$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
+						$array2[$ii] = array(
+							"disciplineName" => $res2->disciplineName,
+							"score" => $res2->score
+						);
+					}
 				}
+
 				$array[$i] = array(
 
 					"familyname" => $res -> familyname, 
@@ -132,7 +141,7 @@ class abiturients_Page extends View {
 					"secondname" => $res -> secondname, 
 					"resultScore" => $res -> resultScore, 
 					"docOriginal" => $res -> docOriginal,
-					"getDiscipline" => $array2
+					"getDiscipline" => !empty($array2) ? $array2 : array()
 				);
 
 			}
@@ -140,7 +149,7 @@ class abiturients_Page extends View {
 		} else {
 			self::$page['content']['error'] = "нет данных";
 		}
-
+		self::$page['content']['budgetplaces'] = !empty($_POST['budgetplaces']) ? $_POST['budgetplaces'] : null;		
 		self::showXSLT('pages/abiturients/getAbbiture');
 	}
 
