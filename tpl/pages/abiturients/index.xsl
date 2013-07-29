@@ -16,27 +16,29 @@
 
 
 	<xsl:template match="content">
-		<p><xsl:value-of select ="message" /></p>
-			<ul class="s1">
-				<li class="instityte" rel="1" >
-					
-						<a href="#" class="getStages">
-							<h4><span class="pluse">+ </span>Институт</h4>
-						</a>
-						<div class="resultStages"></div>					
-				</li>
-					
-				<li class="instityte" rel="0" >
-						<a href="#" class="getStages">
-							<h4><span class="pluse">+ </span>Колледж</h4>
-						</a>
-						<div class="resultStages"></div>					
-				</li>
-			</ul>
-		<!-- <ul class="teachers_ul">
-			<xsl:apply-templates select="teachers/item" />
-		</ul> -->
-		<div class="clear"></div>
+		<div style="margin-left: -50px;">
+			<p><xsl:value-of select ="message" /></p>
+				<ul class="s1">
+					<li class="instityte" rel="1" >
+						
+							<a href="#" class="getStages">
+								<h4><span class="pluse">+ </span>Институт</h4>
+							</a>
+							<div class="resultStages"></div>					
+					</li>
+						
+					<li class="instityte" rel="0" >
+							<a href="#" class="getStages">
+								<h4><span class="pluse">+ </span>Колледж</h4>
+							</a>
+							<div class="resultStages"></div>					
+					</li>
+				</ul>
+			<!-- <ul class="teachers_ul">
+				<xsl:apply-templates select="teachers/item" />
+			</ul> -->
+			<div class="clear"></div>
+		</div>
 	</xsl:template>
 
 	<xsl:template match="teachers/item">

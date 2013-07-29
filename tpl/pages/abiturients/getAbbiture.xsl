@@ -18,7 +18,7 @@
 			<li>
 				<table>
 					<xsl:if test="count(getAbbiture/item) != 0 ">
-						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th></thead>
+						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><th>Статус</th></thead>
 						<xsl:apply-templates select="getAbbiture/item" />
 					</xsl:if>
 				</table>
@@ -35,6 +35,7 @@
 					<td><xsl:value-of select = "secondname" /></td>
 					<td><xsl:value-of select = "resultScore" /></td>
 					<td><xsl:value-of select = "docOriginal" /></td>
+					<td><xsl:value-of select = "status" /></td>
 				</tr>
 			</xsl:when>
 			<xsl:when test="//content/budgetplaces = position() ">
@@ -49,6 +50,7 @@
 					<td><xsl:value-of select = "secondname" /></td>
 					<td><xsl:value-of select = "resultScore" /></td>
 					<td><xsl:value-of select = "docOriginal" /></td>
+					<td><xsl:value-of select = "status" /></td>
 				</tr>
 			</xsl:otherwise>
 		</xsl:choose>

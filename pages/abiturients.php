@@ -133,6 +133,7 @@ class abiturients_Page extends View {
 						);
 					}
 				}
+				else $array2 = array();
 
 				$array[$i] = array(
 
@@ -141,7 +142,8 @@ class abiturients_Page extends View {
 					"secondname" => $res -> secondname, 
 					"resultScore" => $res -> resultScore, 
 					"docOriginal" => $res -> docOriginal,
-					"getDiscipline" => !empty($array2) ? $array2 : array()
+					"getDiscipline" => !empty($array2) ? $array2 : array(),
+					"status" => !empty($res -> status) ? $res -> status : null
 				);
 
 			}
