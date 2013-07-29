@@ -23,8 +23,16 @@
 				</li>
 			</ul>
 		</ul>
+		<script>
+		$(document).ready(function(){
+			$('.showBudget').live("click", function(){
+				$(this).parent().find('.s2').toggle();
+				return false;
+			});
+		});
+		</script>
 	</xsl:template>
-
+	
 	<xsl:template match="getStages/item">
 			
 			<li class="phase" rel="0">
