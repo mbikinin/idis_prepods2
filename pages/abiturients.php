@@ -143,7 +143,7 @@ class abiturients_Page extends View {
 					"resultScore" => $res -> resultScore, 
 					"docOriginal" => $res -> docOriginal,
 					"getDiscipline" => !empty($array2) ? $array2 : array(),
-					"status" => !empty($res -> status) ? $res -> status : null
+					"status" => !empty($res -> status) ? ($res -> status) : null
 				);
 
 			}
