@@ -120,11 +120,12 @@ class abiturients_Page extends View {
 		$params -> budget = $_POST['budget'];
 
 		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) ? self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) : null;
-
+		$array2 = array();
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				if(isset($res->extExamScore) && !empty($res->extExamScore)){
+					unset($array2);
 					for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
 						$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
 						$array2[$ii] = array(
@@ -133,7 +134,6 @@ class abiturients_Page extends View {
 						);
 					}
 				}
-				else $array2 = array();
 
 				$array[$i] = array(
 
@@ -141,9 +141,9 @@ class abiturients_Page extends View {
 					"firstname" => $res -> firstname, 
 					"secondname" => $res -> secondname, 
 					"resultScore" => $res -> resultScore, 
-					"docOriginal" => $res -> docOriginal,
+					"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
 					"getDiscipline" => !empty($array2) ? $array2 : array(),
-					"status" => !empty($res -> status) ? ($res -> status) : null
+					"status" => $res -> status
 				);
 
 			}
