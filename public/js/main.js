@@ -12,6 +12,7 @@ $(document).ready(function() {
 			$(this).parents('.phase').find('.s2').removeClass('hideBlock');
 			$(this).parents('.phase').find('.s2').addClass('showBlock');
 		}
+		
 		else{
 			$(this).parents('.phase').find('.s2').addClass('hideBlock');
 			$(this).parents('.phase').find('.s2').removeClass('showBlock');
