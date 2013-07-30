@@ -28,7 +28,7 @@
 
 	<xsl:template match="getAbbiture/item">
 		<xsl:choose>
-			<xsl:when test="//content/budgetplaces >= position() ">
+			<xsl:when test="//content/budgetplaces >= position()+1 ">
 				<tr class="in_budget"><td class="col"></td>
 					<td><xsl:value-of select = "familyname" /></td>
 					<td><xsl:value-of select = "firstname" /></td>
@@ -39,9 +39,18 @@
 				</tr>
 			</xsl:when>
 			<xsl:when test="//content/budgetplaces = position() ">
-					<tr>
-						<td colspan="6">---------</td>
+									<tr>
+						<td colspan="6" style="background: none">-------------------------------------------------------- <br/><br/></td>
 					</tr>
+					<tr><td class="col"></td>
+						<td><xsl:value-of select = "familyname" /></td>
+						<td><xsl:value-of select = "firstname" /></td>
+						<td><xsl:value-of select = "secondname" /></td>
+						<td><xsl:value-of select = "resultScore" /></td>
+						<td><xsl:value-of select = "docOriginal" /></td>
+						<td><xsl:value-of select = "status" /></td>
+					</tr>
+
 			</xsl:when>
 			<xsl:otherwise>
 				<tr><td class="col"></td>
