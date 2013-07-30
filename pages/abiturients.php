@@ -124,8 +124,9 @@ class abiturients_Page extends View {
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
+				unset($array2);
 				if(isset($res->extExamScore) && !empty($res->extExamScore)){
-					unset($array2);
+					
 					for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
 						$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
 						$array2[$ii] = array(
