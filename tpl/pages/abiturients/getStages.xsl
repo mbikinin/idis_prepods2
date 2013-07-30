@@ -21,14 +21,6 @@
 					
 			</ul>
 		</ul>
-		<script>
-		$(document).ready(function(){
-			$('.showBudget22').live("click", function(){
-				$(this).parents('.phase').find('.resultStages').toggle();
-				return false;
-			});
-		});
-		</script>
 	</xsl:template>
 	
 	<xsl:template match="getStages/item">
@@ -38,7 +30,7 @@
 						<a href="#" class="showBudget">
 							+ Пофамильный перечень лиц, зачисление которых рассматривается приемной комиссией по каждому направлению подготовки (27.07.13)
 						</a>
-							<ul class="s2" >						
+							<ul class="s2 hideBlock">						
 								<li class="budget" rel="1">
 									<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
 									<div class="resultStudy">
@@ -54,10 +46,10 @@
 							</ul>
 					</li>
 					<li class="phase" rel="1">
-						<a href="#" class="showBudget">
+						<a href="#" class="showBudget ">
 							+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
 						</a>
-						<ul class="s2">						
+						<ul class="s2 hideBlock">						
 							<li class="budget" rel="1">
 								<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
 								<div class="resultStudy">
