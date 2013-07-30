@@ -24,7 +24,7 @@
 	</xsl:template>
 	
 	<xsl:template match="getStages/item">
-			<li class="stage" rel="{id}"> 1 поток
+			<li class="stage" rel="{id}"> <xsl:value-of select = "stageName" />
 					<ul>
 					<li class="phase" rel="0">
 						<a href="#" class="showBudget">
