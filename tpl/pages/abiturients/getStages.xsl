@@ -64,6 +64,26 @@
 							</li>
 						</ul>
 					</li>
+					<li class="phase" rel="2">
+						<a href="#" class="showBudget ">
+							+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.08.13)
+						</a>
+						<ul class="s2 hideBlock">						
+							<li class="budget" rel="1">
+								<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+								<div class="resultStudy">
+												
+								</div>
+							</li>
+							<li class="budget" rel="0">
+								<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+								<div class="resultStudy">
+												
+								</div>
+							</li>
+						</ul>
+					</li>
+					
 				</ul>
 			</li>
 	</xsl:template>
