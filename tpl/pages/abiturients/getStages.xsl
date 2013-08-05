@@ -26,63 +26,88 @@
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}"> <xsl:value-of select = "stageName" />
 					<ul>
-					<li class="phase" rel="0">
-						<a href="#" class="showBudget">
-							+ Пофамильный перечень лиц, зачисление которых рассматривается приемной комиссией по каждому направлению подготовки (27.07.13)
-						</a>
-							<ul class="s2 hideBlock">						
-								<li class="budget" rel="1">
-									<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
-									<div class="resultStudy">
-													
-									</div>
-								</li>
-								<li class="budget" rel="0">
-									<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-									<div class="resultStudy">
-													
-									</div>
-								</li>
-							</ul>
-					</li>
-					<li class="phase" rel="1">
-						<a href="#" class="showBudget ">
-							+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
-						</a>
-						<ul class="s2 hideBlock">						
-							<li class="budget" rel="1">
-								<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
-								<div class="resultStudy">
-												
-								</div>
+					<xsl:choose>
+						<xsl:when test = "id != 102 ">
+							<li class="phase" rel="0">
+								<a href="#" class="showBudget">
+									+ Пофамильный перечень лиц, зачисление которых рассматривается приемной комиссией по каждому направлению подготовки (27.07.2013)
+								</a>
+									<ul class="s2 hideBlock">						
+										<li class="budget" rel="1">
+											<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+											<div class="resultStudy">
+															
+											</div>
+										</li>
+										<li class="budget" rel="0">
+											<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+											<div class="resultStudy">
+															
+											</div>
+										</li>
+									</ul>
 							</li>
-							<li class="budget" rel="0">
-								<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-								<div class="resultStudy">
-												
-								</div>
+							<li class="phase" rel="1">
+								<a href="#" class="showBudget ">
+									+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
 							</li>
-						</ul>
-					</li>
-					<li class="phase" rel="2">
-						<a href="#" class="showBudget ">
-							+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.08.13)
-						</a>
-						<ul class="s2 hideBlock">						
-							<li class="budget" rel="1">
-								<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
-								<div class="resultStudy">
-												
-								</div>
+							<li class="phase" rel="2">
+								<a href="#" class="showBudget ">
+									+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.08.13)
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
 							</li>
-							<li class="budget" rel="0">
-								<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-								<div class="resultStudy">
-												
-								</div>
+						</xsl:when>
+						<xsl:otherwise>
+							<li class="phase" rel="1">
+								<a href="#" class="showBudget ">
+									+ Список абитуриентов, рекомендованных к зачислению на I курс (05.08.13)
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
 							</li>
-						</ul>
-					</li>
+						</xsl:otherwise>
+					</xsl:choose>
 					
 				</ul>
 			</li>
