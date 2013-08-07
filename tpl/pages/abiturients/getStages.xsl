@@ -27,7 +27,8 @@
 			<li class="stage" rel="{id}"> <xsl:value-of select = "stageName" />
 					<ul>
 					<xsl:choose>
-						<xsl:when test = "id = 1 ">
+						<!-- 1 поток у института LEVEL=1 -->
+						<xsl:when test="level = 1 and position()=2">
 							<li class="phase" rel="0">
 								<a href="#" class="showBudget">
 									+ Пофамильный перечень лиц, зачисление которых рассматривается приемной комиссией по каждому направлению подготовки (27.07.2013)
@@ -86,23 +87,9 @@
 								</ul>
 							</li>
 						</xsl:when>
-						<xsl:when test = "id = 2 ">
-							
-							<li class="phase" rel="1">
-								<a href="#" class="showBudget ">
-									+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
-								</a>
-								<ul class="s2 hideBlock">						
-									<li class="budget" rel="0">
-										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-										<div class="resultStudy">
-														
-										</div>
-									</li>
-								</ul>
-							</li>
-						</xsl:when>
-						<xsl:when test="id = 102">
+						
+						<!-- 2 поток у института LEVEL=1 -->
+						<xsl:when test="level = 1 and position()=1">
 							<li class="phase" rel="1">
 								<a href="#" class="showBudget ">
 									+ Список абитуриентов, рекомендованных к зачислению на I курс (05.08.13)
@@ -123,11 +110,25 @@
 								</ul>
 							</li>
 						</xsl:when>
-						<xsl:otherwise>
+						
+						<!-- КОЛЛЕДЖ -->
+						<xsl:when test = "level = 0 and position()=1">
+							
 							<li class="phase" rel="1">
-								нет данных
+								<a href="#" class="showBudget ">
+									+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
 							</li>
-						</xsl:otherwise>
+						</xsl:when>
+						
 					</xsl:choose>
 					
 				</ul>

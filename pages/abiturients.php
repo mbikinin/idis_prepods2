@@ -106,6 +106,7 @@ class abiturients_Page extends View {
 			}
 			self::$page['content'] = array();
 			self::$page['content']['getStages'] = $array;
+			self::$page['content']['level'] = $_POST['level'];
 		} else {
 			self::$page['content']['error'] = "нет данных";
 		}
