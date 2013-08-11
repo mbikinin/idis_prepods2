@@ -97,7 +97,7 @@ class abiturients_Page extends View {
 				$array[$i] = array("id" => $res -> id, 
 				"stageName" => $res -> stageName, 
 				"beginDate" => $res -> beginDate, 
-				"entrantsDate" => !empty($res -> entrantsDate) ? date("d.m.Y", strtotime($res->entrantsDate)) : null, 
+				"orderDate" => !empty($res -> orderDate) ? date("d-m-Y", strtotime($res->orderDate)) : null, 
 				"recommendedDate" => !empty($res -> recommendedDate) ? $res -> recommendedDate : null, 
 				"orderDate" => !empty($res -> orderDate) ? $res -> orderDate : null, 
 				"level" => $res -> level, 

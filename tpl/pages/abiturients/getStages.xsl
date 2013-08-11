@@ -69,7 +69,7 @@
 							</li>
 							<li class="phase" rel="2">
 								<a href="#" class="showBudget ">
-									+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.08.13)
+									+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.208.13)
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="1">
@@ -112,6 +112,48 @@
 							<li class="phase" rel="2">
 								<a href="#" class="showBudget ">
 									+ Приказ о зачислении на 1 курс, по итогам 2-ого этапа зачисления (10.08.13)
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
+							</li>
+							
+						</xsl:when>
+						<!-- 3 поток у института LEVEL=1 -->
+						<xsl:when test="level = 1 and position()=2">
+							<li class="phase" rel="1">
+								<a href="#" class="showBudget ">
+									+ Список абитуриентов, рекомендованных к зачислению на I курс
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="phase" rel="2">
+								<a href="#" class="showBudget ">
+									+ Приказ о зачислении на 1 курс, по итогам 3-ого этапа зачисления
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="1">
