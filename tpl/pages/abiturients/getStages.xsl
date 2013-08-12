@@ -165,8 +165,7 @@
 									</li>
 									<li class="budget" rel="0">
 										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-										<div class="resultStudy">
-														
+										<div class="resultStudy">														
 										</div>
 									</li>
 								</ul>
