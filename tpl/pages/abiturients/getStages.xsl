@@ -177,20 +177,18 @@
 						<xsl:when test = "level = 0 and position()=1">
 							
 							<li class="phase" rel="1">
-								<a href="#" class="showBudget ">
+								<a href="#" class="showBudget">
 									+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="0">
 										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-										<div class="resultStudy">
-														
+										<div class="resultStudy">														
 										</div>
 									</li>
 								</ul>
 							</li>
-						</xsl:when>
-						
+						</xsl:when>						
 					</xsl:choose>
 					
 				</ul>
