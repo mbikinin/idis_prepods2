@@ -69,7 +69,7 @@
 							</li>
 							<li class="phase" rel="2">
 								<a href="#" class="showBudget ">
-									+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.208.13)
+									+ Приказ о зачислении на 1 курс, по итогам 1-ого этапа зачисления (05.08.13)
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="1">
@@ -151,8 +151,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="phase" rel="2">
-								
+							<li class="phase" rel="2">								
 								<a href="#" class="showBudget ">
 									+ Приказ о зачислении на 1 курс, по итогам 3-ого этапа зачисления
 								</a>
