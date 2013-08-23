@@ -151,7 +151,27 @@
 										</div>
 									</li>
 								</ul>
-							</li>							
+							</li>	
+							<li class="phase" rel="2">
+								<a href="#" class="showBudget ">
+									+ Приказ о зачислении на 1 курс, по итогам 3-ого этапа зачисления (21.08.2013)		
+								</a>
+								<ul class="s2 hideBlock">						
+									<li class="budget" rel="1">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+									<li class="budget" rel="0">
+										<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+										<div class="resultStudy">
+														
+										</div>
+									</li>
+								</ul>
+							</li>		
+									
 						</xsl:when>
 						
 						<!-- КОЛЛЕДЖ -->
