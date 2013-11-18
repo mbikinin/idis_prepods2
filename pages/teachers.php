@@ -156,12 +156,13 @@ class teachers_Page extends View {
 		else return false;
 	}	
 	public static function setYearsArray($array){
+		
 		$i = 0;
 		$return = array();
 		if(!empty($array))
 		foreach($array as $val){
-			$return [$i++]= $val['year'];
-		}		
+			$return[$i++]= $val['year'];
+		}	
 		return array_unique($return);
 		
 	}

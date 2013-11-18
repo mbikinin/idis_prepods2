@@ -120,20 +120,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 		</li>
 	</xsl:template>
 	<xsl:template match="years_array/item">
-		<xsl:if test="5 > position()">
-			<xsl:choose>
-				<xsl:when test="position() = 1">
+
 					<li>
 						<a class="border rounded" href="#tabs-{text()}"><xsl:value-of select="text()" /></a>
 					</li>
-				</xsl:when>
-				<xsl:otherwise>
-					<li>
-						<a class="border rounded" href="#tabs-{text()}"><xsl:value-of select="text()" /></a>
-					</li>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:if>
+
 	</xsl:template>
 	<xsl:template match="teacher_pub/item">
 		<div id="tabs-{year}">
