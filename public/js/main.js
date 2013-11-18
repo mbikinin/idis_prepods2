@@ -20,29 +20,7 @@ $(document).ready(function() {
 		return false;
 	});
 	
-	$('.pub_year').live("click", function() {
-		if ($(this).attr("id") == 'active')
-			return false
-		else {
-			year = $(this).attr("rel");
-			$(this).parent().find('span').removeAttr("id");
-			$(this).attr('id', 'active')
-			if (year == "all") {
-				$('.teachers_pub_ul li').each(function(key, val) {
-					$(val).attr('class', 'showBlock');
-				});
-			} else {
-				$('.teachers_pub_ul li').each(function(key, val) {
-					if ($(val).find('span:contains(' + year + ')').parents('li').hasClass('hideBlock'))
-						$(val).find('span').parents('li').attr('class', 'showBlock');
-					else
-						$(val).find('span').parents('li').attr('class', 'hideBlock');
 
-				});
-			}
-		}
-		return false;
-	});
 
 	$('.HideDisc').live("click", function(){
 		$(this).parent().find('table').hide();
@@ -66,14 +44,8 @@ $(document).ready(function() {
 			$(this).parent().find('ul').removeClass('showBlock').addClass('hideBlock');
 		return false;
 	});
-	$('.teacher_box .disciplines_href').click(function() {
-		$('.disciplines_list_item').toggle("slow");
-		return false;
-	});
-	$('.teacher_box .publications_href').click(function() {
-		$('.publications_list_item').toggle("slow");
-		return false;
-	});
+	
+
 	
 	/***
 	 *

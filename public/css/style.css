@@ -288,27 +288,41 @@ ul.parrent li.low .oter{
 .sort_by_year {
     margin: 30px 37px;
 }
-.sort_by_year span{
+#tabs{
+	margin-top: 30px;
+}
+#tabs ul{
+	margin:0;
+}
+#tabs li{
+	display: inline-block;
+}
+#tabs li a{
 	background: #eeeeee;
 	padding: 5px;
 	cursor: pointer;
 }
-.sort_by_year  span#active{
-	padding: 7px;
+#tabs .ui-tabs-active a{
+	padding: 4px;
 	font-size:16px;
 	font-weight: bold;
+}
+#tabs .ui-tabs-panel{
+	margin: 10px 0 0 10px;
 }
 /**
 	Дисциплины
 ***/
 .teacher_box .disciplines_list_item{
-	
+	margin-top: 5px;
 }
 .teacher_box .disciplines_href, .teacher_box .publications_href{
-	text-decoration: none;
-	color: #0077bb;
-	font-size: 20px;
 	border-bottom: 1px dashed;
+    color: #0077BB;
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 6px;
+    text-decoration: none;
 }
 .teacher_box .disciplines_href:hover, .teacher_box .publications_href:hover{
 	border-bottom: 0px dashed;

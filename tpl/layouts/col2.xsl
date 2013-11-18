@@ -29,13 +29,7 @@
 				</div>
 				<xsl:apply-templates select="footer" />
 			</body>
-			<script type="text/javascript" src="/public/js/libs/jquery.fancybox-1.3.4.pack.js"></script>
-			<script type="text/javascript">
-			$(document).ready(function() {
-				$("a.imgZoom").fancybox();
-			});
-			</script>
-			<link rel="stylesheet" type="text/css" href="/public/css/jquery.fancybox-1.3.4.css" media="screen" />
+			
 			
 		</html>
 	</xsl:template>

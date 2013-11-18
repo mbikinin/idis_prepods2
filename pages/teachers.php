@@ -103,6 +103,10 @@ class teachers_Page extends View {
 			"science_short"=>!empty($response->return->science_short) ? 
 			$response->return->science_short : null,
 			"department"=>$response->return->department,
+			"teacherEducation"=>!empty($response->return->teacherEducation->academy) ? 
+			$response->return->teacherEducation->academy : null,
+			"qualification"=>!empty($response->return->teacherEducation->qualification) ? 
+			$response->return->teacherEducation->qualification : null
 			
 			);
 		return $array;
