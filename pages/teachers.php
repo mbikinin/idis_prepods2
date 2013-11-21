@@ -52,6 +52,7 @@ class teachers_Page extends View {
     	$id = !empty($id) ? $id : $id;
  		self::$page['content']['teacher_info'] =$info= self::getPrepodsInfo(self::setTeacherId($id));
 //Debug::dump($info);
+		
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
@@ -104,13 +105,31 @@ class teachers_Page extends View {
 			"science_short"=>!empty($response->return->science_short) ? 
 			$response->return->science_short : null,
 			"department"=>$response->return->department,
-			"academy"=>count($response->return->teacherEducation)>1 ? 
-			$response->return->teacherEducation[0]->academy : $response->return->teacherEducation->academy,
-			"qualification"=>count($response->return->teacherEducation)>1 ? 
-			$response->return->teacherEducation[0]->qualification : $response->return->teacherEducation->qualification,
-			"speciality"=>count($response->return->teacherEducation)>1 ? 
-$response->return->teacherEducation[0]->speciality :  $response->return->teacherEducation->speciality
+			"academy" => self::get_array_by_name($response->return->teacherEducation, "academy"),
+			"qualification"=>self::get_array_by_name($response->return->teacherEducation, "qualification"),
+			"speciality"=>self::get_array_by_name($response->return->teacherEducation, "speciality")
 			);
+			//Debug::dump($array);
+		return $array;
+	}
+	public static function get_array_by_name($teacherEducation, $name){
+		for($i=0; $i<count($teacherEducation); $i++){
+			if(isset($teacherEducation) && count($teacherEducation) >1){
+				$array[$i] = 
+					array(
+					$name=>(isset($teacherEducation[$i]->$name)) ?
+					$teacherEducation[$i]->$name : null
+					);
+			}
+			else{
+				$array[0] = 
+					array(
+					$name=>(isset($teacherEducation->$name)) ?
+					$teacherEducation->$name : null
+					);
+			}
+		}
+			
 		return $array;
 	}
 	public static function getDisciplin($Request){

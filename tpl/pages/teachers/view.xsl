@@ -70,7 +70,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 							<xsl:value-of select="teacher_info/department" />
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td class="b title">Образование</td>
 						<td>
 							<xsl:value-of select="teacher_info/academy" />
@@ -89,7 +89,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
                                                 <td>
                                                         <xsl:value-of select="teacher_info/speciality"/>
                                                 </td>
-                                        </tr>					
+                                        </tr>	 -->				
 <!--<tr>
 					<td class="b title">Количество публикаций</td><td>
 					<xsl:value-of select="count(teacher_pub/item)" /></td>
@@ -99,8 +99,47 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 			</div>
 			<div class="clear"></div>
 			<div class="padding"></div>
+			<span class="title_education">Образование</span>
+			<div class="clear"></div>
+			<div class="education_box">
+				<div class="titles">
+					 <div class="item">
+					 	<strong>ВУЗ</strong>
+					 </div>
+					 <div class="item">
+					 	<strong>Квалификация</strong>
+					 </div>
+					 <div class="item">
+					 	<strong>Специальность</strong>
+					 </div>
+				</div>
+				<div class="clear"></div>
+				<div class="academies">
+						<xsl:for-each select="teacher_info/academy/item">
+						    <div class="item">
+						      	<div class="academy"><xsl:value-of select="position()"/>. <xsl:value-of select="academy"/></div>
+						    </div>
+					    </xsl:for-each>
+				</div>
+				<div class="qualifications">
+						<xsl:for-each select="teacher_info/qualification/item">
+						    <div class="item">
+						      	<div class="qualification"><xsl:value-of select="qualification"/></div>
+						    </div>
+					    </xsl:for-each>
+				</div>
+				<div class="specialities">
+						<xsl:for-each select="teacher_info/speciality/item">
+						    <div class="item">
+						      	<div class="speciality"><xsl:value-of select="speciality"/></div>
+						    </div>
+					    </xsl:for-each>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="padding"></div>
 			<xsl:if test="count(teacher_disc/item)!=0">
-				<a href="#" class="disciplines_href">Преподаваемые дисциплины</a>
+				<a href="#" class="disciplines_href">Преподаваемые дисциплины (<xsl:value-of select="count(teacher_disc/item)" />)</a>
 				<div class="disciplines_list_item hideBlock">
 					<ul class="teachers_disc_ul">
 						<xsl:apply-templates select="teacher_disc/item" />
@@ -109,7 +148,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 			</xsl:if>
 			<div class="clear"></div>
 			<xsl:if test="count(teacher_pub/item)!=0">
-				<a href="#" class="publications_href">Публикации и статьи</a>
+				<a href="#" class="publications_href">Публикации и статьи (<xsl:value-of select="count(teacher_pub/item)" />)</a>
 				<div id="tabs" class="hideBlock">
 					<ul>
 					<xsl:apply-templates select="years_array/item"/>

@@ -316,7 +316,7 @@ ul.parrent li.low .oter{
 .teacher_box .disciplines_list_item{
 	margin-top: 5px;
 }
-.teacher_box .disciplines_href, .teacher_box .publications_href{
+.teacher_box .disciplines_href, .teacher_box .publications_href, .title_education{
 	border-bottom: 1px dashed;
     color: #0077BB;
     display: inline-block;
@@ -324,8 +324,11 @@ ul.parrent li.low .oter{
     margin-bottom: 6px;
     text-decoration: none;
 }
+ .title_education{
+ 	border-bottom: 0px dashed;
+ }
 .teacher_box .disciplines_href:hover, .teacher_box .publications_href:hover{
-	border-bottom: 0px dashed;
+	border-bottom: 1px dashed #fff;
 }
 
 /**
@@ -340,4 +343,25 @@ ul.parrent li.low .oter{
 .div_s4 table tr td{
 	border: solid 1px #e1e1e1;
 	padding: 2px 5px;
+}
+
+
+.academies, .qualifications, .specialities, .titles{
+	float:left;
+}
+.education_box .item{
+	height: 55px; 
+	width: 195px;
+	border: solid 1px #e1e1e1;
+	margin: 1px;
+	padding: 4px;
+	font-size: 12px;
+	line-height: 12px;
+}
+.titles .item{
+	float:left;
+	height: auto;
+	background-color: #EEEEEE;
+	padding-left: 10px;
+	width: 189px;
 }
