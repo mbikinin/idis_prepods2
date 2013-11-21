@@ -50,7 +50,8 @@ class teachers_Page extends View {
      */
 	public static function viewAction($id) {
     	$id = !empty($id) ? $id : $id;
- 		self::$page['content']['teacher_info'] = self::getPrepodsInfo(self::setTeacherId($id));
+ 		self::$page['content']['teacher_info'] =$info= self::getPrepodsInfo(self::setTeacherId($id));
+//Debug::dump($info);
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
@@ -103,11 +104,12 @@ class teachers_Page extends View {
 			"science_short"=>!empty($response->return->science_short) ? 
 			$response->return->science_short : null,
 			"department"=>$response->return->department,
-			"teacherEducation"=>!empty($response->return->teacherEducation->academy) ? 
-			$response->return->teacherEducation->academy : null,
-			"qualification"=>!empty($response->return->teacherEducation->qualification) ? 
-			$response->return->teacherEducation->qualification : null
-			
+			"academy"=>count($response->return->teacherEducation)>1 ? 
+			$response->return->teacherEducation[0]->academy : $response->return->teacherEducation->academy,
+			"qualification"=>count($response->return->teacherEducation)>1 ? 
+			$response->return->teacherEducation[0]->qualification : $response->return->teacherEducation->qualification,
+			"speciality"=>count($response->return->teacherEducation)>1 ? 
+$response->return->teacherEducation[0]->speciality :  $response->return->teacherEducation->speciality
 			);
 		return $array;
 	}

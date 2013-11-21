@@ -73,16 +73,24 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 					<tr>
 						<td class="b title">Образование</td>
 						<td>
-							<xsl:value-of select="teacher_info/teacherEducation" />
+							<xsl:value-of select="teacher_info/academy" />
+							
 						</td>
 					</tr>
+					
 					<tr>
 						<td class="b title">Квалификация</td>
 						<td>
 							<xsl:value-of select="teacher_info/qualification" />
 						</td>
 					</tr>
-					<!--<tr>
+					<tr>
+                                                <td class="b title">Специальность</td>
+                                                <td>
+                                                        <xsl:value-of select="teacher_info/speciality"/>
+                                                </td>
+                                        </tr>					
+<!--<tr>
 					<td class="b title">Количество публикаций</td><td>
 					<xsl:value-of select="count(teacher_pub/item)" /></td>
 					</tr>
