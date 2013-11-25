@@ -224,7 +224,7 @@ class teachers_Page extends View {
 								'UserCredentials',
 	                            array('@samigullin','mklP54sd'));
 	                            
-		$client = new SoapClient("https://89.232.109.231/Education/services/person?wsdl", 
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/person?wsdl", 
 		array('encoding'=>'utf-8', "trace"=> 1, "exceptions" => 0));
 		$client->__setSoapHeaders($Headers);
 		return $client;
