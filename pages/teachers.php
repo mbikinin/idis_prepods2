@@ -55,6 +55,7 @@ class teachers_Page extends View {
 		
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
+				Debug::dump($pub_array);
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
  		self::$page['content']['teacher_foto'] = "http://89.232.109.231/Education/public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
@@ -180,6 +181,7 @@ class teachers_Page extends View {
 		return $array;
 		}
 		else return false;
+
 	}	
 	public static function setYearsArray($array){
 		
