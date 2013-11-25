@@ -176,7 +176,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 	<xsl:template match="teacher_pub/item">
 		<div id="tabs-{year}">
 		
-			<xsl:value-of select="proceedings_name" />
+			<xsl:value-of select="proceedings_name" disable-output-escaping="yes"/>
 			<xsl:if test="pages != ''">
 				<span class="gray">
 					&#160;(стр.

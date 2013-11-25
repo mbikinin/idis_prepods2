@@ -22,8 +22,8 @@ class teachers_Page extends View {
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] = 
-    		self::getPrepodsByLetter(self::setLetter("$id")) ? 
-    		self::getPrepodsByLetter(self::setLetter("$id")) :
+    		self::getPrepodsByLetter(self::setLetter2("$id")) ? 
+    		self::getPrepodsByLetter(self::setLetter2("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
   		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
  		self::showXSLT('pages/teachers/index');
@@ -60,7 +60,7 @@ class teachers_Page extends View {
  		self::showXSLT('pages/teachers/view');
     }
 	public static function getPrepodsByLetter($Request){
-		$response = self::connectWsdl()->getTeachersByFIO($Request);
+		$response = self::connectWsdl()->getTeachersByBranch($Request);
 		if(isset($response->return)){
 			if (count($response->return) == 1){
 				$array[] = 
@@ -99,11 +99,11 @@ class teachers_Page extends View {
 			"firstName"=>$response->return->firstName,
 			"id" =>$response->return->id,
 			"secondName"=>$response->return->secondName,
-			"position"=>$response->return->position,
+			"position"=>trim($response->return->position),
 			"acadegree"=>!empty($response->return->acadegree_short) ?
-			$response->return->acadegree_short : null,
+			$response->return->acadegree_short : "",
 			"science_short"=>!empty($response->return->science_short) ? 
-			$response->return->science_short : null,
+			$response->return->science_short : "",
 			"department"=>$response->return->department,
 			"academy" => self::get_array_by_name($response->return->teacherEducation, "academy"),
 			"qualification"=>self::get_array_by_name($response->return->teacherEducation, "qualification"),
@@ -161,12 +161,17 @@ class teachers_Page extends View {
 				array(
 				"author"=>$response->return->publications[$i]->author,
 				"lang"=>$response->return->publications[$i]->lang,
-				"pages" => (isset($response->return->publications[$i]->pages)) ?
-				($response->return->publications[$i]->pages) :null,
-				"proceedings_name"=>(isset($response->return->publications[$i]->proceedings_name))?
-				$response->return->publications[$i]->proceedings_name : null,
-				"proceedings_name"=>$response->return->publications[$i]->title,
-				"type"=>$response->return->publications[$i]->type,
+				"pages" => isset($response->return->publications[$i]->pages)  ? $response->return->publications[$i]->pages : null,
+				"proceedings_name"=>(isset($response->return->publications[$i]->title)) 
+					? 
+						( trim($response->return->publications[$i]->title) == 'Рабочая программа' 
+							? 
+								$response->return->publications[$i]->discName . " <br/>" . $response->return->publications[$i]->prep_direction
+							: 
+								$response->return->publications[$i]->title 
+						) 
+					: null,
+				"type"=>$response->return->publications[$i]->type =='Рабочая программа' ? $response->return->publications[$i]->prep_direction : $response->return->publications[$i]->type,
 				"vak"=>$response->return->publications[$i]->vak,
 				"year"=>$response->return->publications[$i]->year,
 				"pubid"=>$response->return->publications[$i]->pubid			
@@ -197,7 +202,14 @@ class teachers_Page extends View {
 		$Request->teacherid=$id;
 		return $Request;		
 	}
-	public static function setLetter($id){
+	public static function setLetter2($id){
+		$Request = new stdClass();
+		$Request->year=date('Y');
+		$Request->familyname="$id";
+		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";
+		return $Request;		
+	}
+		public static function setLetter($id){
 		
 		$Request = new stdClass();
 		

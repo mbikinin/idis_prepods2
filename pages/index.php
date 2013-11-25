@@ -13,14 +13,17 @@ class index_Page extends View {
      */
 
     public static function initController($action) {
+   		isset($_GET['id']) ? Session::set("filial", $_GET['id']) : "1";
     }
 
     /*
      * Главная страница сайта
      */
     public static function indexAction($id) {
+
     	self::$page['content'] = "";
 		//self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
+
         self::showXSLT('pages/index/index');
     }
  	public static function getFaculties($Request){  
