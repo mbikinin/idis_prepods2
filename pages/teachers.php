@@ -55,7 +55,6 @@ class teachers_Page extends View {
 		
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
-				Debug::dump($pub_array);
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
  		self::$page['content']['teacher_foto'] = "http://89.232.109.231/Education/public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
@@ -163,7 +162,7 @@ class teachers_Page extends View {
 				"author"=>$response->return->publications[$i]->author,
 				"lang"=>$response->return->publications[$i]->lang,
 				"pages" => isset($response->return->publications[$i]->pages)  ? $response->return->publications[$i]->pages : null,
-				"proceedings_name2"=>(isset($response->return->publications[$i]->title)) 
+				"proceedings_name"=>(isset($response->return->publications[$i]->title)) 
 					? 
 						( trim($response->return->publications[$i]->title) == 'Рабочая программа' 
 							? 
@@ -172,7 +171,6 @@ class teachers_Page extends View {
 								$response->return->publications[$i]->title 
 						) 
 					: null,
-					"proceedings_name2"=>$response->return->publications[$i]->discName,
 				"type"=>$response->return->publications[$i]->type =='Рабочая программа' ? $response->return->publications[$i]->prep_direction : $response->return->publications[$i]->type,
 				"vak"=>$response->return->publications[$i]->vak,
 				"year"=>$response->return->publications[$i]->year,
