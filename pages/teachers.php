@@ -166,7 +166,7 @@ class teachers_Page extends View {
 					? 
 						( trim($response->return->publications[$i]->title) == 'Рабочая программа' 
 							? 
-								($response->return->publications[$i]->discName)
+								($response->return->publications[$i]->discName . " <br/>" . $response->return->publications[$i]->prep_direction)
 							: 
 								$response->return->publications[$i]->title 
 						) 
