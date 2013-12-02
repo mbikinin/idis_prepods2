@@ -22,8 +22,8 @@ class teachers_Page extends View {
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] = 
-    		self::getPrepodsByLetter(self::setLetter2("$id")) ? 
-    		self::getPrepodsByLetter(self::setLetter2("$id")) :
+    		self::getPrepodsByLetter(self::setLetter("$id")) ? 
+    		self::getPrepodsByLetter(self::setLetter("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
   		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
  		self::showXSLT('pages/teachers/index');
@@ -60,7 +60,7 @@ class teachers_Page extends View {
  		self::showXSLT('pages/teachers/view');
     }
 	public static function getPrepodsByLetter($Request){
-		$response = self::connectWsdl()->getTeachersByBranch($Request);
+		$response = self::connectWsdl()->getTeachersByFIO($Request);
 		if(isset($response->return)){
 			if (count($response->return) == 1){
 				$array[] = 
@@ -171,7 +171,7 @@ class teachers_Page extends View {
 								$response->return->publications[$i]->title 
 						) 
 					: null,
-				"type"=>$response->return->publications[$i]->type =='Рабочая программа' ? $response->return->publications[$i]->prep_direction : $response->return->publications[$i]->type,
+				"type"=>$response->return->publications[$i]->type,
 				"vak"=>$response->return->publications[$i]->vak,
 				"year"=>$response->return->publications[$i]->year,
 				"pubid"=>$response->return->publications[$i]->pubid			
