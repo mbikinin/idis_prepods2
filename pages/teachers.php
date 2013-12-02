@@ -19,11 +19,12 @@ class teachers_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
+    	Debug::dump(Session::get('filial'));
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] = 
-    		self::getPrepodsByLetter(self::setLetter("$id")) ? 
-    		self::getPrepodsByLetter(self::setLetter("$id")) :
+    		self::getPrepodsByLetter(self::setLetter2("$id")) ? 
+    		self::getPrepodsByLetter(self::setLetter2("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
   		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
  		self::showXSLT('pages/teachers/index');
@@ -205,7 +206,6 @@ class teachers_Page extends View {
 	}
 	public static function setLetter2($id){
 		$Request = new stdClass();
-		$Request->year=date('Y');
 		$Request->familyname="$id";
 		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";
 		return $Request;		
