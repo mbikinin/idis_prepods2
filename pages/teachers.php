@@ -19,7 +19,7 @@ class teachers_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-    	Debug::dump(Session::get('filial'));
+    	
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] = 
