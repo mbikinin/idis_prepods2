@@ -62,8 +62,8 @@ class teachers_Page extends View {
  		self::showXSLT('pages/teachers/view');
     }
 	public static function getPrepodsByLetter($Request){
+		$response = self::connectWsdl()->getTeachersByBranch($Request);
 		//$response = self::connectWsdl()->getTeachersByFIO($Request);
-		$response = self::connectWsdl()->getTeachersByFIO($Request);
 		//Debug::dump($response);
 		if(isset($response->return)){
 			if (count($response->return) == 1){
