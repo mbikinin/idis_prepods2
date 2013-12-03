@@ -23,9 +23,10 @@ class teachers_Page extends View {
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] = 
-    		self::getPrepodsByLetter(self::setLetter2("$id")) ? 
-    		self::getPrepodsByLetter(self::setLetter2("$id")) :
+    		self::getPrepodsByLetter(self::setLetter3("$id")) ? 
+    		self::getPrepodsByLetter(self::setLetter3("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
+		//Debug::dump(self::$page['content']['teachers']);
   		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
  		self::showXSLT('pages/teachers/index');
     }
@@ -61,7 +62,9 @@ class teachers_Page extends View {
  		self::showXSLT('pages/teachers/view');
     }
 	public static function getPrepodsByLetter($Request){
+		//$response = self::connectWsdl()->getTeachersByFIO($Request);
 		$response = self::connectWsdl()->getTeachersByFIO($Request);
+		//Debug::dump($response);
 		if(isset($response->return)){
 			if (count($response->return) == 1){
 				$array[] = 
@@ -204,17 +207,18 @@ class teachers_Page extends View {
 		$Request->teacherid=$id;
 		return $Request;		
 	}
-	public static function setLetter2($id){
+
+	public static function setLetter3($id){
 		$Request = new stdClass();
 		$Request->familyname="$id";
 		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";
 		return $Request;		
 	}
-		public static function setLetter($id){
-		
-		$Request = new stdClass();
-		
+	public static function setLetter33($id){
+		$Request = new stdClass();		
 		$Request->familyname="$id";
+		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";	
+//Debug::dump($Request);
 		return $Request;		
 	}
 	private static function connectWsdl(){
