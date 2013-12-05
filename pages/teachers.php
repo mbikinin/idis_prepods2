@@ -128,7 +128,7 @@ class teachers_Page extends View {
 				$array[$i] = 
 					array(
 						"courseName"=>$teacherTraining[$i]->courseName,
-						"hours"=>$teacherTraining[$i]->hours,
+						"hours"=>isset($teacherTraining[$i]->hours) ? $teacherTraining[$i]->hours : "",
 						"place"=>$teacherTraining[$i]->place,
 						"year"=>$teacherTraining[$i]->year
 					);

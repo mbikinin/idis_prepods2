@@ -163,7 +163,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 						      		<strong>
 						      			<xsl:value-of select="courseName"/>&#160;
 						      		</strong>
+						      		<xsl:if test="hours!=''">
 						      		(<i><xsl:value-of select="hours"/> ч.</i>)
+						      		</xsl:if>
 						      	</li>
 						      	
 						    </div>
