@@ -157,7 +157,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 						      	<li>
 						      		<xsl:value-of select="year"/>г. <br/>
 						      		<xsl:value-of select="place"/>&#160;
-						      		<xsl:value-of select="place"/>&#160;
 						      		<br/>
 						      		по программе: 
 						      		<strong>
