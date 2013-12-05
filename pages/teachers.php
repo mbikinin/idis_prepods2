@@ -111,9 +111,39 @@ class teachers_Page extends View {
 			"department"=>$response->return->department,
 			"academy" => self::get_array_by_name($response->return->teacherEducation, "academy"),
 			"qualification"=>self::get_array_by_name($response->return->teacherEducation, "qualification"),
-			"speciality"=>self::get_array_by_name($response->return->teacherEducation, "speciality")
+			"speciality"=>self::get_array_by_name($response->return->teacherEducation, "speciality"),
+			"teachingExperienceDate" => !empty($response->return->teachingExperienceDate) ? 
+			$response->return->teachingExperienceDate : "",
+			"totalExperienceDate"=> !empty($response->return->totalExperienceDate) ? 
+			$response->return->totalExperienceDate : "",
+			"teacherTraining"=> !empty($response->return->teacherTraining) ? 
+			self::get_training($response->return) : ""
 			);
-			//Debug::dump($array);
+			//Debug::dump(self::get_training($response->return));
+		return $array;
+	}
+	public static function get_training($return){
+		for($i=0; $i<count($return); $i++){
+			if(isset($return) && count($return) >1){
+				$array[$i] = 
+					array(
+						"courseName"=>$return->teacherTraining[$i]->courseName,
+						"hours"=>$return->teacherTraining[$i]->hours,
+						"place"=>$return->teacherTraining[$i]->place,
+						"year"=>$return[$i]->teacherTraining->year
+					);
+			}
+			else{
+				$array[0] = 
+					array(
+						"courseName"=>$return->teacherTraining->courseName,
+						"hours"=>$return->teacherTraining->hours,
+						"place"=>$return->teacherTraining->place,
+						"year"=>$return->teacherTraining->year
+					);
+			}
+		}
+			
 		return $array;
 	}
 	public static function get_array_by_name($teacherEducation, $name){
@@ -147,7 +177,7 @@ class teachers_Page extends View {
 					);
 			}
 			else {
-				$array = 
+				$array[0] = 
 					array(
 					"disciplines"=>(isset($response->return->disciplines->name)) ?
 					strtolower($response->return->disciplines->name) : null

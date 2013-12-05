@@ -70,6 +70,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 							<xsl:value-of select="teacher_info/department" />
 						</td>
 					</tr>
+					<xsl:if test="teacher_info/totalExperienceDate != '' " >					
+						<tr>
+							<td colspan="2">Общий стаж работы с <xsl:value-of select="teacher_info/totalExperienceDate" /></td>
+						</tr>
+					</xsl:if>
+					<xsl:if test="teacher_info/teachingExperienceDate != '' " >
+					<tr>
+						<td colspan="2">Общий педагогический стаж работы с <xsl:value-of select="teacher_info/teachingExperienceDate" /></td>
+					</tr>
+					</xsl:if>
 					<!-- <tr>
 						<td class="b title">Образование</td>
 						<td>
@@ -138,6 +148,30 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 			</div>
 			<div class="clear"></div>
 			<div class="padding"></div>
+			<xsl:if test="count(teacher_info/teacherTraining/item)!=0">
+				<a href="#" class="disciplines_href">Повышение квалификации (<xsl:value-of select="count(teacher_info/teacherTraining/item)" />)</a>
+				<div class="disciplines_list_item hideBlock">
+					<ul class="teachers_disc_ul">
+						<xsl:for-each select="teacher_info/teacherTraining/item">
+						    <div class="item">
+						      	<li>
+						      		<xsl:value-of select="year"/>г. <br/>
+						      		<xsl:value-of select="place"/>&#160;
+						      		<xsl:value-of select="place"/>&#160;
+						      		<br/>
+						      		по программе: 
+						      		<strong>
+						      			<xsl:value-of select="courseName"/>&#160;
+						      		</strong>
+						      		(<i><xsl:value-of select="hours"/> ч.</i>)
+						      	</li>
+						      	
+						    </div>
+					    </xsl:for-each>
+					</ul>
+				</div>
+			</xsl:if>
+			<div class="clear"></div>
 			<xsl:if test="count(teacher_disc/item)!=0">
 				<a href="#" class="disciplines_href">Преподаваемые дисциплины (<xsl:value-of select="count(teacher_disc/item)" />)</a>
 				<div class="disciplines_list_item hideBlock">
