@@ -117,29 +117,29 @@ class teachers_Page extends View {
 			"totalExperienceDate"=> !empty($response->return->totalExperienceDate) ? 
 			$response->return->totalExperienceDate : "",
 			"teacherTraining"=> !empty($response->return->teacherTraining) ? 
-			self::get_training($response->return) : ""
+			self::get_training($response->return->teacherTraining) : ""
 			);
 			//Debug::dump(self::get_training($response->return));
 		return $array;
 	}
-	public static function get_training($return){
-		for($i=0; $i<count($return); $i++){
-			if(isset($return) && count($return) >1){
+	public static function get_training($teacherTraining){
+		for($i=0; $i<count($teacherTraining); $i++){
+			if(isset($teacherTraining) && count($teacherTraining) >1){
 				$array[$i] = 
 					array(
-						"courseName"=>$return->teacherTraining[$i]->courseName,
-						"hours"=>$return->teacherTraining[$i]->hours,
-						"place"=>$return->teacherTraining[$i]->place,
-						"year"=>$return[$i]->teacherTraining->year
+						"courseName"=>$teacherTraining[$i]->courseName,
+						"hours"=>$teacherTraining[$i]->hours,
+						"place"=>$teacherTraining[$i]->place,
+						"year"=>$teacherTraining[$i]->year
 					);
 			}
 			else{
 				$array[0] = 
 					array(
-						"courseName"=>$return->teacherTraining->courseName,
-						"hours"=>$return->teacherTraining->hours,
-						"place"=>$return->teacherTraining->place,
-						"year"=>$return->teacherTraining->year
+						"courseName"=>$teacherTraining->courseName,
+						"hours"=>$teacherTraining->hours,
+						"place"=>$teacherTraining->place,
+						"year"=>$teacherTraining->year
 					);
 			}
 		}
