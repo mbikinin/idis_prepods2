@@ -10,7 +10,7 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_year = 2013;
+	private static $_year = 2014;
 	
 	public static function initController($action) {
 
@@ -55,6 +55,7 @@ class abiturients_Page extends View {
 		} else {
 			self::$page['content']['error'] = "нет данных";
 		}
+		self::$page['content']['count_budget'] = 
 		self::showXSLT('pages/abiturients/StudyForms');
 	}
 
@@ -73,7 +74,8 @@ class abiturients_Page extends View {
 				$array[$i] = array(
 				"id" => $response -> return[$i] -> id, 
 				"specialityName" => $response -> return[$i] -> specialityName,
-				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null);
+				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null,
+				"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null);
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;

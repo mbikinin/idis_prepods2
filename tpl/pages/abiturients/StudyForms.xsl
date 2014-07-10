@@ -15,6 +15,7 @@
 				<li><xsl:value-of select = "error" />
 				</li>
 			</xsl:if>
+			
 			<xsl:apply-templates select="StudyForms/item" />
 		</ul>
 	</xsl:template>
