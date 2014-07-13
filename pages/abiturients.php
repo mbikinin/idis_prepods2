@@ -75,7 +75,8 @@ class abiturients_Page extends View {
 				"id" => $response -> return[$i] -> id, 
 				"specialityName" => $response -> return[$i] -> specialityName,
 				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null,
-				"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null);
+				"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null,
+				"dateNow" => date('d/m/Y',  time()));
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;
@@ -98,8 +99,8 @@ class abiturients_Page extends View {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				$array[$i] = array("id" => $res -> id, 
 				"stageName" => $res -> stageName, 
-				"beginDate" => $res -> beginDate, 
-				"orderDate" => !empty($res -> orderDate) ? date("d-m-Y", strtotime($res->orderDate)) : null, 
+				"beginDate" => date("d/m/Y", strtotime($res->beginDate)), 
+				"orderDate" => !empty($res -> orderDate) ? date("d/m/Y", strtotime($res->orderDate)) : null, 
 				"recommendedDate" => !empty($res -> recommendedDate) ? $res -> recommendedDate : null, 
 				"orderDate" => !empty($res -> orderDate) ? $res -> orderDate : null, 
 				"level" => $res -> level, 
@@ -140,18 +141,19 @@ class abiturients_Page extends View {
 				}
 
 				$array[$i] = array(
-
 					"familyname" => $res -> familyname, 
 					"firstname" => $res -> firstname, 
 					"secondname" => $res -> secondname, 
 					"resultScore" => $res -> resultScore, 
 					"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
 					"getDiscipline" => !empty($array2) ? $array2 : array(),
-					"status" => !empty($res -> status) ? $res -> status : null
+					"status" => !empty($res -> status) ? $res -> status : null,
+					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
 				);
 
 			}
 			self::$page['content']['getAbbiture'] = $array;
+			self::$page['content']['getAbbitureKvote'] = $array;
 		} else {
 			self::$page['content']['error'] = "нет данных";
 		}
@@ -172,7 +174,7 @@ class abiturients_Page extends View {
 	//Education/services/entrants/getEntrantsInfo?planid=5245&stageid=41&phase=0&budget=0
 	///Education/services/entrants/getStageEntrants?planid=6136&stageid=41&phase=2&budget=1
 	public static function getPrepods($Request) {
-		//Получаем массив факультетов
+		//Получаем массив факультетовш
 		$response = self::connectWsdl() -> getTeachersByDept($Request);
 		for ($i = 0; $i < count($response -> return); $i++) {
 			$array[$i] = array("familyName" => $response -> return[$i] -> familyName, "firstName" => $response -> return[$i] -> firstName, "id" => $response -> return[$i] -> id, "secondName" => $response -> return[$i] -> secondName, "position" => $response -> return[$i] -> position);

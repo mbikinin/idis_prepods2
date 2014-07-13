@@ -162,6 +162,7 @@ $(document).ready(function() {
 		result = ".resultAbbiture";
 		if(this_.hasClass("is_load")){
 			this_.parent().find(result).hide();
+			this_.parent().find(".kvotaplaces").hide();
 			this_.removeClass("is_load");
 			this_.addClass("showBlock");
 			return false;
@@ -169,6 +170,7 @@ $(document).ready(function() {
 		else if(this_.hasClass("showBlock")){
 			this_.parent().find(result).show();
 			this_.removeClass("showBlock");
+			this_.parent().find(".kvotaplaces").show();
 			this_.addClass("is_load");
 			return false;
 		}
@@ -194,6 +196,8 @@ $(document).ready(function() {
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);
 			this_.addClass("is_load ")
+			this_.parent().find(".kvotaplaces").show();
+
 			$('.loading').remove();
 		});
 		
