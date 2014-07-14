@@ -24,13 +24,7 @@
 				</table>
 				<table>
 					<xsl:if test="count(getAbbitureKvote/item) != 0 ">
-						<span class="kvotaplaces hideBlock"><br/><br/>
-						<p>
-							<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
-							<xsl:if test="kvotaplaces != '' ">	
-								<i>Количество бюджетных мест - <xsl:value-of select = "kvotaplaces" /> </i>
-							</xsl:if>
-						</p></span>
+
 						<p><i>места, финансируемые из федерального бюджета по квоте приема лиц, имеющих особое право</i></p>
 						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 						<xsl:apply-templates select="getAbbitureKvote/item" />
