@@ -24,7 +24,7 @@
 				</table>
 				<table>
 					<xsl:if test="count(getAbbitureKvote/item) != 0 ">
-						<xsl:if test="budget = 1">
+						<xsl:if test="budget = '1'">
 							<p><i>места, финансируемые из федерального бюджета по квоте приема лиц, имеющих особое право</i></p>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureKvote/item" />						
