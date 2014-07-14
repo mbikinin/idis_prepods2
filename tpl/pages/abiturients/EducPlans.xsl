@@ -26,6 +26,9 @@
 					<xsl:if test="budgetplaces != '' ">	
 						<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
 					</xsl:if>
+					<xsl:if test="budgetplaces != '' ">	
+						<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "budgetplaces" /> </i>
+					</xsl:if>
 				</p></span>
 				<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 				<div class="resultAbbiture"></div>
