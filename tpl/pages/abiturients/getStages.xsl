@@ -25,7 +25,7 @@
 	
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">
-				<xsl:value-of select="stageName"/> (<xsl:value-of select="beginDate"/>)
+				<xsl:value-of select="stageName"/> (01/06/2014)
 					<ul>
 					<xsl:choose>
 						<!-- 1 поток у института LEVEL=1 -->
