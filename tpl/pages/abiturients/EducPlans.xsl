@@ -23,8 +23,8 @@
 				<span class="kvotaplaces hideBlock"><br/><br/>
 				<p>
 					<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
-					<xsl:if test="kvotaplaces != '' ">	
-						<i>Количество бюджетных мест - <xsl:value-of select = "kvotaplaces" /> </i>
+					<xsl:if test="budgetplaces != '' ">	
+						<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
 					</xsl:if>
 				</p></span>
 				<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
