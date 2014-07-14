@@ -63,11 +63,11 @@
 					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
 					<xsl:if test="count(getDiscipline/item) != 0 ">						
 						<a href="#" class="ShowDisc">  предметы  </a>
-						<table class="format" style="float:right; display: none;">
-						
+						<table class="format" style="float:right; display: none;">						
 								<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
-								<xsl:apply-templates select="getDiscipline/item" />
-						
+								<tbody>
+									<xsl:apply-templates select="getDiscipline/item" />
+								</tbody>
 						</table>
 					</xsl:if>
 					</td>
@@ -105,7 +105,9 @@
 						<table class="format" style="float:right; display: none;">
 						
 								<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
-								<xsl:apply-templates select="getDiscipline/item" />
+								<tbody>
+									<xsl:apply-templates select="getDiscipline/item" />
+								</tbody>
 						
 						</table>
 					</xsl:if>
@@ -114,12 +116,6 @@
 			</xsl:if>
 	</xsl:template>
 	<xsl:template match="getAbbiture/item/getDiscipline/item">	
-				<tr>
-					<td><xsl:value-of select = "disciplineName" /></td>
-					<td><xsl:value-of select = "score" /></td>
-				</tr>
-	</xsl:template>
-	<xsl:template match="getAbbitureKvota/item/getDiscipline/item">	
 				<tr>
 					<td><xsl:value-of select = "disciplineName" /></td>
 					<td><xsl:value-of select = "score" /></td>
