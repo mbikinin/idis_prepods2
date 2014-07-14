@@ -89,7 +89,7 @@
 							</li>
 						</xsl:when>
 						
-						<!-- 2 поток у института LEVEL=1 -->
+						<!-- 2 поток у института LEVEL=1 
 						<xsl:when test="level = 1 and position()=2">
 							<li class="phase" rel="3">
 								<a href="#" class="showBudget ">
@@ -142,7 +142,7 @@
 									</li>
 								</ul>
 							</li>
-						</xsl:when>
+						</xsl:when>-->
 						<!-- 3 поток у института LEVEL=1 -->
 						<xsl:when test="level = 1 and position()=3">
 							<li class="phase" rel="1">

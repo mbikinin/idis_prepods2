@@ -114,9 +114,9 @@
 			</xsl:if>
 	</xsl:template>
 	<xsl:template match="getAbbiture/item/getDiscipline/item">	
-				<tr>
-					<td><xsl:value-of select = "disciplineName" /></td>
-					<td><xsl:value-of select = "score" /></td>
-				</tr>
+		<tr>
+			<td><xsl:value-of select = "disciplineName" /></td>
+			<td><xsl:value-of select = "score" /></td>
+		</tr>
 	</xsl:template>
 </xsl:stylesheet>
