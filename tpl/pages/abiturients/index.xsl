@@ -17,7 +17,6 @@
 
 	<xsl:template match="content">
 		<div style="margin-left: -50px;">
-			<xsl:value-of select ="filial" />
 			<p><xsl:value-of select ="message" /></p>
 				<ul class="s1">
 					<li class="instityte" rel="1" >						
