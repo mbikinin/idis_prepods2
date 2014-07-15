@@ -23,6 +23,7 @@ class abiturients_Page extends View {
 	public static function indexAction($id) {
 		Session::set("filial", Router::getRouteParam('id'));
 		self::$page['content'] = "";
+		self::$page['content']['filial'] = Session::get("filial");
 		self::showXSLT('pages/abiturients/index');
 	}
 
@@ -190,7 +191,7 @@ class abiturients_Page extends View {
 	 * @param unknown_type $id - teacher id
 	 */
 	public static function viewAction($id) {
-		$id = !empty($id) ? $id : $id;
+		$id = !empty($id) ? $id : $id;		
 		self::$page['content']['teacher_info'] = self::getPrepodsInfo(self::setTeacherId($id));
 		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
 		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
