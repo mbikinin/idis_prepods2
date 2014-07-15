@@ -147,6 +147,7 @@ class abiturients_Page extends View {
 					"resultScore" => $res -> resultScore, 
 					"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
 					"getDiscipline" => !empty($array2) ? $array2 : array(),
+					"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 					"status" => !empty($res -> status) ? $res -> status : null,
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
 				);
