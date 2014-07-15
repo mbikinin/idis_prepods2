@@ -23,7 +23,7 @@ class abiturients_Page extends View {
 	public static function indexAction($id) {
 		Session::set("filial", Router::getRouteParam('id'));
 		self::$page['content'] = "";
-		self::$page['content']['filial'] = Session::get("filial");
+		self::$page['content']['filial'] = Router::getRouteParam('id');
 		self::showXSLT('pages/abiturients/index');
 	}
 
