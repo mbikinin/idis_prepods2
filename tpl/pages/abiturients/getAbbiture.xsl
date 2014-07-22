@@ -37,6 +37,7 @@
 	</xsl:template>
 
 	<xsl:template match="getAbbiture/item">
+		
 		<xsl:if test="kvota != 1 ">
 				<xsl:choose>
 					<xsl:when test="status = 'Рекомендован' ">
