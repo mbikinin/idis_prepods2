@@ -25,7 +25,7 @@
 	
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">
-				<xsl:value-of select="stageName"/> (01/06/2014)
+				<xsl:value-of select="stageName"/>
 					<ul>
 					<xsl:choose>
 						<!-- 1 поток у института LEVEL=1 -->
@@ -147,7 +147,7 @@
 						<xsl:when test="level = 1 and position()=3">
 							<li class="phase" rel="1">
 								<a href="#" class="showBudget ">
-									+ Список абитуриентов, рекомендованных к зачислению на I курс (16.08.2013)
+									+ Список абитуриентов, рекомендованных к зачислению на I курс
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="1">
@@ -166,7 +166,7 @@
 							</li>	
 							<li class="phase" rel="2">
 								<a href="#" class="showBudget ">
-									+ Приказ о зачислении на 1 курс, по итогам 3-ого этапа зачисления (21.08.2013)		
+									+ Приказ о зачислении на 1 курс, по итогам 3-ого этапа зачисления	
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="1">
@@ -191,7 +191,7 @@
 							
 							<li class="phase" rel="1">
 								<a href="#" class="showBudget">
-									+ Список абитуриентов, рекомендованных к зачислению на I курс (30.07.13)
+									+ Список абитуриентов, рекомендованных к зачислению на I курс
 								</a>
 								<ul class="s2 hideBlock">						
 									<li class="budget" rel="0">
