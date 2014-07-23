@@ -20,7 +20,12 @@
 					<xsl:if test="count(getAbbiture/item) != 0 ">						
 						<p><i>Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</i></p>
 						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
-						<xsl:apply-templates select="getAbbiture/item" />
+						<xsl:if test="budget = 1">
+							<xsl:apply-templates select="getAbbiture/item" />
+						</xsl:if>
+						<xsl:if test="budget = 0">
+							<xsl:apply-templates select="getAbbitureAll/item" />
+						</xsl:if>
 					</xsl:if>
 				</table>
 				<table>
@@ -35,7 +40,43 @@
 			</li>
 		</ul>
 	</xsl:template>
-
+	<xsl:template match="getAbbitureAll/item">
+				<xsl:choose>
+					<xsl:when test="status = 'Рекомендован' ">
+						<tr class="in_budget"><td class="col"></td>
+							<td><xsl:value-of select = "familyname" /></td>
+							<td><xsl:value-of select = "firstname" /></td>
+							<td><xsl:value-of select = "secondname" /></td>
+							<td><xsl:value-of select = "resultScore" /></td>
+							<td><xsl:value-of select = "docOriginal" /></td>
+							<!-- <td><xsl:value-of select = "status" /></td> -->
+						</tr>
+					</xsl:when>
+					<xsl:otherwise>
+						<tr><td class="col"></td>
+							<td><xsl:value-of select = "familyname" /></td>
+							<td><xsl:value-of select = "firstname" /></td>
+							<td><xsl:value-of select = "secondname" /></td>
+							<td><xsl:value-of select = "resultScore" /></td>
+							<td><xsl:value-of select = "docOriginal" /></td>
+							<!-- <td><xsl:value-of select = "status" /></td> -->
+						</tr>
+					</xsl:otherwise>
+				</xsl:choose>
+				<tr>
+					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+					<xsl:if test="count(getDiscipline/item) != 0 ">						
+						<a href="#" class="ShowDisc">  предметы  </a>
+						<table class="format" style="float:right; display: none;">						
+								<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
+								<tbody>
+									<xsl:apply-templates select="getDisciplineAll/item" />
+								</tbody>
+						</table>
+					</xsl:if>
+					</td>
+				</tr>
+	</xsl:template>
 	<xsl:template match="getAbbiture/item">
 		
 		<xsl:if test="kvota != 1 ">
@@ -122,6 +163,12 @@
 		</tr>
 	</xsl:template>
 	<xsl:template match="getAbbitureKvote/item/getDisciplineKvote/item">	
+		<tr>
+			<td><xsl:value-of select = "disciplineName" /></td>
+			<td><xsl:value-of select = "score" /></td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="getAbbitureAll/item/getDisciplineAll/item">	
 		<tr>
 			<td><xsl:value-of select = "disciplineName" /></td>
 			<td><xsl:value-of select = "score" /></td>
