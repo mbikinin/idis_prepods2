@@ -94,13 +94,28 @@ class abiturients_Page extends View {
 		$params -> level = $_POST['level'];
 
 		$response = self::connectWsdl("entrants?wsdl") -> getStages($params) ? self::connectWsdl("entrants?wsdl") -> getStages($params) : null;
-
+		$array1 = array();
+		
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
+				unset($array1);
+				if(isset($res->phase) && !empty($res->phase)){					
+					for ($ii = 0; $ii < count($res->phase); $ii++) {
+						$res2 = count($res->phase) == 1 ? $res->phase : $res->phase[$ii];
+						$array1[$ii] = array(
+							"phasekey" => $res2->entry->key,
+							"phasevalue" => $res2->entry->value
+						);
+					}
+				}
+				
 				$array[$i] = array("id" => $res -> id, 
-				"stageName" => $res -> stageName, 
+				"stageName" => $res -> stageName,
+				"phases" => $array1,
+				"reccertaincitizensdate" => !empty($res -> reccertaincitizensdate) ? date("d/m/Y", strtotime($res->reccertaincitizensdate)) : null, 
 				"beginDate" => date("d/m/Y", strtotime($res->beginDate)), 
+				"endDate" => !empty($res -> endDate) ? date("d/m/Y", strtotime($res->endDate)) : null, 
 				"orderDate" => !empty($res -> orderDate) ? date("d/m/Y", strtotime($res->orderDate)) : null, 
 				"recommendedDate" => !empty($res -> recommendedDate) ? $res -> recommendedDate : null, 
 				"orderDate" => !empty($res -> orderDate) ? $res -> orderDate : null, 
@@ -134,10 +149,11 @@ class abiturients_Page extends View {
 					
 					for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
 						$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
+						
 						$array2[$ii] = array(
 							"disciplineName" => $res2->disciplineName,
 							"score" => $res2->score
-						);
+						);	
 					}
 				}
 
@@ -153,10 +169,26 @@ class abiturients_Page extends View {
 					"status" => !empty($res -> status) ? $res -> status : null,
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
 				);
+				if(!empty($res -> kvota) && $res -> kvota == 1)
+					$array3[$i] = array(
+						"familyname" => $res -> familyname, 
+						"firstname" => $res -> firstname, 
+						"secondname" => $res -> secondname, 
+						"resultScore" => $res -> resultScore, 
+						"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
+						"getDiscipline" => !empty($array2) ? $array2 : array(),
+						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
+						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
+						"status" => !empty($res -> status) ? $res -> status : null,
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+					);
+				
 
 			}
-			self::$page['content']['getAbbiture'] = self::$page['content']['getAbbitureKvote'] = self::$page['content']['getAbbitureAll'] = $array;
-		} else {
+			self::$page['content']['getAbbiture'] =self::$page['content']['getAbbitureAll'] = $array;
+			self::$page['content']['getAbbitureKvote'] = isset($array3) && count($array3) > 0 ? $array3 : null;
+		}
+		else {
 			self::$page['content']['error'] = "нет данных";
 		}
 		self::$page['content']['budget'] = $_POST['budget'];

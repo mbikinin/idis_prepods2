@@ -17,8 +17,8 @@
 			</xsl:if>
 			<li>
 				<table>
-					<xsl:if test="count(getAbbiture/item) != 0 ">						
-						<p><i>Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</i></p>
+					<xsl:if test="count(getAbbiture/item) > 0 ">						
+						<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
 						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 						<xsl:if test="budget = 1">
 							<xsl:apply-templates select="getAbbiture/item" />
@@ -29,9 +29,9 @@
 					</xsl:if>
 				</table>
 				<table>
-					<xsl:if test="count(getAbbitureKvote/item) != 0 ">
+					<xsl:if test="count(getAbbitureKvote/item) > 0">
 						<xsl:if test="budget = 1">
-							<p><i>Рейтинг абитуриентов по квоте приема лиц, имеющих особое право, на места, финансируемые из федерального бюджета</i></p>
+							<h5 style="width: 650px">Рейтинг абитуриентов по квоте приема лиц, имеющих особое право, на места, финансируемые из федерального бюджета</h5>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureKvote/item" />						
 						</xsl:if>
@@ -42,14 +42,14 @@
 	</xsl:template>
 	<xsl:template match="getAbbitureAll/item">
 				<xsl:choose>
-					<xsl:when test="status = 'Рекомендован' ">
+					<xsl:when test="status = 'рекомендован(а) к зачислению' ">
 						<tr class="in_budget"><td class="col"></td>
 							<td><xsl:value-of select = "familyname" /></td>
 							<td><xsl:value-of select = "firstname" /></td>
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:when>
 					<xsl:otherwise>
@@ -59,12 +59,12 @@
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:otherwise>
 				</xsl:choose>
 				<tr>
-					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+					<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
 					<xsl:if test="count(getDiscipline/item) != 0 ">						
 						<a href="#" class="ShowDisc">  предметы  </a>
 						<table class="format" style="float:right; display: none;">						
@@ -81,14 +81,14 @@
 		
 		<xsl:if test="kvota != 1 ">
 				<xsl:choose>
-					<xsl:when test="status = 'Рекомендован' ">
+					<xsl:when test="status = 'рекомендован(а) к зачислению' ">
 						<tr class="in_budget"><td class="col"></td>
 							<td><xsl:value-of select = "familyname" /></td>
 							<td><xsl:value-of select = "firstname" /></td>
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:when>
 					<xsl:otherwise>
@@ -98,12 +98,12 @@
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:otherwise>
 				</xsl:choose>
 				<tr>
-					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+					<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
 					<xsl:if test="count(getDiscipline/item) != 0 ">						
 						<a href="#" class="ShowDisc">  предметы  </a>
 						<table class="format" style="float:right; display: none;">						
@@ -120,14 +120,14 @@
 	<xsl:template match="getAbbitureKvote/item">
 		<xsl:if test="kvota = 1 ">
 				<xsl:choose>
-					<xsl:when test="status = 'Рекомендован' ">
+					<xsl:when test="status = 'рекомендован(а) к зачислению' ">
 						<tr class="in_budget"><td class="col"></td>
 							<td><xsl:value-of select = "familyname" /></td>
 							<td><xsl:value-of select = "firstname" /></td>
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:when>
 					<xsl:otherwise>
@@ -137,12 +137,12 @@
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!-- <td><xsl:value-of select = "status" /></td> -->
+							<td><xsl:value-of select = "status" /></td>
 						</tr>
 					</xsl:otherwise>
 				</xsl:choose>
 				<tr>
-					<td colspan="5" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+					<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
 					<xsl:if test="count(getDiscipline/item) != 0 ">						
 						<a href="#" class="ShowDisc">  предметы  </a>
 						<table class="format" style="float:right; display: none;">						

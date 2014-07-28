@@ -158,6 +158,7 @@ $(document).ready(function() {
 	});
 
 	$(".getEntrantsInfo").live("click", function(){
+
 		this_ = $(this);
 		result = ".resultAbbiture";
 		if(this_.hasClass("is_load")){
@@ -170,7 +171,7 @@ $(document).ready(function() {
 		else if(this_.hasClass("showBlock")){
 			this_.parent().find(result).show();
 			this_.removeClass("showBlock");
-			this_.parent().find(".kvotaplaces").show();
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
 			this_.addClass("is_load");
 			return false;
 		}
@@ -196,8 +197,9 @@ $(document).ready(function() {
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);
 			this_.addClass("is_load ")
-			this_.parent().find(".kvotaplaces").show();
-
+			
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			
 			$('.loading').remove();
 		});
 		
