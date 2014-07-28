@@ -17,13 +17,16 @@
 			</xsl:if>
 			<li>
 				<table>
-					<xsl:if test="count(getAbbiture/item) > 0 ">						
-						<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
-						<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
-						<xsl:if test="budget = 1">
-							<xsl:apply-templates select="getAbbiture/item" />
+					<xsl:if test="count(getAbbitureAll/item) > 0 ">						
+						
+						<xsl:if test="budget = 1 and count(getAbbitureNoKvote/item) > 0">
+							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
+							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
+							<xsl:apply-templates select="getAbbitureNoKvote/item" />
 						</xsl:if>
 						<xsl:if test="budget = 0">
+							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
+							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureAll/item" />
 						</xsl:if>
 					</xsl:if>
@@ -77,9 +80,8 @@
 					</td>
 				</tr>
 	</xsl:template>
-	<xsl:template match="getAbbiture/item">
+	<xsl:template match="getAbbitureNoKvote/item">
 		
-		<xsl:if test="kvota != 1 ">
 				<xsl:choose>
 					<xsl:when test="status = 'рекомендован(а) к зачислению' ">
 						<tr class="in_budget"><td class="col"></td>
@@ -115,7 +117,6 @@
 					</xsl:if>
 					</td>
 				</tr>
-			</xsl:if>
 	</xsl:template>
 	<xsl:template match="getAbbitureKvote/item">
 		<xsl:if test="kvota = 1 ">
@@ -156,7 +157,7 @@
 				</tr>
 			</xsl:if>
 	</xsl:template>
-	<xsl:template match="getAbbiture/item/getDiscipline/item">	
+	<xsl:template match="getAbbitureNoKvote/item/getDiscipline/item">	
 		<tr>
 			<td><xsl:value-of select = "disciplineName" /></td>
 			<td><xsl:value-of select = "score" /></td>

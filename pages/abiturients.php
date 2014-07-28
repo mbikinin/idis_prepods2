@@ -169,7 +169,7 @@ class abiturients_Page extends View {
 					"status" => !empty($res -> status) ? $res -> status : null,
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
 				);
-				if(!empty($res -> kvota) && $res -> kvota == 1)
+				if(!empty($res -> kvota) && $res -> kvota == 1){
 					$array3[$i] = array(
 						"familyname" => $res -> familyname, 
 						"firstname" => $res -> firstname, 
@@ -182,11 +182,27 @@ class abiturients_Page extends View {
 						"status" => !empty($res -> status) ? $res -> status : null,
 						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
 					);
-				
+				}
+				if($res -> kvota == 0){				
+					$array4[$i] = array(
+						"familyname" => $res -> familyname, 
+						"firstname" => $res -> firstname, 
+						"secondname" => $res -> secondname, 
+						"resultScore" => $res -> resultScore, 
+						"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
+						"getDiscipline" => !empty($array2) ? $array2 : array(),
+						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
+						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
+						"status" => !empty($res -> status) ? $res -> status : null,
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+					);
+				}
 
 			}
-			self::$page['content']['getAbbiture'] =self::$page['content']['getAbbitureAll'] = $array;
+			self::$page['content']['getAbbitureAll'] = $array;
 			self::$page['content']['getAbbitureKvote'] = isset($array3) && count($array3) > 0 ? $array3 : null;
+			self::$page['content']['getAbbitureNoKvote'] = isset($array4) && count($array4) > 0 ? $array4 : null;
+			
 		}
 		else {
 			self::$page['content']['error'] = "нет данных";
