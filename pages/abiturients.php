@@ -100,13 +100,15 @@ class abiturients_Page extends View {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				unset($array1);
-				if(isset($res->phase) && !empty($res->phase)){					
-					for ($ii = 0; $ii < count($res->phase); $ii++) {
-						$res2 = count($res->phase) == 1 ? $res->phase : $res->phase[$ii];
+				if(isset($res->phase->entry) && !empty($res->phase->entry)){					
+					for ($ii = 0; $ii < count($res->phase->entry); $ii++) {
+						$res2 = count($res->phase->entry) == 1 ? $res->phase->entry : $res->phase->entry[$ii];
 						$array1[$ii] = array(
-							"phasekey" => $res2->entry->key,
-							"phasevalue" => $res2->entry->value
+							"phasekey" => $res2->key,
+							"phasevalue" => $res2->value
 						);
+						
+						
 					}
 				}
 				
