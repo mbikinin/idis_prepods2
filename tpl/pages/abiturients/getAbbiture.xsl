@@ -34,7 +34,7 @@
 				<table>
 					<xsl:if test="count(getAbbitureKvote/item) > 0">
 						<xsl:if test="budget = 1">
-							<h5 style="width: 650px">Рейтинг абитуриентов по квоте приема лиц, имеющих особое право, на места, финансируемые из федерального бюджета</h5>
+							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места, финансируемые из бюджета</h5>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureKvote/item" />						
 						</xsl:if>
