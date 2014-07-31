@@ -20,7 +20,7 @@
 					<xsl:if test="count(getAbbitureAll/item) > 0 ">						
 						
 						<xsl:if test="budget = 1 and count(getAbbitureNoKvote/item) > 0">
-							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
+							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места, финансируемые из бюджета</h5>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureNoKvote/item" />
 						</xsl:if>
@@ -34,7 +34,7 @@
 				<table>
 					<xsl:if test="count(getAbbitureKvote/item) > 0">
 						<xsl:if test="budget = 1">
-							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места, финансируемые из бюджета</h5>
+							<h5 style="width: 650px">Рейтинг абитуриентов на места, финансируемые из федерального бюджета по квоте приема лиц, имеющих особое право</h5>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureKvote/item" />						
 						</xsl:if>
