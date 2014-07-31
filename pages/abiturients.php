@@ -74,6 +74,8 @@ class abiturients_Page extends View {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				$array[$i] = array(
 				"id" => $response -> return[$i] -> id, 
+				"skillId" => $response -> return[$i] -> skillId, 
+				"budget" => $_POST['budget'],
 				"specialityName" => $response -> return[$i] -> specialityName,
 				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null,
 				"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null,

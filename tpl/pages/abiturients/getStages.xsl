@@ -28,19 +28,32 @@
 			<a href="#" class="showBudget ">
 				+ <xsl:value-of select = "phasevalue" />
 			</a>
-			<ul class="s2 hideBlock">						
-					<li class="budget" rel="1">
-						<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
-						<div class="resultStudy">
-										
-						</div>
-					</li>
-					<li class="budget" rel="0">
-						<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-						<div class="resultStudy">
-										
-						</div>
-					</li>
+			<ul class="s2 hideBlock">		
+				<xsl:choose>	
+					<xsl:when test="phasekey = 1 ">			
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
+							<div class="resultStudy">
+											
+							</div>
+						</li>
+						<li class="budget" rel="0">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+							<div class="resultStudy">
+											
+							</div>
+						</li>
+					</xsl:when>
+					<xsl:otherwise>
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
+							<div class="resultStudy">
+											
+							</div>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
+					
 				</ul>
 		</li>
 	</xsl:template>
