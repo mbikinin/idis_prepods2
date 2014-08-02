@@ -22,7 +22,7 @@
 					<xsl:if test="budget = 1 and skillId = 62">
 						<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
 					</xsl:if>
-					<xsl:if test="budget = 0 and skillId != 62">
+					<xsl:if test="budget = 0">
 						<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
 					</xsl:if>							
 				</a>				
