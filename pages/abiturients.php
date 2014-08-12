@@ -107,7 +107,8 @@ class abiturients_Page extends View {
 						$res2 = count($res->phase->entry) == 1 ? $res->phase->entry : $res->phase->entry[$ii];
 						$array1[$ii] = array(
 							"phasekey" => $res2->key,
-							"phasevalue" => $res2->value
+							"phasevalue" => $res2->value,
+							"level" => $params -> level
 						);
 						
 						
