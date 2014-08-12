@@ -30,26 +30,20 @@
 			</a>
 			<ul class="s2 hideBlock">		
 				<xsl:choose>	
-					<xsl:when test="phasekey = 1 or phasekey= 2">			
+					<xsl:when test="phasekey = 3">			
 						<li class="budget" rel="1">
 							<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
-							<div class="resultStudy">
-											
-							</div>
-						</li>
-						<li class="budget" rel="0">
-							<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
-							<div class="resultStudy">
-											
-							</div>
+							<div class="resultStudy"></div>
 						</li>
 					</xsl:when>
 					<xsl:otherwise>
 						<li class="budget" rel="1">
 							<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
-							<div class="resultStudy">
-											
-							</div>
+							<div class="resultStudy"></div>
+						</li>
+						<li class="budget" rel="0">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+							<div class="resultStudy"></div>
 						</li>
 					</xsl:otherwise>
 				</xsl:choose>
