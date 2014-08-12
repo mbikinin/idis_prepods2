@@ -36,6 +36,12 @@
 							<div class="resultStudy"></div>
 						</li>
 					</xsl:when>
+					<xsl:when test="level = 0">			
+						<li class="budget" rel="0">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>Внебюджет</a>
+							<div class="resultStudy"></div>
+						</li>
+					</xsl:when>
 					<xsl:otherwise>
 						<li class="budget" rel="1">
 							<a href="#" class="getStudy"><span class="pluse">+ </span>Бюджет</a>											
