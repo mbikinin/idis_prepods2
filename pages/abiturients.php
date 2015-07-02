@@ -73,12 +73,12 @@ class abiturients_Page extends View {
 			for ($i = 0; $i < count($response -> return); $i++) {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				$array[$i] = array(
-				"id" => $response -> return[$i] -> id, 
-				"skillId" => $response -> return[$i] -> skillId, 
+				"id" => $res -> id, 
+				"skillId" => $res -> skillId, 
 				"budget" => $_POST['budget'],
-				"specialityName" => $response -> return[$i] -> specialityName,
-				"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null,
-				"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null,
+				"specialityName" => $res -> specialityName,
+				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
+				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 			}
 			self::$page['content'] = array();
