@@ -10,7 +10,7 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_year = 2014;
+	private static $_year = 2015;
 	
 	public static function initController($action) {
 
@@ -143,7 +143,7 @@ class abiturients_Page extends View {
 		$params -> stageid = $_POST['stage'];
 		$params -> phase = $_POST['phase'];
 		$params -> budget = $_POST['budget'];
-
+		$params -> free = 0;
 		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) ? self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) : null;
 		$array2 = array();
 		if (!empty($response -> return)) {
@@ -333,7 +333,7 @@ class abiturients_Page extends View {
 	private static function connectWsdl($service) {
 		$Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials', array('@samigullin', 'mklP54sd'));
 
-		$client = new SoapClient("https://89.232.109.231/Education/services/" . $service, array('encoding' => 'utf-8', "trace" => 1, "exceptions" => 0));
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service, array('encoding' => 'utf-8', "trace" => 1, "exceptions" => 0));
 		$client -> __setSoapHeaders($Headers);
 		return $client;
 	}
