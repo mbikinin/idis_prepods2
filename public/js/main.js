@@ -194,7 +194,7 @@ $(document).ready(function() {
 				phase : phase,
 				budget : budget,
 				budgetplaces : budgetplaces,
-				free = free
+				free : free
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);
