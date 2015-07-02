@@ -36,7 +36,13 @@
 							<div class="resultStudy"></div>
 						</li>
 					</xsl:when>
-					<xsl:when test="level = 0 and phasekey=0">			
+					<xsl:when test="level = 0 and phasekey=0">
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy">
+								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА</a>
+											
+							<div class="resultStudy"></div>
+						</li>			
 						<li class="budget" rel="0">
 							<a href="#" class="getStudy"><span class="pluse">+ </span>МЕСТА ПО ДОГОВОРАМ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a>
 							<div class="resultStudy"></div>
