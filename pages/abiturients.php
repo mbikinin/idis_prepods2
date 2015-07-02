@@ -10,7 +10,7 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_year = 2014;
+	private static $_year = 2015;
 	
 	public static function initController($action) {
 
@@ -143,6 +143,7 @@ class abiturients_Page extends View {
 		$params -> stageid = $_POST['stage'];
 		$params -> phase = $_POST['phase'];
 		$params -> budget = $_POST['budget'];
+		$params -> free = $_POST['free'];
 
 		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) ? self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) : null;
 		$array2 = array();

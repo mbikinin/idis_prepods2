@@ -43,7 +43,7 @@
 						</li>
 					</xsl:when>
 					<xsl:otherwise>
-						<li class="budget" rel="1">
+						<li class="budget free" rel="1">
 							<a href="#" class="getStudy">
 								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА</a>
 											
