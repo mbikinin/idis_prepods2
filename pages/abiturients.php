@@ -70,17 +70,31 @@ class abiturients_Page extends View {
 
 		$response = self::connectWsdl("educplan?wsdl") -> getEducPlans($params);
 		if (!empty($response -> return)) {
-			for ($i = 0; $i < count($response -> return); $i++) {
-				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
-				$array[$i] = array(
-				"id" => $res -> id, 
-				"skillId" => $res -> skillId, 
-				"budget" => $_POST['budget'],
-				"specialityName" => $res -> specialityName,
-				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
-				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
-				"dateNow" => date('d/m/Y',  time()));
-			}
+			
+				if(isset($response -> return) && count($response -> return) >1){
+					for ($i = 0; $i < count($response -> return); $i++) {
+						$array[$i] = array(
+						"id" => $response -> return[$i] -> id, 
+						"skillId" => $response -> return[$i] -> skillId, 
+						"budget" => $_POST['budget'],
+						"specialityName" => $response -> return[$i] -> specialityName,
+						"budgetplaces"=> !empty($response -> return[$i] -> budgetplaces) ? $response -> return[$i] -> budgetplaces : null,
+						"kvotaplaces"=> !empty($response -> return[$i] -> kvotaplaces) ? $response -> return[$i] -> kvotaplaces : null,
+						"dateNow" => date('d/m/Y',  time()));
+					}			
+				}
+				else {
+					$array[0] = array(
+					"id" => $response -> return -> id, 
+					"skillId" => $response -> return -> skillId, 
+					"budget" => $_POST['budget'],
+					"specialityName" => $response -> return -> specialityName,
+					"budgetplaces"=> !empty($response -> return -> budgetplaces) ? $response -> return -> budgetplaces : null,
+					"kvotaplaces"=> !empty($response -> return -> kvotaplaces) ? $response -> return -> kvotaplaces : null,
+					"dateNow" => date('d/m/Y',  time()));				
+				}
+
+			
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;
 		} else {
