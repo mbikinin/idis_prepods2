@@ -193,7 +193,8 @@ $(document).ready(function() {
 				stage : stage,
 				phase : phase,
 				budget : budget,
-				budgetplaces : budgetplaces
+				budgetplaces : budgetplaces,
+				free = free
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);
