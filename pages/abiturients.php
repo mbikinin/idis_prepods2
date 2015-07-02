@@ -336,7 +336,7 @@ class abiturients_Page extends View {
 	private static function connectWsdl($service) {
 		$Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials', array('@samigullin', 'mklP54sd'));
 
-		$client = new SoapClient("https://89.232.109.231/Education/services/" . $service, array('encoding' => 'utf-8', "trace" => 1, "exceptions" => 0));
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service, array('encoding' => 'utf-8', "trace" => 1, "exceptions" => 0));
 		$client -> __setSoapHeaders($Headers);
 		return $client;
 	}
