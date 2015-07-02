@@ -43,13 +43,13 @@
 						</li>
 					</xsl:when>
 					<xsl:otherwise>
-						<li class="budget free" rel="1">
+						<li class="budget" rel="1">
 							<a href="#" class="getStudy">
 								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА</a>
 											
 							<div class="resultStudy"></div>
 						</li>
-						<li class="budget" rel="0">
+						<li class="budget free" rel="0">
 							<a href="#" class="getStudy">
 <span class="pluse">+ </span>БЕСПЛАТНЫЕ МЕСТА</a>											
 							<div class="resultStudy"></div>
