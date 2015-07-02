@@ -143,7 +143,7 @@ class abiturients_Page extends View {
 		$params -> stageid = $_POST['stage'];
 		$params -> phase = $_POST['phase'];
 		$params -> budget = $_POST['budget'];
-		$params -> free = 1;
+		$params -> free = $_POST['freeParam'];
 
 		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) ? self::connectWsdl("entrants?wsdl") -> getEntrantsInfo($params) : null;
 		$array2 = array();
