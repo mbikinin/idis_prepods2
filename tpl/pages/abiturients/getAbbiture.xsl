@@ -25,7 +25,8 @@
 							<xsl:apply-templates select="getAbbitureNoKvote/item" />
 						</xsl:if>
 						<xsl:if test="budget = 0">
-							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
+						<xsl:if test="free = 0">
+							<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5></xsl:if>
 							<thead><th></th><th colspan="3">Ф.И.О</th><th>Баллы</th><th>Оригиналы</th><!--<th>Статус</th>--></thead>
 							<xsl:apply-templates select="getAbbitureAll/item" />
 						</xsl:if>
