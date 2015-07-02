@@ -215,7 +215,7 @@ class abiturients_Page extends View {
 			self::$page['content']['error'] = "нет данных";
 		}
 		self::$page['content']['budget'] = $_POST['budget'];
-		self::$page['content']['free'] = $_POST['free'];
+		self::$page['content']['free'] = $_POST['freeParam'];
 		self::$page['content']['budgetplaces'] = !empty($_POST['budgetplaces']) ? $_POST['budgetplaces'] : null;		
 		self::showXSLT('pages/abiturients/getAbbiture');
 	}
