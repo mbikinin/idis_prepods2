@@ -10,7 +10,7 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_year = 2014;
+	private static $_year = 2015;
 	
 	public static function initController($action) {
 
