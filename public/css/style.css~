@@ -17,13 +17,6 @@ tr.pcolor2 td{
 tr.pcolor3 td{
 	background: #87CEEB;
 }
-.ShowDisc{
-display: block;
-  margin-top: -2px;
-  margin-left: -11px;
-  padding-bottom: 2px;
-}
-
 html, body {
 	margin:0;
 	padding:0;

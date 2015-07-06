@@ -43,6 +43,7 @@ class abiturients_Page extends View {
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
+		$params -> free = $_POST['free'];
 
 		$response = self::connectWsdl("studyform?wsdl") -> getStudyForms($params) ? self::connectWsdl("studyform?wsdl") -> getStudyForms($params) : null;
 
@@ -67,9 +68,11 @@ class abiturients_Page extends View {
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
 		$params -> studyform = $_POST['studyform'];
+		$params -> free = $_POST['free'];
+		
 		$response = self::connectWsdl("educplan?wsdl") -> getEducPlans($params);
 
-		if(isset($response -> return) && count($response -> return) > ){
+		if(isset($response -> return) && count($response -> return) == 1){
 			$array[] = array(
 				"id" => $response -> return -> id, 
 				"skillId" => $response -> return -> skillId, 
@@ -104,7 +107,7 @@ class abiturients_Page extends View {
 		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
-
+		$params -> free = $_POST['free'];
 		$response = self::connectWsdl("entrants?wsdl") -> getStages($params) ? self::connectWsdl("entrants?wsdl") -> getStages($params) : null;
 		$array1 = array();
 		

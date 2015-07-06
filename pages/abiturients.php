@@ -43,6 +43,7 @@ class abiturients_Page extends View {
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
+		$params -> free = $_POST['free'];
 
 		$response = self::connectWsdl("studyform?wsdl") -> getStudyForms($params) ? self::connectWsdl("studyform?wsdl") -> getStudyForms($params) : null;
 
@@ -67,6 +68,8 @@ class abiturients_Page extends View {
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
 		$params -> studyform = $_POST['studyform'];
+		$params -> free = $_POST['free'];
+		
 		$response = self::connectWsdl("educplan?wsdl") -> getEducPlans($params);
 
 		if(isset($response -> return) && count($response -> return) == 1){
@@ -104,7 +107,7 @@ class abiturients_Page extends View {
 		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
-
+		$params -> free = $_POST['free'];
 		$response = self::connectWsdl("entrants?wsdl") -> getStages($params) ? self::connectWsdl("entrants?wsdl") -> getStages($params) : null;
 		$array1 = array();
 		
@@ -184,7 +187,8 @@ class abiturients_Page extends View {
 					"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 					"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 					"status" => !empty($res -> status) ? $res -> status : null,
-					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+					"priority" => !empty($res->priority) ? $res->priority : null				
 				);
 				if(!empty($res -> kvota) && $res -> kvota == 1){
 					$array3[$i] = array(
@@ -197,7 +201,8 @@ class abiturients_Page extends View {
 						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
-						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+						"priority" => !empty($res->priority) ? $res->priority : null			
 					);
 				}
 				if($res -> kvota == 0){				
@@ -211,7 +216,8 @@ class abiturients_Page extends View {
 						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
-						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+						"priority" => !empty($res->priority) ? $res->priority : null
 					);
 				}
 
