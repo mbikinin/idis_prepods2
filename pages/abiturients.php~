@@ -176,7 +176,6 @@ class abiturients_Page extends View {
 						);	
 					}
 				}
-
 				$array[$i] = array(
 					"familyname" => $res -> familyname, 
 					"firstname" => $res -> firstname, 

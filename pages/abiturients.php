@@ -189,6 +189,7 @@ class abiturients_Page extends View {
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
 					"priority" => !empty($res->priority) ? $res->priority : null				
 				);
+
 				if(!empty($res -> kvota) && $res -> kvota == 1){
 					$array3[$i] = array(
 						"familyname" => $res -> familyname, 
