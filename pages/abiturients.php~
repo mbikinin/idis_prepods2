@@ -187,7 +187,8 @@ class abiturients_Page extends View {
 					"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 					"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 					"status" => !empty($res -> status) ? $res -> status : null,
-					"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+					"priority" => !empty($res->priority) ? $res->priority : null				
 				);
 				if(!empty($res -> kvota) && $res -> kvota == 1){
 					$array3[$i] = array(
@@ -200,7 +201,8 @@ class abiturients_Page extends View {
 						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
-						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+						"priority" => !empty($res->priority) ? $res->priority : null			
 					);
 				}
 				if($res -> kvota == 0){				
@@ -214,7 +216,8 @@ class abiturients_Page extends View {
 						"getDisciplineAll" => !empty($array2) ? $array2 : array(),
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
-						"kvota" => !empty($res -> kvota) ? $res -> kvota : null					
+						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
+						"priority" => !empty($res->priority) ? $res->priority : null
 					);
 				}
 
