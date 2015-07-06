@@ -19,7 +19,7 @@
 			<li class="plan" rel="{id}" >
 				<a href="#" class="getEntrantsInfo" >
 					
-					<xsl:if test="budget = 1 and (skillId = 62 or skillId = 90)">
+					<xsl:if test="budget = 1">
 						<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
 					</xsl:if>
 					<xsl:if test="budget = 0">

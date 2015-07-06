@@ -69,7 +69,7 @@ class abiturients_Page extends View {
 		$params -> studyform = $_POST['studyform'];
 		$response = self::connectWsdl("educplan?wsdl") -> getEducPlans($params);
 
-		if(isset($response -> return) && count($response -> return) == 1){
+		if(isset($response -> return) && count($response -> return) > ){
 			$array[] = array(
 				"id" => $response -> return -> id, 
 				"skillId" => $response -> return -> skillId, 
