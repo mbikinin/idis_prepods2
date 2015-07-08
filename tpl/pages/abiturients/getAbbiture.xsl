@@ -66,7 +66,7 @@
 							<td><xsl:value-of select = "secondname" /></td>
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
-							<!--<td><xsl:value-of select = "status" /></td>-->
+<!--							<td><xsl:value-of select = "priority" /></td> -->
 							
 						</tr>
 					</xsl:otherwise>
