@@ -37,7 +37,7 @@
 							<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i>
 						</xsl:if>
 						<xsl:if test="freeplaces != '' ">	
-							<i>Количество бесплатных мест - <xsl:value-of select = "freeplaces" /> </i>
+							<i>Количество бюджетных мест - <xsl:value-of select = "freeplaces" /> </i>
 						</xsl:if>
 					</p>
 				</span>

@@ -80,6 +80,7 @@ class abiturients_Page extends View {
 				"specialityName" => $response -> return -> specialityName,
 				"budgetplaces"=> !empty($response -> return -> budgetplaces) ? $response -> return -> budgetplaces : null,
 				"kvotaplaces"=> !empty($response -> return -> kvotaplaces) ? $response -> return -> kvotaplaces : null,
+				"freeplaces"=> !empty($response -> return -> freeplaces) ? $response -> return -> freeplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 		}
 		else if (!empty($response -> return) && count($response -> return) > 1) {
@@ -92,6 +93,7 @@ class abiturients_Page extends View {
 				"specialityName" => $res -> specialityName,
 				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
 				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
+				"freeplaces"=> !empty($res -> freeplaces) ? $res -> freeplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 			}
 		} else {
@@ -107,7 +109,6 @@ class abiturients_Page extends View {
 		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
-		$params -> free = $_POST['free'];
 		$response = self::connectWsdl("entrants?wsdl") -> getStages($params) ? self::connectWsdl("entrants?wsdl") -> getStages($params) : null;
 		$array1 = array();
 		
@@ -187,7 +188,8 @@ class abiturients_Page extends View {
 					"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 					"status" => !empty($res -> status) ? $res -> status : null,
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
-					"priority" => !empty($res->priority) ? $res->priority : null				
+					"priority" => !empty($res->priority) ? $res->priority : null,
+					"achivScore" => isset($res->achivScore) ? $res->achivScore : null				
 				);
 
 				if(!empty($res -> kvota) && $res -> kvota == 1){
@@ -202,7 +204,8 @@ class abiturients_Page extends View {
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
 						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
-						"priority" => !empty($res->priority) ? $res->priority : null			
+						"priority" => !empty($res->priority) ? $res->priority : null,
+						"achivScore" => isset($res->achivScore) ? $res->achivScore : null
 					);
 				}
 				if($res -> kvota == 0){				
@@ -217,7 +220,8 @@ class abiturients_Page extends View {
 						"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 						"status" => !empty($res -> status) ? $res -> status : null,
 						"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
-						"priority" => !empty($res->priority) ? $res->priority : null
+						"priority" => !empty($res->priority) ? $res->priority : null,
+						"achivScore" => isset($res->achivScore) ? $res->achivScore : null
 					);
 				}
 
@@ -352,7 +356,7 @@ class abiturients_Page extends View {
 	private static function connectWsdl($service) {
 		$Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials', array('@samigullin', 'mklP54sd'));
 
-		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service, array('encoding' => 'utf-8', "trace" => 1, "exceptions" => 0));
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service, array('encoding' => 'utf-8', "exceptions" => 0));
 		$client -> __setSoapHeaders($Headers);
 		return $client;
 	}
