@@ -73,7 +73,7 @@
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">
 				
-				<xsl:value-of select="stageName"/>
+				<!--<xsl:value-of select="stageName"/>-->
 				<ul>
 					<xsl:apply-templates select="phases/item" />
 				</ul>
