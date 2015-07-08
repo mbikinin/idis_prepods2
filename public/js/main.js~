@@ -84,6 +84,7 @@ $(document).ready(function() {
 		}
 		return false;
 	});
+
 	$(".getStudy").live("click", function(){
 		this_ = $(this);
 		result = ".resultStudy";
@@ -161,7 +162,7 @@ $(document).ready(function() {
 	});
 
 	$(".getEntrantsInfo").live("click", function(){
-
+		alert( 1)
 		this_ = $(this);
 		result = ".resultAbbiture";
 		if(this_.hasClass("is_load")){
@@ -208,6 +209,108 @@ $(document).ready(function() {
 			$('.loading').remove();
 		});
 		
+		}
+		return false;
+	});
+$(".getEntrantsInfo2").live("click", function(){
+
+		this_ = $(this);
+		result = ".resultAbbiture";
+		if(this_.hasClass("is_load")){
+			this_.parent().find(result).hide();
+			this_.parent().find(".kvotaplaces").hide();
+			this_.removeClass("is_load");
+			this_.addClass("showBlock");
+			return false;
+		}
+		else if(this_.hasClass("showBlock")){
+			this_.parent().find(result).show();
+			this_.removeClass("showBlock");
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			this_.addClass("is_load");
+			return false;
+		}
+		else{
+		plan = this_.parents('.plan').attr("rel");
+		stage = this_.parents('.stage').attr("rel");
+		phase = this_.attr("rel");
+		budget = this_.parents('.budget').attr("rel");
+		budgetplaces = this_.parent().find('.budgetplaces').attr("value");
+		freeParam = this_.parents('.budget').hasClass("free") ? 1 : 0;
+		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
+		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+		
+		$.ajax({
+			type : "post",
+			url : "/abiturients/getEntrantsInfo",
+			data : {
+				plan : plan,
+				stage : stage,
+				phase : phase,
+				budget : budget,
+				budgetplaces : budgetplaces,
+				freeParam : freeParam
+			}
+		}).done(function(data) {
+			this_.parent().find('.resultAbbiture').html(data);
+			this_.addClass("is_load ")
+			
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			
+			$('.loading').remove();
+		});
+		
+		}
+		return false;
+	});
+
+	$(".getEntrantsInfoList").live("click", function(){
+
+		this_ = $(this);
+		result = ".resultAbbiture";
+		if(this_.hasClass("is_load")){
+			this_.parent().find(result).hide();
+			this_.parent().find(".kvotaplaces").hide();
+			this_.removeClass("is_load");
+			this_.addClass("showBlock");
+			return false;
+		}
+		else if(this_.hasClass("showBlock")){
+			this_.parent().find(result).show();
+			this_.removeClass("showBlock");
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			this_.addClass("is_load");
+			return false;
+		}
+		else{
+		plan = $(this).parents('.plan').attr("rel");
+		stage = $(this).parents('.stage').attr("rel");
+		phase = $(this).parents('.phase').attr("rel");
+		budget = $(this).parents('.budget').attr("rel");
+		budgetplaces = $(this).parent().find('.budgetplaces').attr("value");
+		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
+		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+		
+		$.ajax({
+			type : "post",
+			url : "/abiturients/getEntrantsInfoList",
+			data : {
+				plan : plan,
+				stage : stage,
+				phase : phase,
+				budget : budget,
+				budgetplaces : budgetplaces,
+				freeParam : freeParam
+			}
+		}).done(function(data) {
+			this_.parent().find('.resultAbbiture').html(data);
+			this_.addClass("is_load ")
+			
+			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			
+			$('.loading').remove();
+		});	
 		}
 		return false;
 	});

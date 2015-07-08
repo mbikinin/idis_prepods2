@@ -17,32 +17,38 @@
 
 	<xsl:template match="EducPlans/item">	
 			<li class="plan" rel="{id}" >
-				<a href="#" class="getEntrantsInfo" >
-					
-					<xsl:if test="budget = 1">
-						<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
-					</xsl:if>
-					<xsl:if test="budget = 0">
-						<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />
-					</xsl:if>							
-				</a>				
-				<span class="kvotaplaces hideBlock"><br/>
-					<p>
-						<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
-						<xsl:if test="budgetplaces != '' ">	
-							<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
-						</xsl:if>
-						<br/>
-						<xsl:if test="kvotaplaces != '' ">	
-							<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i>
-						</xsl:if>
-						<xsl:if test="freeplaces != '' ">	
-							<i>Количество бюджетных мест - <xsl:value-of select = "freeplaces" /> </i>
-						</xsl:if>
-					</p>
-				</span>
-				<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-				<div class="resultAbbiture"></div>
+				<xsl:choose>
+					<xsl:when test="budgetplaces != '' ">	
+						<a href="#" class="getEntrantsInfoList" rel="">				
+							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
+						</a>
+						<div class="resultAbbiture">
+							123						
+						</div>
+					</xsl:when>	
+					<xsl:otherwise>	
+						<a href="#" class="getEntrantsInfo" >				
+							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
+						</a>			
+						<span class="kvotaplaces hideBlock"><br/>
+							<p>
+								<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
+								<xsl:if test="budgetplaces != '' ">	
+									<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
+								</xsl:if>
+								<br/>
+								<xsl:if test="kvotaplaces != '' ">	
+									<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i>
+								</xsl:if>
+								<xsl:if test="freeplaces != '' ">	
+									<i>Количество бесплатных мест - <xsl:value-of select = "freeplaces" /> </i>
+								</xsl:if>
+							</p>
+						</span>
+						<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
+						<div class="resultAbbiture"></div>
+					</xsl:otherwise>
+				</xsl:choose>
 
 			</li>
 	</xsl:template>

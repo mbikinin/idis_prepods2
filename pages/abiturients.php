@@ -132,7 +132,8 @@ class abiturients_Page extends View {
 				$array[$i] = array("id" => $res -> id, 
 				"stageName" => $res -> stageName,
 				"phases" => $array1,
-				"reccertaincitizensdate" => !empty($res -> reccertaincitizensdate) ? date("d/m/Y", strtotime($res->reccertaincitizensdate)) : null, 
+				"reccertaincitizensdate" => !empty($res -> reccertaincitizensdate) ? date("d/m/Y", strtotime($res->reccertaincitizensdate)) : null,
+				"krimrecommendeddate" => !empty($res -> krimrecommendeddate) ? date("Н-m-d", strtotime($res->krimrecommendeddate)) : null,
 				"beginDate" => date("d/m/Y", strtotime($res->beginDate)), 
 				"endDate" => !empty($res -> endDate) ? date("d/m/Y", strtotime($res->endDate)) : null, 
 				"orderDate" => !empty($res -> orderDate) ? date("d/m/Y", strtotime($res->orderDate)) : null, 
@@ -238,6 +239,10 @@ class abiturients_Page extends View {
 		self::$page['content']['free'] = $_POST['freeParam'];
 		self::$page['content']['budgetplaces'] = !empty($_POST['budgetplaces']) ? $_POST['budgetplaces'] : null;		
 		self::showXSLT('pages/abiturients/getAbbiture');
+	}
+	public static function getEntrantsInfoListAjaxAction() {
+		self::$page['content'] = "";
+		self::showXSLT('pages/abiturients/getAbbitureList');
 	}
 
 	public static function xsort(&$nodes, $child_name, $order = SORT_ASC) {
