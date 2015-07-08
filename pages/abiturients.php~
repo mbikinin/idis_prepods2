@@ -93,7 +93,6 @@ class abiturients_Page extends View {
 				"specialityName" => $res -> specialityName,
 				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
 				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
-				"freeplaces"=> !empty($res -> freeplaces) ? $res -> freeplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 			}
 		} else {

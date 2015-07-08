@@ -17,7 +17,7 @@
 			</xsl:if>
 			<ul>
 				
-						<xsl:apply-templates select="getStages/item" />
+				<xsl:apply-templates select="getStages/item" />
 					
 			</ul>
 		</ul>
