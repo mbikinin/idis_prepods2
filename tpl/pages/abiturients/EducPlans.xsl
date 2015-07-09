@@ -33,14 +33,13 @@
 							<p>
 								<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
 								<xsl:if test="budgetplaces != '' ">	
-									<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
+									<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i><br/>
 								</xsl:if>
-								<br/>
 								<xsl:if test="kvotaplaces != '' ">	
-									<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i>
+									<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i><br/>
 								</xsl:if>
 								<xsl:if test="freeplaces != '' ">	
-									<i>Количество бесплатных мест - <xsl:value-of select = "freeplaces" /> </i>
+									<i>Количество бесплатных мест - <xsl:value-of select = "freeplaces" /> </i><br/>
 								</xsl:if>
 							</p>
 						</span>

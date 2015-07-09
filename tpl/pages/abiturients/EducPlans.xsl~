@@ -23,7 +23,6 @@
 							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
 						</a>
 						<div class="resultAbbiture">
-							123						
 						</div>
 					</xsl:when>	
 					<xsl:otherwise>	
@@ -36,7 +35,6 @@
 								<xsl:if test="budgetplaces != '' ">	
 									<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i>
 								</xsl:if>
-								<br/>
 								<xsl:if test="kvotaplaces != '' ">	
 									<i>Количество бюджетных мест по квоте  - <xsl:value-of select = "kvotaplaces" /> </i>
 								</xsl:if>
