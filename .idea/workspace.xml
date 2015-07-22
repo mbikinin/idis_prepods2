@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/abiturients.php" afterPath="$PROJECT_DIR$/pages/abiturients.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" afterPath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" afterPath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/abiturients/getStages.xsl" afterPath="$PROJECT_DIR$/tpl/pages/abiturients/getStages.xsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
     </list>
     <ignored path="idis_prepods.iws" />
@@ -68,21 +65,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.95">
-              <caret line="216" column="48" selection-start-line="216" selection-start-column="48" selection-end-line="216" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.5363942">
+              <caret line="241" column="59" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="abiturients.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="abiturients.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/abiturients.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54888886">
-              <caret line="183" column="119" selection-start-line="183" selection-start-column="119" selection-end-line="183" selection-end-column="119" />
+            <state vertical-scroll-proportion="-15.264151">
+              <caret line="207" column="92" selection-start-line="207" selection-start-column="92" selection-end-line="207" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.xsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/layouts/layout.xsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="col2.xsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/layouts/col2.xsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="53" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="53" />
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="44" />
               <folding>
                 <element signature="n#xsl:template#4;n#xsl:stylesheet#0;n#!!top" expanded="false" />
                 <element signature="n#xsl:template#5;n#xsl:stylesheet#0;n#!!top" expanded="false" />
@@ -111,9 +128,9 @@
       <list>
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/getStages.xsl" />
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/pages/abiturients.php" />
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" />
+        <option value="$PROJECT_DIR$/pages/abiturients.php" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
       </list>
     </option>
   </component>
@@ -211,7 +228,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="abiturients" />
+              <option name="myItemId" value="index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idis_prepods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idis_prepods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -470,10 +505,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/layouts/col2.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/layouts/layout.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="53" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="53" />
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="44" />
           <folding>
             <element signature="n#xsl:template#4;n#xsl:stylesheet#0;n#!!top" expanded="false" />
             <element signature="n#xsl:template#5;n#xsl:stylesheet#0;n#!!top" expanded="false" />
@@ -481,18 +532,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+    <entry file="file://$PROJECT_DIR$/pages/abiturients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.95">
-          <caret line="216" column="48" selection-start-line="216" selection-start-column="48" selection-end-line="216" selection-end-column="48" />
+        <state vertical-scroll-proportion="-15.264151">
+          <caret line="207" column="92" selection-start-line="207" selection-start-column="92" selection-end-line="207" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/abiturients.php">
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54888886">
-          <caret line="183" column="119" selection-start-line="183" selection-start-column="119" selection-end-line="183" selection-end-column="119" />
+        <state vertical-scroll-proportion="0.5363942">
+          <caret line="241" column="59" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
           <folding />
         </state>
       </provider>

@@ -205,7 +205,7 @@ class abiturients_Page extends View {
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
 					"priority" => !empty($res->priority) ? $res->priority : null,
 					"achivScore" => isset($res->achivScore) ? $res->achivScore : null,
-					"averagescore"=> isset($res->averagescore) ? $res->averagescore : null,
+					"averagescore"=> !empty($res->averagescore) ? $res->averagescore : null,
 					"schoolDiscScore" => !empty($schoolDisc) ? $schoolDisc : array()
 				);
 
