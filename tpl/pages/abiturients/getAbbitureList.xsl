@@ -10,32 +10,53 @@
 
 
 	<xsl:template match="content">
+
 		<ul class="s5">
 			<xsl:if test = "error != '' "> 
 				<li><xsl:value-of select = "error" />
 				</li>
 			</xsl:if>
-			<li>
-						<a href="#" class="getEntrantsInfo2" rel="5">				
-							<span class="pluse">+ </span> Списки поступающих на выделенные бюджетные места (из числа граждан Республики Крым)							
+			<xsl:choose>
+				<xsl:when test="phase = '6' ">
+				<li>
+					<a href="#" class="getEntrantsInfo2" rel="6">
+						<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)
+					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
+					<div class="resultAbbiture"></div>
+				</li>
+				<!--<li>
+					<a href="#" class="getEntrantsInfo2" rel="0">
+						<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
+					</a>
+					<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
+					<div class="resultAbbiture"></div>
+				</li>-->
+				</xsl:when>
+				<xsl:otherwise>
+					<li>
+						<a href="#" class="getEntrantsInfo2" rel="5">
+							<span class="pluse">+ </span> Списки поступающих на выделенные бюджетные места (из числа граждан Республики Крым)
 						</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 						<div class="resultAbbiture"></div></li><li>
-						<a href="#" class="getEntrantsInfo2" rel="4">				
-							<span class="pluse">+ </span> Списки поступающих по квоте приема лиц, имеющих особые права 							
-						</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-						<div class="resultAbbiture"></div></li><li>
-						<a href="#" class="" rel="">				
-							<span class="pluse">+ </span> Списки лиц, поступающих в пределах квоты целевого приема							
-						</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-						<div class="resultAbbiture"></div></li>
-			<li>
-					<a href="#" class="getEntrantsInfo2" rel="0">				
-						<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу							
-				</a>
+					<a href="#" class="getEntrantsInfo2" rel="4">
+						<span class="pluse">+ </span> Списки поступающих по квоте приема лиц, имеющих особые права
+					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
+					<div class="resultAbbiture"></div></li><li>
+					<a href="#" class="" rel="">
+						<span class="pluse">+ </span> Списки лиц, поступающих в пределах квоты целевого приема
+					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
+					<div class="resultAbbiture"></div>
+				</li>
+					<li>
+						<a href="#" class="getEntrantsInfo2" rel="0">
+							<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
+						</a>
 						<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 						<div class="resultAbbiture"></div>
-			</li>
-			
+					</li>
+
+				</xsl:otherwise>
+			</xsl:choose>
 		</ul>
 	</xsl:template>
 	

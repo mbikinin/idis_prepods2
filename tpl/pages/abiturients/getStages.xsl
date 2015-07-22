@@ -71,6 +71,54 @@
 					
 			</ul>
 		</li>
+		<li class="phase" rel="6">
+			<a href="#" class="showBudget ">
+				+ ПРИКАЗЫ О ЗАЧИСЛЕНИИ
+			</a>
+			<ul class="s2 hideBlock">
+				<xsl:choose>
+					<xsl:when test="phasekey = 3">
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy">
+								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА
+							</a>
+							<div class="resultStudy"></div>
+						</li>
+					</xsl:when>
+					<xsl:when test="level = 0 and phasekey=0">
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy">
+								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА</a>
+
+							<div class="resultStudy"></div>
+						</li>
+						<li class="budget" rel="0">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>МЕСТА ПО ДОГОВОРАМ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a>
+							<div class="resultStudy"></div>
+						</li>
+					</xsl:when>
+					<xsl:otherwise>
+						<li class="budget" rel="1">
+							<a href="#" class="getStudy">
+								<span class="pluse">+ </span>БЮДЖЕТНЫЕ МЕСТА</a>
+
+							<div class="resultStudy"></div>
+						</li>
+						<li class="budget free" rel="0">
+							<a href="#" class="getStudy">
+								<span class="pluse">+ </span>БЕСПЛАТНЫЕ МЕСТА</a>
+							<div class="resultStudy"></div>
+						</li>
+						<li class="budget" rel="0">
+							<a href="#" class="getStudy"><span class="pluse">+ </span>МЕСТА ПО ДОГОВОРАМ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a>
+							<div class="resultStudy"></div>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
+
+			</ul>
+		</li>
+
 	</xsl:template>
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">
@@ -81,6 +129,7 @@
 
 				<ul>
 					<xsl:apply-templates select="phases/item" />
+
 				</ul>
 				<input type="hidden" value="{krimrecommendeddate}" class="krimrecommendeddate" />
 			</li>
