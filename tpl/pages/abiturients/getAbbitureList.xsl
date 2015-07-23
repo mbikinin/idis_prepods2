@@ -32,6 +32,14 @@
 					<div class="resultAbbiture"></div>
 				</li>-->
 				</xsl:when>
+				<xsl:when test="inst = '0' ">
+					<li>
+                        <a href="#" class="getEntrantsInfo2" rel="0">
+                            <span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
+                        </a>
+                        <div class="resultAbbiture"></div>
+                    </li>
+				</xsl:when>
 				<xsl:otherwise>
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="5">
@@ -46,7 +54,7 @@
 						<span class="pluse">+ </span> Списки лиц, поступающих в пределах квоты целевого приема
 					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 					<div class="resultAbbiture"></div>
-				</li>
+					</li>
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="0">
 							<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу

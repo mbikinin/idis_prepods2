@@ -200,6 +200,7 @@ class abiturients_Page extends View {
 					"docOriginal" => !empty($res -> docOriginal) ? $res -> docOriginal : null,
 					"getDiscipline" => !empty($array2) ? $array2 : array(),
 					"getDisciplineAll" => !empty($array2) ? $array2 : array(),
+					"getDisciplineAllFree" => !empty($array2) ? $array2 : array(),
 					"getDisciplineKvote" => !empty($array2) ? $array2 : array(),
 					"status" => !empty($res -> status) ? $res -> status : null,
 					"kvota" => !empty($res -> kvota) ? $res -> kvota : null,
@@ -243,7 +244,10 @@ class abiturients_Page extends View {
 				}
 
 			}
-			self::$page['content']['getAbbitureAll'] = self::$page['content']['getAbbitureStatus'] = self::$page['content']['getAbbitureColledg'] = $array;
+			self::$page['content']['getAbbitureAll'] =
+				self::$page['content']['getAbbitureAllFree'] =
+				self::$page['content']['getAbbitureStatus'] =
+				self::$page['content']['getAbbitureColledg'] = $array;
 			self::$page['content']['getAbbitureKvote'] = isset($array3) && count($array3) > 0 ? $array3 : null;
 			self::$page['content']['getAbbitureNoKvote'] = isset($array4) && count($array4) > 0 ? $array4 : null;
 			
@@ -261,6 +265,7 @@ class abiturients_Page extends View {
 	}
 
 	public static function getEntrantsInfoListAjaxAction() {
+		self::$page['content']['inst'] = $_POST['inst'];
 		self::$page['content']['phase'] = $_POST['phase'];
 		self::showXSLT('pages/abiturients/getAbbitureList');
 	}

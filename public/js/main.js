@@ -293,13 +293,15 @@ $(".getEntrantsInfo2").live("click", function(){
 		budget = $(this).parents('.budget').attr("rel");
 		budgetplaces = $(this).parent().find('.budgetplaces').attr("value");
 		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+			inst = this_.parents('.instityte').attr("rel");
 		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		$.ajax({
 			type : "post",
 			url : "/abiturients/getEntrantsInfoList",
 			data : {
-				phase : phase
+				phase : phase,
+				inst : inst
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);
