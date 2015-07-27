@@ -302,7 +302,7 @@
 			</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="getAbbitureColledg/item/schoolDiscScoreBudg/item">
+	<xsl:template match="getAbbitureColledgBudg/item/schoolDiscScoreBudg/item">
 		<tr>
 			<td><xsl:value-of select = "disciplineName" /></td>
 			<td><xsl:value-of select = "score" /></td>
