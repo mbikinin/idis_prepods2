@@ -23,7 +23,7 @@
 		</ul>
 	</xsl:template>
 	<xsl:template match="getStages/item/phases/item">
-		
+		<xsl:if test="phasekey = 0">
 		<li class="phase" rel="{phasekey}">
 			<a href="#" class="showBudget ">
 				+ <xsl:value-of select = "phasevalue" />
@@ -70,7 +70,8 @@
 			</xsl:choose>
 					
 			</ul>
-		</li>
+		</li></xsl:if>
+		<xsl:if test="level = 0 or phasekey = 0">
 		<li class="phase" rel="6">
 			<a href="#" class="showBudget ">
 				+ ПРИКАЗЫ О ЗАЧИСЛЕНИИ
@@ -118,7 +119,7 @@
 
 			</ul>
 		</li>
-
+	</xsl:if>
 	</xsl:template>
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">

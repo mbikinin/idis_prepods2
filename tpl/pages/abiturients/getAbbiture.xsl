@@ -17,9 +17,8 @@
 			</xsl:if>
 
 			<li>
-
 					<xsl:choose>
-                        <xsl:when test="inst = '0' ">
+                        <xsl:when test="inst = '0' and  budget = '0' ">
 
                             <table>
                                 <xsl:if test="count(getAbbitureColledg/item) > 0 ">
@@ -30,6 +29,17 @@
                                 </xsl:if>
                             </table>
                         </xsl:when>
+
+						<xsl:when test="inst = '0' and budget = 1 ">
+							<table>
+								<xsl:if test="count(getAbbitureColledgBudg/item) > 0 ">
+									<thead>
+										<th></th><th>Фамилия</th>
+										<th>Имя</th><th>Отчество</th><th>Средний балл <br/> по аттестату</th><th>Оригинал</th></thead>
+									<xsl:apply-templates select="getAbbitureColledgBudg/item" />
+								</xsl:if>
+							</table>
+						</xsl:when>
 						<xsl:when test="phase = 6 ">
                             <table>
                                 <xsl:if test="count(getAbbitureStatus/item) > 0 ">
@@ -106,6 +116,32 @@
         </tr>
 
     </xsl:template>
+	<xsl:template match="getAbbitureColledgBudg/item">
+
+		<tr class="pcolor{priority}" >
+			<td class="col"></td>
+			<td><xsl:value-of select = "familyname" /></td>
+			<td><xsl:value-of select = "firstname" /></td>
+			<td><xsl:value-of select = "secondname" /></td>
+			<td><xsl:value-of select = "averagescore" /></td>
+			<td><xsl:value-of select = "docOriginal" /></td>
+		</tr>
+		<tr>
+			<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
+				<xsl:if test="count(schoolDiscScoreBudg/item) != 0 ">
+					<a href="#" class="ShowDisc">  предметы  </a>
+
+					<table class="format" style="float:right; display: none;">
+						<thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
+						<tbody>
+							<xsl:apply-templates select="schoolDiscScoreBudg/item" />
+						</tbody>
+					</table>
+				</xsl:if>
+			</td>
+		</tr>
+
+	</xsl:template>
 	<xsl:template match="getAbbitureStatus/item">
 
 		<tr class="pcolor{priority}" >
@@ -266,7 +302,12 @@
 			</xsl:if>
 	</xsl:template>
 
-
+	<xsl:template match="getAbbitureColledg/item/schoolDiscScoreBudg/item">
+		<tr>
+			<td><xsl:value-of select = "disciplineName" /></td>
+			<td><xsl:value-of select = "score" /></td>
+		</tr>
+	</xsl:template>
 
     <xsl:template match="getAbbitureColledg/item/schoolDiscScore/item">
         <tr>

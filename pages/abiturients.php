@@ -207,7 +207,8 @@ class abiturients_Page extends View {
 					"priority" => !empty($res->priority) ? $res->priority : null,
 					"achivScore" => isset($res->achivScore) ? $res->achivScore : null,
 					"averagescore"=> !empty($res->averagescore) ? $res->averagescore : null,
-					"schoolDiscScore" => !empty($schoolDisc) ? $schoolDisc : array()
+					"schoolDiscScore" => !empty($schoolDisc) ? $schoolDisc : array(),
+					"schoolDiscScoreBudg" => !empty($schoolDisc) ? $schoolDisc : array()
 				);
 
 				if(!empty($res -> kvota) && $res -> kvota == 1){
@@ -247,7 +248,8 @@ class abiturients_Page extends View {
 			self::$page['content']['getAbbitureAll'] =
 				self::$page['content']['getAbbitureAllFree'] =
 				self::$page['content']['getAbbitureStatus'] =
-				self::$page['content']['getAbbitureColledg'] = $array;
+				self::$page['content']['getAbbitureColledg'] =
+				self::$page['content']['getAbbitureColledgBudg']= $array;
 			self::$page['content']['getAbbitureKvote'] = isset($array3) && count($array3) > 0 ? $array3 : null;
 			self::$page['content']['getAbbitureNoKvote'] = isset($array4) && count($array4) > 0 ? $array4 : null;
 			
