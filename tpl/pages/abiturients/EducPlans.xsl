@@ -18,7 +18,7 @@
 	<xsl:template match="EducPlans/item">	
 			<li class="plan" rel="{id}" >
 				<xsl:choose>
-					<xsl:when test="budgetplaces != '' ">	
+					<xsl:when test="budgetplaces != 0 ">	
 						<a href="#" class="getEntrantsInfoList" rel="">				
 							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
 						</a>
