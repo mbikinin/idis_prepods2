@@ -220,7 +220,7 @@ $(".getEntrantsInfo2").live("click", function(){
 		result = ".resultAbbiture";
 		if(this_.hasClass("is_load")){
 			this_.parent().find(result).hide();
-			this_.parent().find(".kvotaplaces").hide();
+			this_.parents('.getEducPlans').find(".kvotaplaces2").hide();
 			this_.removeClass("is_load");
 			this_.addClass("showBlock");
 			return false;
@@ -228,7 +228,7 @@ $(".getEntrantsInfo2").live("click", function(){
 		else if(this_.hasClass("showBlock")){
 			this_.parent().find(result).show();
 			this_.removeClass("showBlock");
-			this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+			this_.parent('.getEducPlans').find(".kvotaplaces2").css({"display": "block"}).show();
 			this_.addClass("is_load");
 			return false;
 		}

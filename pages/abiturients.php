@@ -94,6 +94,10 @@ class abiturients_Page extends View {
 				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
 				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
 				"freeplaces"=> !empty($res -> freeplaces) ? $res -> freeplaces : null,
+
+				"bplaces"=> !empty($res -> bplaces) ? $res -> bplaces : null,
+				"kplaces"=> !empty($res -> kplaces) ? $res -> kplaces : null,
+				"fplaces"=> !empty($res -> fplaces) ? $res -> fplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 			}
 		} else {
@@ -101,6 +105,7 @@ class abiturients_Page extends View {
 		}
  		self::$page['content'] = array();
 		self::$page['content']['budget'] = $_POST['budget'];
+		self::$page['content']['free'] = $_POST['free'];
 		self::$page['content']['EducPlans'] = $array;
 		self::showXSLT('pages/abiturients/EducPlans');
 
