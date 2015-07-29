@@ -100,7 +100,8 @@ class abiturients_Page extends View {
 			self::$page['content']['error'] = "нет данных";
 		}
  		self::$page['content'] = array();
-                self::$page['content']['EducPlans'] = $array;
+		self::$page['content']['budget'] = $_POST['budget'];
+		self::$page['content']['EducPlans'] = $array;
 		self::showXSLT('pages/abiturients/EducPlans');
 
 }

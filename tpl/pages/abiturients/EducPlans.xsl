@@ -18,7 +18,7 @@
 	<xsl:template match="EducPlans/item">	
 			<li class="plan" rel="{id}" >
 				<xsl:choose>
-					<xsl:when test="budgetplaces != 0 ">	
+					<xsl:when test="budget = 1 ">
 						<a href="#" class="getEntrantsInfoList" rel="">				
 							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
 						</a>
@@ -32,7 +32,7 @@
 						<span class="kvotaplaces hideBlock"><br/>
 							<p>
 								<i>Рейтинг абитуриентов по состоянию на <xsl:value-of select = "dateNow" /> г.</i><br/>
-								<xsl:if test="budgetplaces != '' ">	
+								<xsl:if test="budgetplaces != '' ">
 									<i>Количество бюджетных мест - <xsl:value-of select = "budgetplaces" /> </i><br/>
 								</xsl:if>
 								<xsl:if test="kvotaplaces != '' ">	
