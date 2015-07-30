@@ -56,7 +56,7 @@
 								<xsl:if test="budget = 1 and count(getAbbitureNoKvote/item) > 0">
 									<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места, финансируемые из бюджета</h5>
 									<thead><th></th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Сумма конкурсных <br/>баллов	</th>
-										<th>Оригинал</th><th>Индивидуальные<br/> достижения	</th></thead>
+										<th>Оригинал</th><th>Индивидуальные<br/> достижения	</th><th>Статус</th></thead>
 									<xsl:apply-templates select="getAbbitureNoKvote/item" />
 								</xsl:if>
 								<xsl:if test="budget = 0">
@@ -64,7 +64,7 @@
 											<h5 style="width: 650px">Рейтинг абитуриентов по общему конкурсу на места по договорам об оказании платных образовательных услуг</h5>
 										</xsl:if>
 										<thead><th></th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Сумма конкурсных <br/>баллов</th><th>Оригинал</th>
-											<th>Индивидуальные<br/> достижения	</th></thead>
+											<th>Индивидуальные<br/> достижения	</th><th>Статус</th></thead>
 										<xsl:if test="free = 1">
 											<xsl:apply-templates select="getAbbitureAllFree/item" />
 										</xsl:if>
@@ -78,7 +78,8 @@
 							<xsl:if test="count(getAbbitureKvote/item) > 0">
 								<xsl:if test="budget = 1">
 									<h5 style="width: 650px">Рейтинг абитуриентов на места, финансируемые из федерального бюджета по квоте приема лиц, имеющих особое право</h5>
-									<thead><th></th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Сумма конкурсных <br/>баллов</th><th>Оригинал</th><th>Индивидуальные<br/> достижения	</th></thead>
+									<thead><th></th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Сумма конкурсных <br/>баллов</th><th>Оригинал</th>
+										<th>Индивидуальные<br/> достижения	</th><th>Статус</th></thead>
 									<xsl:apply-templates select="getAbbitureKvote/item" />
 								</xsl:if>
 							</xsl:if>
@@ -125,6 +126,7 @@
 			<td><xsl:value-of select = "secondname" /></td>
 			<td><xsl:value-of select = "averagescore" /></td>
 			<td><xsl:value-of select = "docOriginal" /></td>
+
 		</tr>
 		<tr>
 			<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
@@ -163,6 +165,8 @@
 			<td><xsl:value-of select = "resultScore" /></td>
 			<td><xsl:value-of select = "docOriginal" /></td>
 			<td><xsl:value-of select = "achivScore" /></td>
+			<td><xsl:value-of select = "status" /></td>
+
 		</tr>
 		<tr>
 			<td colspan="4" style=" background-color: #fff; padding-bottom: 10px; cursor: pointer; " >
@@ -233,6 +237,8 @@
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
 							<td><xsl:value-of select = "achivScore" /></td>
+							<td><xsl:value-of select = "status" /></td>
+
 						</tr>
 					</xsl:when>
 					<xsl:otherwise>
@@ -243,6 +249,8 @@
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
 							<td><xsl:value-of select = "achivScore" /></td>
+							<td><xsl:value-of select = "status" /></td>
+
 						</tr>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -272,6 +280,8 @@
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
 							<td><xsl:value-of select = "achivScore" /></td>
+							<td><xsl:value-of select = "status" /></td>
+
 						</tr>
 					</xsl:when>
 					<xsl:otherwise>
@@ -282,6 +292,8 @@
 							<td><xsl:value-of select = "resultScore" /></td>
 							<td><xsl:value-of select = "docOriginal" /></td>
 							<td><xsl:value-of select = "achivScore" /></td>
+							<td><xsl:value-of select = "status" /></td>
+
 						</tr>
 					</xsl:otherwise>
 				</xsl:choose>
