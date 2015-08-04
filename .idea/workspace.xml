@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" afterPath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" afterPath="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" />
     </list>
     <ignored path="idis_prepods.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EducPlans.xsl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EducPlans.xsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/EducPlans.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42497376">
-              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -54,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getAbbitureList.xsl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getAbbitureList.xsl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.5281385">
+              <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="abiturients.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/abiturients.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.708332">
+            <state vertical-scroll-proportion="0.0">
               <caret line="326" column="54" selection-start-line="326" selection-start-column="42" selection-end-line="326" selection-end-column="54" />
               <folding />
             </state>
@@ -107,7 +107,7 @@
       <file leaf-file-name="getAbbiture.xsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-38.793102">
+            <state vertical-scroll-proportion="0.0">
               <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
               <folding />
             </state>
@@ -123,11 +123,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/getStages.xsl" />
-        <option value="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/pages/abiturients.php" />
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/EducPlans.xsl" />
         <option value="$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl" />
+        <option value="$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl" />
       </list>
     </option>
   </component>
@@ -171,7 +171,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -333,6 +332,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -819,26 +819,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/abiturients.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.708332">
+        <state vertical-scroll-proportion="0.0">
           <caret line="326" column="54" selection-start-line="326" selection-start-column="42" selection-end-line="326" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl">
+    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/EducPlans.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-38.793102">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -851,10 +843,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/EducPlans.xsl">
+    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbiture.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42497376">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/pages/abiturients/getAbbitureList.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5281385">
+          <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
           <folding />
         </state>
       </provider>

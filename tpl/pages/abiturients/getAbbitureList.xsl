@@ -18,18 +18,25 @@
 			</xsl:if>
 			<xsl:choose>
 				<xsl:when test="phase = '6' ">
-				<li>
-					<a href="#" class="getEntrantsInfo2" rel="6">
-						<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)
-					</a>
-					<div class="resultAbbiture"></div>
-				</li>
+					<li>
+						<a href="#" class="getEntrantsInfo2" rel="6">
+							<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)
+						</a>
+						<div class="resultAbbiture"></div>
+					</li>
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="3">
 							<span class="pluse">+ </span> Приказ о зачислении поступающих по квоте приема лиц, имеющих особые права
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
+					<li>
+						<a href="#" class="getEntrantsInfo2" rel="2">
+							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу
+						</a>
+						<div class="resultAbbiture"></div>
+					</li>
+
 				<!--<li>
 					<a href="#" class="getEntrantsInfo2" rel="0">
 						<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
