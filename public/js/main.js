@@ -103,7 +103,7 @@ $(document).ready(function() {
 		else{
 		level = $(this).parents('.instityte').attr("rel");
 		budget = $(this).parents('.budget').attr("rel");
-		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+		free = $(this).parents('.budget').hasClass("free") ? 1 : 0;
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		$.ajax({
 			type : "post",
@@ -111,7 +111,7 @@ $(document).ready(function() {
 			data : {
 				level : level,
 				budget : budget,
-				free : freeParam
+				free : free
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultStudy').html(data);
@@ -139,7 +139,7 @@ $(document).ready(function() {
 		level = $(this).parents('.instityte').attr("rel");
 		budget = $(this).parents('.budget').attr("rel");
 		studyform = $(this).parents('.studyForm').attr("rel");
-		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+		free = $(this).parents('.budget').hasClass("free") ? 1 : 0;
 
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		$.ajax({
@@ -149,7 +149,7 @@ $(document).ready(function() {
 				level : level,
 				budget : budget,
 				studyform : studyform,
-				free : freeParam
+				free : free
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultEducPlans').html(data);
@@ -184,7 +184,7 @@ $(document).ready(function() {
 		phase = $(this).parents('.phase').attr("rel");
 		budget = $(this).parents('.budget').attr("rel");
 		budgetplaces = $(this).parent().find('.budgetplaces').attr("value");
-		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+		free = $(this).parents('.budget').hasClass("free") ? 1 : 0;
 		inst = this_.parents('.instityte').attr("rel");
 
 			//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
@@ -199,7 +199,7 @@ $(document).ready(function() {
 				phase : phase,
 				budget : budget,
 				budgetplaces : budgetplaces,
-				freeParam : freeParam,
+				free : free,
 				inst : inst
 			}
 		}).done(function(data) {
@@ -238,7 +238,7 @@ $(".getEntrantsInfo2").live("click", function(){
 		phase = this_.attr("rel");
 		budget = this_.parents('.budget').attr("rel");
 		budgetplaces = this_.parent().find('.budgetplaces').attr("value");
-		freeParam = this_.parents('.budget').hasClass("free") ? 1 : 0;
+			free = this_.parents('.budget').hasClass("free") ? 1 : 0;
 			inst = this_.parents('.instityte').attr("rel");
 		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
@@ -252,7 +252,7 @@ $(".getEntrantsInfo2").live("click", function(){
 				phase : phase,
 				budget : budget,
 				budgetplaces : budgetplaces,
-				freeParam : freeParam,
+				free : free,
 				inst : inst
 			}
 		}).done(function(data) {
@@ -292,8 +292,8 @@ $(".getEntrantsInfo2").live("click", function(){
 		phase = $(this).parents('.phase').attr("rel");
 		budget = $(this).parents('.budget').attr("rel");
 		budgetplaces = $(this).parent().find('.budgetplaces').attr("value");
-		freeParam = $(this).parents('.budget').hasClass("free") ? 1 : 0;
-			inst = this_.parents('.instityte').attr("rel");
+		free = $(this).parents('.budget').hasClass("free") ? 1 : 0;
+		inst = this_.parents('.instityte').attr("rel");
 		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		$.ajax({
@@ -301,7 +301,8 @@ $(".getEntrantsInfo2").live("click", function(){
 			url : "/abiturients/getEntrantsInfoList",
 			data : {
 				phase : phase,
-				inst : inst
+				inst : inst,
+				free : free
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);

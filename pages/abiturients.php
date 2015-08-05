@@ -77,10 +77,14 @@ class abiturients_Page extends View {
 				"id" => $response -> return -> id, 
 				"skillId" => $response -> return -> skillId, 
 				"budget" => $_POST['budget'],
+				"free" => $_POST['free'],
 				"specialityName" => $response -> return -> specialityName,
 				"budgetplaces"=> !empty($response -> return -> budgetplaces) ? $response -> return -> budgetplaces : null,
 				"kvotaplaces"=> !empty($response -> return -> kvotaplaces) ? $response -> return -> kvotaplaces : null,
 				"freeplaces"=> !empty($response -> return -> freeplaces) ? $response -> return -> freeplaces : null,
+				"bplaces"=> !empty($res -> bplaces) ? $res -> bplaces : null,
+				"kplaces"=> !empty($res -> kplaces) ? $res -> kplaces : null,
+				"fplaces"=> !empty($res -> fplaces) ? $res -> fplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 		}
 		else if (!empty($response -> return) && count($response -> return) > 1) {
@@ -90,6 +94,7 @@ class abiturients_Page extends View {
 				"id" => $res -> id, 
 				"skillId" => $res -> skillId, 
 				"budget" => $_POST['budget'],
+				"free" => $_POST['free'],
 				"specialityName" => $res -> specialityName,
 				"budgetplaces"=> !empty($res -> budgetplaces) ? $res -> budgetplaces : null,
 				"kvotaplaces"=> !empty($res -> kvotaplaces) ? $res -> kvotaplaces : null,
@@ -100,7 +105,8 @@ class abiturients_Page extends View {
 				"fplaces"=> !empty($res -> fplaces) ? $res -> fplaces : null,
 				"dateNow" => date('d/m/Y',  time()));
 			}
-		} else {
+		}
+		else {
 			self::$page['content']['error'] = "нет данных";
 		}
  		self::$page['content'] = array();
@@ -160,7 +166,7 @@ class abiturients_Page extends View {
 
 	public static function getEntrantsInfoAjaxAction() {
 		$params = new stdClass();
-		$params -> free = $_POST["freeParam"];		
+		$params -> free = $_POST["free"];
 		$params -> planid = $_POST["plan"];
 		$params -> stageid = $_POST['stage'];
 		$params -> phase = $_POST['phase'];
@@ -266,7 +272,7 @@ class abiturients_Page extends View {
 
 		self::$page['content']['phase'] = $_POST['phase'];
 		self::$page['content']['budget'] = $_POST['budget'];
-		self::$page['content']['free'] = $_POST['freeParam'];
+		self::$page['content']['free'] = $_POST['free'];
 		self::$page['content']['inst'] = $_POST['inst'];
 		self::$page['content']['budgetplaces'] = !empty($_POST['budgetplaces']) ? $_POST['budgetplaces'] : null;		
 		self::showXSLT('pages/abiturients/getAbbiture');
@@ -275,6 +281,7 @@ class abiturients_Page extends View {
 	public static function getEntrantsInfoListAjaxAction() {
 		self::$page['content']['inst'] = $_POST['inst'];
 		self::$page['content']['phase'] = $_POST['phase'];
+		self::$page['content']['free'] = $_POST['free'];
 		self::showXSLT('pages/abiturients/getAbbitureList');
 	}
 

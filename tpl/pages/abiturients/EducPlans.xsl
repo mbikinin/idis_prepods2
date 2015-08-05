@@ -11,10 +11,13 @@
 
 	<xsl:template match="content">
 		<ul class="s4">
+
 			<xsl:apply-templates select="EducPlans/item" />
 		</ul>
 	</xsl:template>
-	<xsl:template match="EducPlans/item">	
+	<xsl:template match="EducPlans/item">
+
+
 			<li class="plan" rel="{id}" >
 				<span class="kvotaplaces hideBlock"><br/>
 					<p>
@@ -31,13 +34,15 @@
 						</xsl:if>
 					</p>
 				</span>
+
 				<xsl:choose>
-					<xsl:when test="budget = 1 ">
+					<xsl:when test="budget = 1 or free = 1">
 						<a href="#" class="getEntrantsInfoList" rel="">				
 							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
 						</a>
 						<div class="resultAbbiture"></div>
-					</xsl:when>	
+					</xsl:when>
+
 					<xsl:otherwise>
 						<a href="#" class="getEntrantsInfo" >				
 							<span class="pluse">+ </span> <xsl:value-of select = "specialityName" />							
