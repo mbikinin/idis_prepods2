@@ -302,7 +302,8 @@ $(".getEntrantsInfo2").live("click", function(){
 			data : {
 				phase : phase,
 				inst : inst,
-				free : free
+				free : free,
+				budget : budget
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);

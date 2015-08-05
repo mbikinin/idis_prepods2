@@ -17,7 +17,7 @@
 				</li>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="phase = 6 and budget = 1 ">
+				<xsl:when test="phase = 2 and budget = 1">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="6">
 							<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)
@@ -45,7 +45,7 @@
 					<div class="resultAbbiture"></div>
 				</li>-->
 				</xsl:when>
-				<xsl:when test="inst = '0' ">
+				<xsl:when test="inst = 0 ">
 					<li>
                         <a href="#" class="getEntrantsInfo2" rel="0">
                             <span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
@@ -54,7 +54,7 @@
                     </li>
 				</xsl:when>
 
-				<xsl:when test="free = '1' ">
+				<xsl:when test="(budget = 0 and free = 1) or (budget = 0 and free = 0)  ">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="2">
 							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от 04.08.2015

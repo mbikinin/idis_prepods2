@@ -282,6 +282,7 @@ class abiturients_Page extends View {
 		self::$page['content']['inst'] = $_POST['inst'];
 		self::$page['content']['phase'] = $_POST['phase'];
 		self::$page['content']['free'] = $_POST['free'];
+		self::$page['content']['budget'] = $_POST['budget'];
 		self::showXSLT('pages/abiturients/getAbbitureList');
 	}
 
