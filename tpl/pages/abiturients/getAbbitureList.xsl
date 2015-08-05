@@ -17,7 +17,7 @@
 				</li>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="phase = '6' ">
+				<xsl:when test="phase = '2' ">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="6">
 							<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)

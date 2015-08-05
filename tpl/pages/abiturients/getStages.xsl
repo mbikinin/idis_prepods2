@@ -72,7 +72,7 @@
 			</ul>
 		</li></xsl:if>
 		<xsl:if test="level = 0 or phasekey = 0">
-		<li class="phase" rel="6">
+		<li class="phase" rel="2">
 			<a href="#" class="showBudget ">
 				+ ПРИКАЗЫ О ЗАЧИСЛЕНИИ
 			</a>

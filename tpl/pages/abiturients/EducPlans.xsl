@@ -23,7 +23,7 @@
 						<xsl:if test="budget = 1 and bplaces > 0 ">
 							<i>Количество мест - <xsl:value-of select = "bplaces" /> </i><br/>
 						</xsl:if>
-						<xsl:if test="budget = 0 and free = 0 and fplaces > 0 ">
+						<xsl:if test="budget = 0 and fplaces > 0 ">
 							<i>Количество мест - <xsl:value-of select = "fplaces" /> </i><br/>
 						</xsl:if>
 						<xsl:if test="kplaces > 0 ">
