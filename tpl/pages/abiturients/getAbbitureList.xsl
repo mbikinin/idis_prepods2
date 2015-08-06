@@ -54,7 +54,7 @@
                     </li>
 				</xsl:when>
 
-				<xsl:when test="(budget = 0 and free = 1) or (budget = 0 and free = 0)  ">
+				<xsl:when test="(phase =2 and budget = 0 and free = 1) or (phase =2 and budget = 0 and free = 0)  ">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="2">
 							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от orderDate
