@@ -233,13 +233,16 @@ $(".getEntrantsInfo2").live("click", function(){
 			return false;
 		}
 		else{
+
 		plan = this_.parents('.plan').attr("rel");
 		stage = this_.parents('.stage').attr("rel");
+
 		phase = this_.attr("rel");
 		budget = this_.parents('.budget').attr("rel");
 		budgetplaces = this_.parent().find('.budgetplaces').attr("value");
-			free = this_.parents('.budget').hasClass("free") ? 1 : 0;
-			inst = this_.parents('.instityte').attr("rel");
+
+		free = this_.parents('.budget').hasClass("free") ? 1 : 0;
+		inst = this_.parents('.instityte').attr("rel");
 		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		
@@ -294,7 +297,9 @@ $(".getEntrantsInfo2").live("click", function(){
 		budgetplaces = $(this).parent().find('.budgetplaces').attr("value");
 		free = $(this).parents('.budget').hasClass("free") ? 1 : 0;
 		inst = this_.parents('.instityte').attr("rel");
-		//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
+		orderDate = $('.orderDate').val();
+
+			//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
 		$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
 		$.ajax({
 			type : "post",
@@ -303,7 +308,8 @@ $(".getEntrantsInfo2").live("click", function(){
 				phase : phase,
 				inst : inst,
 				free : free,
-				budget : budget
+				budget : budget,
+				orderDate : orderDate
 			}
 		}).done(function(data) {
 			this_.parent().find('.resultAbbiture').html(data);

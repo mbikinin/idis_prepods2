@@ -150,8 +150,7 @@ class abiturients_Page extends View {
 				"endDate" => !empty($res -> endDate) ? date("d/m/Y", strtotime($res->endDate)) : null, 
 				"orderDate" => !empty($res -> orderDate) ? date("d/m/Y", strtotime($res->orderDate)) : null, 
 				"recommendedDate" => !empty($res -> recommendedDate) ? $res -> recommendedDate : null, 
-				"orderDate" => !empty($res -> orderDate) ? $res -> orderDate : null, 
-				"level" => $res -> level, 
+				"level" => $res -> level,
 				"branch" => $res -> branch);
 
 			}
@@ -258,12 +257,14 @@ class abiturients_Page extends View {
 
 			}
 			self::$page['content']['getAbbitureAll'] =
-				self::$page['content']['getAbbitureAllFree'] =
-				self::$page['content']['getAbbitureStatus'] =
-				self::$page['content']['getAbbitureColledg'] =
-				self::$page['content']['getAbbitureColledgBudg']= $array;
+			self::$page['content']['getAbbitureAllFree'] =
+			self::$page['content']['getAbbitureStatus'] =
+			self::$page['content']['getAbbitureColledg'] =
+			self::$page['content']['getAbbitureColledgBudg']= $array;
 			self::$page['content']['getAbbitureKvote'] = isset($array3) && count($array3) > 0 ? $array3 : null;
 			self::$page['content']['getAbbitureNoKvote'] = isset($array4) && count($array4) > 0 ? $array4 : null;
+
+
 			
 		}
 		else {
@@ -283,6 +284,8 @@ class abiturients_Page extends View {
 		self::$page['content']['phase'] = $_POST['phase'];
 		self::$page['content']['free'] = $_POST['free'];
 		self::$page['content']['budget'] = $_POST['budget'];
+		self::$page['content']['orderDate'] = $_POST['orderDate'];
+
 		self::showXSLT('pages/abiturients/getAbbitureList');
 	}
 

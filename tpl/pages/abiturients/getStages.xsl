@@ -123,16 +123,13 @@
 	</xsl:template>
 	<xsl:template match="getStages/item">
 			<li class="stage" rel="{id}">
-				
-
-				<!--<xsl:value-of select="stageName"/>-->
 
 
 				<ul>
 					<xsl:apply-templates select="phases/item" />
 
 				</ul>
-				<input type="hidden" value="{krimrecommendeddate}" class="krimrecommendeddate" />
+				<input type="hidden" value="{orderDate}" class="orderDate" />
 			</li>
 	</xsl:template>
 </xsl:stylesheet>

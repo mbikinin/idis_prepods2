@@ -57,7 +57,7 @@
 				<xsl:when test="(phase =2 and budget = 0 and free = 1) or (phase =2 and budget = 0 and free = 0)  ">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="2">
-							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от orderDate
+							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от <xsl:value-of select = "orderDate" />
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
@@ -66,22 +66,25 @@
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="5">
 							<span class="pluse">+ </span> Списки поступающих на выделенные бюджетные места (из числа граждан Республики Крым)
-						</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-						<div class="resultAbbiture"></div></li><li>
-					<a href="#" class="getEntrantsInfo2" rel="4">
-						<span class="pluse">+ </span> Списки поступающих по квоте приема лиц, имеющих особые права
-					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-					<div class="resultAbbiture"></div></li><li>
-					<a href="#" class="" rel="">
-						<span class="pluse">+ </span> Списки лиц, поступающих в пределах квоты целевого приема
-					</a><input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
-					<div class="resultAbbiture"></div>
+						</a>
+						<div class="resultAbbiture"></div>
+					</li>
+					<li>
+						<a href="#" class="getEntrantsInfo2" rel="4">
+							<span class="pluse">+ </span> Списки поступающих по квоте приема лиц, имеющих особые права
+						</a>
+						<div class="resultAbbiture"></div>
+					</li>
+					<li>
+						<a href="#" class="" rel="">
+							<span class="pluse">+ </span> Списки лиц, поступающих в пределах квоты целевого приема
+						</a>
+						<div class="resultAbbiture"></div>
 					</li>
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="0">
 							<span class="pluse">+ </span> Списки лиц, поступающих по общему конкурсу
 						</a>
-						<input type="hidden" class="budgetplaces" value="{budgetplaces}"/>
 						<div class="resultAbbiture"></div>
 					</li>
 
