@@ -57,7 +57,7 @@
 				<xsl:when test="(budget = 0 and free = 1) or (budget = 0 and free = 0)  ">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="2">
-							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от 04.08.2015
+							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от orderDate
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
