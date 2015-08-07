@@ -61,6 +61,12 @@
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
+					<!--<li>
+						<a href="#" class="getEntrantsInfo3" rel="2">
+							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от 07/08/2015
+						</a>
+						<div class="resultAbbiture"></div>
+					</li>-->
 				</xsl:when>
 				<xsl:otherwise>
 					<li>

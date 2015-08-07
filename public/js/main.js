@@ -214,7 +214,7 @@ $(document).ready(function() {
 		}
 		return false;
 	});
-$(".getEntrantsInfo2").live("click", function(){
+	$(".getEntrantsInfo2").live("click", function(){
 
 		this_ = $(this);
 		result = ".resultAbbiture";
@@ -267,6 +267,63 @@ $(".getEntrantsInfo2").live("click", function(){
 			$('.loading').remove();
 		});
 		
+		}
+		return false;
+	});
+
+	$(".getEntrantsInfo3").live("click", function(){
+
+		this_ = $(this);
+		result = ".resultAbbiture";
+		if(this_.hasClass("is_load")){
+			this_.parent().find(result).hide();
+			this_.parents('.getEducPlans').find(".kvotaplaces2").hide();
+			this_.removeClass("is_load");
+			this_.addClass("showBlock");
+			return false;
+		}
+		else if(this_.hasClass("showBlock")){
+			this_.parent().find(result).show();
+			this_.removeClass("showBlock");
+			this_.parent('.getEducPlans').find(".kvotaplaces2").css({"display": "block"}).show();
+			this_.addClass("is_load");
+			return false;
+		}
+		else{
+
+			plan = this_.parents('.plan').attr("rel");
+			stage = this_.parents('.stage').attr("rel");
+
+			phase = this_.attr("rel");
+			budget = this_.parents('.budget').attr("rel");
+			budgetplaces = this_.parent().find('.budgetplaces').attr("value");
+
+			free = this_.parents('.budget').hasClass("free") ? 1 : 0;
+			inst = this_.parents('.instityte').attr("rel");
+			//phase - фаза приема ( 0 - пофамильный перечень, 1-рекомендованные, 2- включенные в приказ )
+			$(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+
+			$.ajax({
+				type : "post",
+				url : "/abiturients/getEntrantsInfo",
+				data : {
+					plan : plan,
+					stage : 530,
+					phase : phase,
+					budget : budget,
+					budgetplaces : budgetplaces,
+					free : free,
+					inst : inst
+				}
+			}).done(function(data) {
+				this_.parent().find('.resultAbbiture').html(data);
+				this_.addClass("is_load ")
+
+				this_.parent().find(".kvotaplaces").css({"display": "block"}).show();
+
+				$('.loading').remove();
+			});
+
 		}
 		return false;
 	});
