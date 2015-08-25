@@ -17,7 +17,7 @@
 				</li>
 			</xsl:if>
 			<xsl:choose>
-				<xsl:when test="phase = 2 and budget = 1">
+				<xsl:when test="phase = 2 and budget = 1 and inst = 1">
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="6">
 							<span class="pluse">+ </span> Приказ о зачислении на выделенные бюджетные места (из числа граждан Республики Крым)
@@ -32,10 +32,16 @@
 					</li>
 					<li>
 						<a href="#" class="getEntrantsInfo2" rel="2">
-							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу
+							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу 04/08/2015
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
+					<li>
+                                                <a href="#" class="getEntrantsInfo3" rel="2">
+                                                        <span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу 07/08/2015
+                                                </a>
+                                                <div class="resultAbbiture"></div>
+                                        </li>
 
 				<!--<li>
 					<a href="#" class="getEntrantsInfo2" rel="0">
@@ -61,12 +67,12 @@
 						</a>
 						<div class="resultAbbiture"></div>
 					</li>
-					<!--<li>
+					<li>
 						<a href="#" class="getEntrantsInfo3" rel="2">
 							<span class="pluse">+ </span> Приказ о зачислении, поступающих по общему конкурсу от 07/08/2015
 						</a>
 						<div class="resultAbbiture"></div>
-					</li>-->
+					</li>
 				</xsl:when>
 				<xsl:otherwise>
 					<li>

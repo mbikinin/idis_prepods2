@@ -129,7 +129,7 @@ class abiturients_Page extends View {
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
 				unset($array1);
 				if(isset($res->phase->entry) && !empty($res->phase->entry)){					
-					for ($ii = 0; $ii < count($res->phase->entry); $ii++) {
+					for ($ii = 0; $ii < 1/*count($res->phase->entry)*/; $ii++) {
 						$res2 = count($res->phase->entry) == 1 ? $res->phase->entry : $res->phase->entry[$ii];
 						$array1[$ii] = array(
 							"phasekey" => $res2->key,
