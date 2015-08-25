@@ -308,7 +308,7 @@ $(document).ready(function() {
 				url : "/abiturients/getEntrantsInfo",
 				data : {
 					plan : plan,
-					stage : 530,
+					stage : 641,
 					phase : phase,
 					budget : budget,
 					budgetplaces : budgetplaces,
