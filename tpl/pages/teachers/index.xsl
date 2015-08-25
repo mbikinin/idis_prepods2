@@ -12,20 +12,20 @@
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 
-	<!-- Код страницы -->
 
 
 	<xsl:template match="content">
-		<a class="gray" href="/">Главная </a> ->
-		<strong class="gray" >Алфавитный указатель</strong>	
-		
+		<a class="gray" href="/">Главная </a>
 		<xsl:call-template name="search_block" />
 		<p><xsl:value-of select ="message" /></p>
+		<p><xsl:value-of select ="error" /></p>
+
 		<ul class="teachers_ul">
 		<xsl:apply-templates select="teachers/item" />
 		</ul>
 		<div class="clear"></div>
 	</xsl:template>
+
 
 	<xsl:template match="teachers/item">
 	

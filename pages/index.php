@@ -20,12 +20,14 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-
+		Session::set("filial", Router::getRouteParam('id'));
     	self::$page['content'] = "";
 		//self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
-
+		self::$page['content']['specialities'] = Teacher::getSpecialities();
         self::showXSLT('pages/index/index');
     }
+
+
  	public static function getFaculties($Request){  
 		$Headers=new SoapHeader('http://idis.ieml.ru/ws/department', 
 								'UserCredentials',
@@ -51,6 +53,7 @@ class index_Page extends View {
 		}
 		return $fackultetsArray;
 	}
+
 	 public static function getChairs($Request){  
 	                            
 		$client = new SoapClient("https://89.232.109.231/Education/services/department?wsdl", 
@@ -98,5 +101,5 @@ class index_Page extends View {
 		$Request->faculty=$facultet;
 		return $Request;		
 	}
-    
+
 }

@@ -19,31 +19,34 @@ class teachers_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-    	
+		Session::set("filial", Router::getRouteParam('id'));
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
-    	self::$page['content']['teachers'] = 
-    		self::getPrepodsByLetter(self::setLetter3("$id")) ? 
+    	self::$page['content']['teachers'] =
+    		self::getPrepodsByLetter(self::setLetter3("$id")) ?
     		self::getPrepodsByLetter(self::setLetter3("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
 		//Debug::dump(self::$page['content']['teachers']);
-  		//self::$page['content']['teachers'] = self::getPrepods(self::setRequest($id));
- 		self::showXSLT('pages/teachers/index');
+		self::$page['content']['specialities'] = Teacher::getSpecialities();
+
+		self::showXSLT('pages/teachers/index');
     }
 	public static function getPrepods($Request){
 		//Получаем массив факультетов
 		$response = self::connectWsdl()->getTeachersByDept($Request);
-		for($i=0; $i<count($response->return); $i++){
-		$array[$i] = 
-			array(
-			"familyName"=>$response->return[$i]->familyName,
-			"firstName"=>$response->return[$i]->firstName,
-			"id" =>$response->return[$i]->id,
-			"secondName"=>$response->return[$i]->secondName,
-			"position"=>$response->return[$i]->position
-			);
+		if (isset($response -> return)) {
+			for($i=0; $i<count($response->return); $i++){
+				$array[$i] =
+					array(
+					"familyName"=>$response->return[$i]->familyName,
+					"firstName"=>$response->return[$i]->firstName,
+					"id" =>$response->return[$i]->id,
+					"secondName"=>$response->return[$i]->secondName,
+					"position"=>$response->return[$i]->position
+					);
+			}
+			return $array;
 		}
-		return $array;
 	}
     /**
      * 
@@ -53,7 +56,7 @@ class teachers_Page extends View {
 	public static function viewAction($id) {
     	$id = !empty($id) ? $id : $id;
  		self::$page['content']['teacher_info'] =$info= self::getPrepodsInfo(self::setTeacherId($id));
-//Debug::dump($info);
+		self::$page['content']['specialities'] = Teacher::getSpecialities();
 		
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
@@ -61,6 +64,49 @@ class teachers_Page extends View {
  		self::$page['content']['teacher_foto'] = "http://89.232.109.231/Education/public/TeacherPhoto?par_personid=$id"; 		
  		self::showXSLT('pages/teachers/view');
     }
+
+
+    /**
+     * @param $id
+     * @return array|void
+     */
+    public static function specialitiesAction($id) {
+		$params = new stdClass();
+		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
+		$params -> speccode = $id;
+		$response = self::connectWsdl() -> getTeachersBySpec($params);
+		self::$page['content'] = "";
+		if (isset($response -> return)) {
+			for ($i = 0; $i < count($response -> return); $i++) {
+				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
+				$tempIds[$i] = $res -> id;
+			}
+		}
+		if (isset($tempIds)) {
+			$params = new stdClass();
+			for($i=0; $i<count($tempIds);$i++) {
+					$response = self::connectWsdl()->getTeacherInfo(self::setTeacherId($tempIds[$i]));
+					for ($j = 0; $j < count($response-> return); $j++) {
+						$res = count($response-> return) == 1 ? $response-> return : $response-> return [$j];
+						$array[$i] = array(
+							"id" => $res->id,
+							"familyName" => $res->familyName,
+							"firstName" => $res->firstName,
+							"secondName" => $res->secondName,
+							"position" => $res->position
+						);
+					}
+			}
+
+			self::$page['content']['getTeachersBySpec'] = $array;
+		}
+		else
+			self::$page['content']['error'] = "Нет данных";
+		self::$page['content']['specialities'] = Teacher::getSpecialities();
+		self::showXSLT('pages/teachers/specialities');
+	}
+
+
 	public static function getPrepodsByLetter($Request){
 		$response = self::connectWsdl()->getTeachersByBranch($Request);
 		//$response = self::connectWsdl()->getTeachersByFIO($Request);
@@ -95,6 +141,9 @@ class teachers_Page extends View {
 		else return false;
 		
 	}
+
+
+
 	public static function getPrepodsInfo($Request){
 		$response = self::connectWsdl()->getTeacherInfo($Request);
 		$array = 
@@ -137,7 +186,6 @@ class teachers_Page extends View {
 				$array[0] = 
 					array(
 						"courseName"=>$teacherTraining->courseName,
-						"hours"=>$teacherTraining->hours,
 						"place"=>$teacherTraining->place,
 						"year"=>$teacherTraining->year
 					);
@@ -168,6 +216,7 @@ class teachers_Page extends View {
 	}
 	public static function getDisciplin($Request){
 		$response =self::connectWsdl()->getTeacherDisc($Request);
+		if(isset($response->return->disciplines)){
 		for($i=0; $i<count($response->return->disciplines); $i++){
 			if(isset($response->return->disciplines) && count($response->return->disciplines) >1){
 				$array[$i] = 
@@ -185,6 +234,7 @@ class teachers_Page extends View {
 			}
 		}
 		return $array;
+		}
 	}
 	public static function getPublication($Request){
 		$array = array();
@@ -235,6 +285,7 @@ class teachers_Page extends View {
  	public static function setTeacherId($id){
 		$Request = new stdClass();
 		$Request->teacherid=$id;
+		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";
 		return $Request;		
 	}
 
@@ -248,15 +299,14 @@ class teachers_Page extends View {
 		$Request = new stdClass();		
 		$Request->familyname="$id";
 		$Request->branch = Session::get("filial") ? Session::get("filial") : "1";	
-//Debug::dump($Request);
-		return $Request;		
+        return $Request;
 	}
 	private static function connectWsdl(){
-		$Headers=new SoapHeader('http://idis.ieml.ru/ws/person', 
+		$Headers=new SoapHeader('http://idis.ieml.ru/ws/person',
 								'UserCredentials',
 	                            array('@samigullin','mklP54sd'));
 	                            
-		$client = new SoapClient("https://idis.ieml.ru/Education/services/person?wsdl", 
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/person?wsdl",
 		array('encoding'=>'utf-8', "trace"=> 1, "exceptions" => 0));
 		$client->__setSoapHeaders($Headers);
 		return $client;

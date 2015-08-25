@@ -12,19 +12,23 @@
 		<xsl:apply-templates select="root" />
 	</xsl:template>
 
-	<!-- Код страницы -->
+	<!-- Код страницы
 
 
 	<xsl:template match="content">
 	<h1>Поиск преподавателей</h1>
 		<xsl:call-template name="search_block" />
-			
-		<!-- <ul class="parrent"><xsl:apply-templates select="facultets/item" /> </ul>-->
+
+		<ul class="parrent"><xsl:apply-templates select="facultets/item" /> </ul>
 			
 		
+	</xsl:template>-->
+
+	<xsl:template match="content">
+		<a class="gray" href="/">Главная </a> ->
+		<xsl:call-template name="search_block" />
+		<p><xsl:value-of select ="message" /></p>
+
+		<div class="clear"></div>
 	</xsl:template>
-	<xsl:template match="alphabet/item">
-		<a href="/teachers/index?id={text()}" ><xsl:value-of select="text()" /></a>
-	</xsl:template>
-	
 </xsl:stylesheet>

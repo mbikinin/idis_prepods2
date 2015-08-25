@@ -23,7 +23,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 			});
 		</script>
 		<a class="gray" href="/">Главная </a> ->
-		<a class="gray" href="/teachers/index?id={substring(teacher_info/familyName,1,1)}">Алфавитный указатель</a> ->
+		<a class="gray" href="#" onclick="history.go(-1);">Cписок направлений</a> ->
 		<strong class="gray" ><xsl:value-of select="teacher_info/familyName" />&#160;<xsl:value-of select="teacher_info/firstName" />&#160;<xsl:value-of select="teacher_info/secondName" />
 		</strong>
 		

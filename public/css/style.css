@@ -157,9 +157,8 @@ img {
 }
 
 table.search_teacher tr td{
-	padding: 2px;
 	vertical-align: middle;
-	
+
 }
 .search_teacher .title {
 	padding-right:15px;
@@ -384,4 +383,24 @@ ul.parrent li.low .oter{
 
 .kvotaplaces{
     margin-left: 26px;
+}
+
+.specialities_ul li {
+	font-size: 13px;
+	text-align: left;
+	line-height: 14px;
+	float: left;
+	width: 440px;
+	padding: 0px 20px 2px;
+
+}
+table.search_teacher tbody td{
+	text-align: left;
+}
+.search_box{
+	padding: 20px 0 20px 45px;
+}
+
+.search_box input[type=submit]{
+	padding: 0 35px;
 }
