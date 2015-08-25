@@ -72,12 +72,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/x
 					</tr>
 					<xsl:if test="teacher_info/totalExperienceDate != '' " >					
 						<tr>
-							<td colspan="2">Общий стаж работы с <xsl:value-of select="teacher_info/totalExperienceDate" /></td>
+							<td colspan="2">Общий стаж работы <xsl:value-of select="teacher_info/totalExperienceDate" /></td>
 						</tr>
 					</xsl:if>
 					<xsl:if test="teacher_info/teachingExperienceDate != '' " >
 					<tr>
-						<td colspan="2">Общий педагогический стаж работы с <xsl:value-of select="teacher_info/teachingExperienceDate" /></td>
+						<td colspan="2">Общий педагогический стаж работы <xsl:value-of select="teacher_info/teachingExperienceDate" /></td>
 					</tr>
 					</xsl:if>
 					<!-- <tr>

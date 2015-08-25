@@ -240,7 +240,7 @@ ul.parrent li.low .oter{
 }
 .teachers_ul li {
     float: left;
-    min-width: 300px;
+    width: 300px;
 }
 .teachers_ul li, .teachers_pub_ul li{
     padding: 5px 0;

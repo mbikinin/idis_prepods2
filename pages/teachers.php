@@ -11,6 +11,7 @@ class teachers_Page extends View {
     /*
      * Инициализация контроллера
      */
+	private static $_year = 2015;
 
     public static function initController($action) {
     }
@@ -28,7 +29,7 @@ class teachers_Page extends View {
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
 		//Debug::dump(self::$page['content']['teachers']);
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
-
+		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
 		self::showXSLT('pages/teachers/index');
     }
 	public static function getPrepods($Request){
@@ -61,7 +62,7 @@ class teachers_Page extends View {
  		self::$page['content']['teacher_disc'] = self::getDisciplin(self::setTeacherId($id));
  		self::$page['content']['teacher_pub'] = $pub_array = self::getPublication(self::setTeacherId($id));
  		self::$page['content']['years_array'] = self::setYearsArray($pub_array);
- 		self::$page['content']['teacher_foto'] = "http://89.232.109.231/Education/public/TeacherPhoto?par_personid=$id"; 		
+ 		self::$page['content']['teacher_foto'] = "http://idis.ieml.ru/Education/public/TeacherPhoto?par_personid=$id";
  		self::showXSLT('pages/teachers/view');
     }
 
@@ -102,9 +103,12 @@ class teachers_Page extends View {
 		}
 		else
 			self::$page['content']['error'] = "Нет данных";
+
+		self::$page['content']['branch'] = !empty($_SESSION["filial"]) ? Session::get("filial") : "1";
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
 		self::showXSLT('pages/teachers/specialities');
 	}
+
 
 
 	public static function getPrepodsByLetter($Request){
@@ -194,6 +198,7 @@ class teachers_Page extends View {
 			
 		return $array;
 	}
+
 	public static function get_array_by_name($teacherEducation, $name){
 		for($i=0; $i<count($teacherEducation); $i++){
 			if(isset($teacherEducation) && count($teacherEducation) >1){

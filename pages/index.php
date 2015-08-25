@@ -24,6 +24,7 @@ class index_Page extends View {
     	self::$page['content'] = "";
 		//self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
+		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
         self::showXSLT('pages/index/index');
     }
 
