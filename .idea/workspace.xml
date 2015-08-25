@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/core/teacher.class.php" afterPath="$PROJECT_DIR$/engine/core/teacher.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/teachers/view.xsl" afterPath="$PROJECT_DIR$/tpl/pages/teachers/view.xsl" />
     </list>
     <ignored path="idis_prepods.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,14 +44,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.xsl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.xsl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/pages/teachers/view.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.39349422">
+              <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
               <folding>
-                <marker date="1440537839361" expanded="true" signature="681:738" placeholder="{...}" />
-                <marker date="1440537839361" expanded="true" signature="704:731" placeholder="{&quot;collapsible&quot;: true...}" />
+                <marker date="1440538499961" expanded="true" signature="681:738" placeholder="{...}" />
+                <marker date="1440538499961" expanded="true" signature="704:731" placeholder="{&quot;collapsible&quot;: true...}" />
               </folding>
             </state>
           </provider>
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teacher.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/engine/core/teacher.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4843918">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state vertical-scroll-proportion="-16.25">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,10 +138,10 @@
         <option value="$PROJECT_DIR$/tpl/pages/index/index.xsl" />
         <option value="$PROJECT_DIR$/tpl/blocks/dialogs.xsl" />
         <option value="$PROJECT_DIR$/pages/index.php" />
-        <option value="$PROJECT_DIR$/tpl/pages/teachers/view.xsl" />
         <option value="$PROJECT_DIR$/tpl/pages/teachers/specialities.xsl" />
         <option value="$PROJECT_DIR$/pages/teachers.php" />
         <option value="$PROJECT_DIR$/engine/core/teacher.class.php" />
+        <option value="$PROJECT_DIR$/tpl/pages/teachers/view.xsl" />
       </list>
     </option>
   </component>
@@ -914,17 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/teachers/view.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="82" selection-start-line="25" selection-start-column="82" selection-end-line="25" selection-end-column="82" />
-          <folding>
-            <marker date="1440537839361" expanded="true" signature="681:738" placeholder="{...}" />
-            <marker date="1440537839361" expanded="true" signature="704:731" placeholder="{&quot;collapsible&quot;: true...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/pages/teachers/specialities.xsl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -943,9 +932,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/core/teacher.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4843918">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/pages/teachers/view.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39349422">
+          <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
+          <folding>
+            <marker date="1440538499961" expanded="true" signature="681:738" placeholder="{...}" />
+            <marker date="1440538499961" expanded="true" signature="704:731" placeholder="{&quot;collapsible&quot;: true...}" />
+          </folding>
         </state>
       </provider>
     </entry>
