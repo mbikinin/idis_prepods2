@@ -41,7 +41,7 @@
 			<li>
 				<a href="https://idis.ieml.ru/Education/public/PedagogPdfReport?branch={//branch}&amp;year=2015&amp;speccode={id}">
 					<img src="/public/images/ico_pdf.gif"/>
-					<xsl:value-of select=«name» />					
+					<xsl:value-of select=‘name’ />					
 				</a><br/>
 			</li>
 		</xsl:template>
