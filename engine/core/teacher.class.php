@@ -8,7 +8,9 @@
 class Teacher {
 
     public static function getSpecialities(){
-        $response = self::connectWsdl()->getSpecialities();
+$params = new stdClass();
+		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
+        $response = self::connectWsdl()->getSpecialities($params);
         $array = array();
         if (isset($response -> return)) {
             for ($i = 0; $i < count($response-> return); $i++) {

@@ -24,7 +24,7 @@ class teachers_Page extends View {
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
     	self::$page['content'] = "";
     	self::$page['content']['teachers'] =
-    		self::getPrepodsByLetter(self::setLetter3("$id")) ?
+get    		self::getPrepodsByLetter(self::setLetter3("$id")) ?
     		self::getPrepodsByLetter(self::setLetter3("$id")) :
     		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
 		//Debug::dump(self::$page['content']['teachers']);
