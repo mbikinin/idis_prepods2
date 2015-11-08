@@ -18,7 +18,7 @@
 			</ul>
 			</td>
 		</tr>
-		<tr>
+		<!--<tr>
 			<td><span>Поиск по фамилии</span></td>
 			<td>
 				<div class="search_box">
@@ -29,7 +29,7 @@
 					</form>
 				</div>
 			</td>
-		</tr>
+		</tr>-->
 		</table>
 
 		</xsl:template>

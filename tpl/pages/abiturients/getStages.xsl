@@ -57,11 +57,11 @@
 										
 						<div class="resultStudy"></div>
 					</li>
-					<li class="budget free" rel="0">
+					<!--<li class="budget free" rel="0">
 						<a href="#" class="getStudy">
-							<span class="pluse">+ </span>БЕСПЛАТНЫЕ МЕСТА</a>											
+							<span class="pluse">+ </span>БЕСПЛАТНЫЕ МЕСТА</a>
 						<div class="resultStudy"></div>
-					</li>
+					</li>-->
 					<li class="budget" rel="0">
 						<a href="#" class="getStudy"><span class="pluse">+ </span>МЕСТА ПО ДОГОВОРАМ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a>
 						<div class="resultStudy"></div>
@@ -105,11 +105,11 @@
 
 							<div class="resultStudy"></div>
 						</li>
-						<li class="budget free" rel="0">
+						<!--<li class="budget free" rel="0">
 							<a href="#" class="getStudy">
 								<span class="pluse">+ </span>БЕСПЛАТНЫЕ МЕСТА</a>
 							<div class="resultStudy"></div>
-						</li>
+						</li>-->
 						<li class="budget" rel="0">
 							<a href="#" class="getStudy"><span class="pluse">+ </span>МЕСТА ПО ДОГОВОРАМ ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a>
 							<div class="resultStudy"></div>
