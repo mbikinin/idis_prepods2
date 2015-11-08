@@ -13,8 +13,7 @@ class teachers_Page extends View {
      */
 	private static $_year = 2015;
 
-    public static function initController($action) {
-    }
+    public static function initController($action) { }
 
     /*
      * Главная страница сайта
