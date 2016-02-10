@@ -41,7 +41,7 @@
 			<xsl:variable name="current_url">https://idis.ieml.ru/Education/public/PedagogPdfReport?</xsl:variable>
 			<xsl:variable name="current_branch"><xsl:value-of select="//branch" /></xsl:variable>
 			<li>
-				<a href="https://idis.ieml.ru/Education/public/PedagogPdfReport?{$current_branch}">
+				<a href="https://idis.ieml.ru/Education/public/PedagogPdfReport?speccode={id}">
 					<img src="/public/images/ico_pdf.gif"/>
 					 <xsl:value-of select="name" />					
 				</a><br/>
