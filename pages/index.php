@@ -20,11 +20,10 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
-	Session::set("filial", str_replace($id,"/",""));
+	$id = !empty($_GET['id']) ?  preg_replace( '/[^0-9]/', '', $_GET['id'] ) : 1;
     	self::$page['content'] = "";
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
-		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
+		self::$page['content']['branch'] = $id;
         self::showXSLT('pages/index/index');
     }
 
