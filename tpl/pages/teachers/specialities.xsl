@@ -11,9 +11,6 @@
 	<xsl:template match="/">
 		<xsl:apply-templates select="root" />
 	</xsl:template>
-
-
-
 	<xsl:template match="content">
 		<a class="gray" href="/">Главная </a>
 

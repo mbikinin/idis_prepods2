@@ -20,9 +20,9 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-		Session::set("filial", Router::getRouteParam('id'));
+		$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+		Session::set("filial", $id);
     	self::$page['content'] = "";
-		//self::$page['content']['facultets'] = self::getFaculties(self::setRequest(1));
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
 		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
         self::showXSLT('pages/index/index');

@@ -11,21 +11,21 @@ class teachers_Page extends View {
     /*
      * Инициализация контроллера
      */
-	private static $_year = 2015;
+	private static $_year = 2016;
 
     public static function initController($action) { }
 
     /*
      * Главная страница сайта
      */
-    public static function indexAction($id) {
-		Session::set("filial", Router::getRouteParam('id'));
+    public static function indexAction($id) {		
     	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+		Session::set("filial", $id);
     	self::$page['content'] = "";
-    	self::$page['content']['teachers'] =
-get    		self::getPrepodsByLetter(self::setLetter3("$id")) ?
+    	/*self::$page['content']['teachers'] =
+    		self::getPrepodsByLetter(self::setLetter3("$id")) ?
     		self::getPrepodsByLetter(self::setLetter3("$id")) :
-    		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;
+    		self::$page['content']['message'] = "По вашему запросу ничего не найдено." ;*/
 		//Debug::dump(self::$page['content']['teachers']);
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
 		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
