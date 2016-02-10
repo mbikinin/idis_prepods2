@@ -20,8 +20,8 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
-		$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
-		Session::set("filial", $id);
+	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+	Session::set("filial", str_replace($id,"/",""));
     	self::$page['content'] = "";
 		self::$page['content']['specialities'] = Teacher::getSpecialities();
 		self::$page['content']['branch'] = Session::get("filial") ? Session::get("filial") : "1";
