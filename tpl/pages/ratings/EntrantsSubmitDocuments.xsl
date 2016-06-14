@@ -15,16 +15,16 @@
             <p>Нет данных!</p>
         </xsl:when>
         <xsl:otherwise>
-            <table class="EntrantsSubmitDocuments_box">
+            <table class="result EntrantsSubmitDocuments_box">
                 <thead>
                     <tr>
                         <th>ФИО</th>
-                        <th>Общее количество баллов</th>
+                        <th>Общее количество <br/>баллов</th>
                         <!--Вывод дисциплин-->
-                        <th>Количество баллов по индивидуальным достижениям</th>
-                        <th>Оригинал аттестата/диплома</th>
-                        <th>Заявление о согласии на обучение</th>
                         <th>Особые права</th>
+                        <th>Статус</th>
+                        <th>Кол. баллов по<br/> индивидуальным достижениям</th>
+                        <th>Условия приема</th>
                     </tr>
                 </thead>
                 <xsl:apply-templates select="EntrantsSubmitDocuments/item" />
@@ -35,13 +35,17 @@
 
     <xsl:template match="EntrantsSubmitDocuments/item">
        <tr>
-           <td><xsl:value-of select="familyname" /> <xsl:value-of select="firstname" /> <xsl:value-of select="secondname " /></td>
+           <td>
+               <xsl:value-of select="familyname" />&#160;
+               <xsl:value-of select="firstname" />&#160;
+               <xsl:value-of select="secondname " />
+           </td>
            <td><xsl:value-of select="resultScore" /></td>
            <!--Вывод дисциплин-->
-           <td><xsl:value-of select="achivScore" /></td>
-           <td><xsl:value-of select="docOriginal" /></td>
-           <td><xsl:value-of select="consentEnrollment" /></td>
            <td><xsl:value-of select="privelege" /></td>
+           <td><xsl:value-of select="status" /></td>
+           <td><xsl:value-of select="achiveScore" /></td>
+           <td><xsl:value-of select="condition" /></td>
        </tr>
     </xsl:template>
 </xsl:stylesheet>

@@ -404,3 +404,9 @@ table.search_teacher tbody td{
 .search_box input[type=submit]{
 	padding: 0 35px;
 }
+table.result td,
+table.result th
+{
+	border:solid 1px #e1e1e8;
+	padding: 10px;
+}

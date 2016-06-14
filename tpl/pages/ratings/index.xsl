@@ -18,6 +18,7 @@
 			<p><xsl:value-of select ="message" /></p>
 			<select name="branch" class="branch">
 				<option>--Выберите филиал</option>
+				<option value = "1">Казань</option>
 				<xsl:apply-templates select="filials/item" />
 			</select>
 			<div class="clear"></div>
