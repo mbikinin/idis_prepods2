@@ -73,7 +73,7 @@ class ratings_Page extends View {
 		$params -> year = date('Y');
 		$params -> financeform = $_POST['financeform'];
 		$params -> krim = $_POST['krim'];
-		$response = self::connectWsdl("educplan?wsdl") -> getEntrantsSubmitDocuments($params);
+		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsSubmitDocuments($params);
 
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
@@ -84,13 +84,13 @@ class ratings_Page extends View {
 					"secondname" => $res->secondname,
 					"resultScore" => $res->resultScore,
 					"privelege" => $res->privelege,
-					"consentEnrollment" => $res->consentEnrollment,
+					"status" => $res->status,
 					"achivScore" => $res->achivScore,
-					"docOriginal" => $res->docOriginal,
+					"condition" => $res->condition,
 				);
 			}
 			self::$page['content'] = array();
-			self::$page['content']['entrantsSubmitDocuments'] = $array;
+			self::$page['content']['EntrantsSubmitDocuments'] = $array;
 		}
 		else {
 			self::$page['content']['error'] = "нет данных";
@@ -109,11 +109,27 @@ class ratings_Page extends View {
 		$params -> year = date('Y');
 		$params -> financeform = $_POST['financeform'];
 		$params -> krim = $_POST['krim'];
-		$response = self::connectWsdl("educplan?wsdl") -> getEntrantsSubmitDocuments($params);
-
+		$response = self::connectWsdl("entrants?wsdl") -> getEntrantsList($params);
+		$extExamScoreArray = array();
 		if (!empty($response -> return)) {
 			for ($i = 0; $i < count($response -> return); $i++) {
+
 				$res = count($response -> return) == 1 ? $response -> return : $response -> return[$i];
+
+				unset($extExamScoreArray);
+				if(isset($res->extExamScore) && !empty($res->extExamScore)){
+					for ($ii = 0; $ii < count($res->extExamScore); $ii++) {
+						$res2 = count($res->extExamScore) == 1 ? $res->extExamScore : $res->extExamScore[$ii];
+
+						$extExamScoreArray[$ii] = array(
+							"disciplineName" => $res2->disciplineName,
+							"entranceDisciplineId" => $res2->entranceDisciplineId,
+							"priority" => $res2->priority,
+							"score" => $res2->score
+						);
+					}
+				}
+
 				$array[$i] = array(
 					"familyname" => $res ->familyname,
 					"firstname" => $res ->firstname,
@@ -123,6 +139,7 @@ class ratings_Page extends View {
 					"consentEnrollment" => $res->consentEnrollment,
 					"achivScore" => $res->achivScore,
 					"docOriginal" => $res->docOriginal,
+					"extExamScores" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
 				);
 			}
 			self::$page['content'] = array();

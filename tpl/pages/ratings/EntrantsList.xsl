@@ -15,15 +15,15 @@
                 <p>Нет данных!</p>
             </xsl:when>
             <xsl:otherwise>
-                <table class="EntrantsSubmitDocuments_box">
+                <table class="result EntrantsSubmitDocuments_box">
                     <thead>
                         <tr>
                             <th>ФИО</th>
-                            <th>Общее количество баллов</th>
-                            <!--Вывод дисциплин-->
-                            <th>Количество баллов по индивидуальным достижениям</th>
+                            <th>Общее<br/> количество баллов</th>
+                            <th>Дисциплины</th>
+                            <th>Количество баллов<br/> по индивидуальным достижениям</th>
                             <th>Оригинал аттестата/диплома</th>
-                            <th>Заявление о согласии на обучение</th>
+                            <th>Заявление о <br/>согласии на обучение</th>
                             <th>Особые права</th>
                         </tr>
                     </thead>
@@ -35,13 +35,32 @@
 
     <xsl:template match="EntrantsList/item">
         <tr>
-            <td><xsl:value-of select="familyname" /> <xsl:value-of select="firstname" /> <xsl:value-of select="secondname " /></td>
+            <td>
+                <xsl:value-of select="familyname" /> &#160;
+                <xsl:value-of select="firstname" /> &#160;
+                <xsl:value-of select="secondname " />
+            </td>
             <td><xsl:value-of select="resultScore" /></td>
-            <!--Вывод дисциплин-->
+            <td>
+                <xsl:if test="count(extExamScores/item) != 0 ">
+                    <table>
+                        <thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
+                        <tbody>
+                            <xsl:apply-templates select="extExamScores/item" />
+                        </tbody>
+                    </table>
+                </xsl:if>
+            </td>
             <td><xsl:value-of select="achivScore" /></td>
             <td><xsl:value-of select="docOriginal" /></td>
             <td><xsl:value-of select="consentEnrollment" /></td>
             <td><xsl:value-of select="privelege" /></td>
+        </tr>
+    </xsl:template>
+    <xsl:template match="EntrantsList/item/extExamScores/item">
+        <tr>
+            <td><xsl:value-of select = "disciplineName" /></td>
+            <td><xsl:value-of select = "score" /></td>
         </tr>
     </xsl:template>
 </xsl:stylesheet>
