@@ -410,3 +410,15 @@ table.result th
 	border:solid 1px #e1e1e8;
 	padding: 10px;
 }
+.resultEducPlans {
+	display: inline-block;
+}
+.rating_box select{
+	width: 200px;
+}
+.rating_box select.error{
+	border: solid 1px #b80000;
+}
+.progress_box{
+	height: 10px;
+}

@@ -10,7 +10,7 @@ $(document).ready(function() {
         _skillvalue = $('.skillvalue').val();
         _financeform = $('.financeform').val();
 
-        $(this).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
             url : "/ratings/getEducPlans",
@@ -29,25 +29,25 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".getResultList").live("change", function(){
-        url = 0;
-        id = $(this).val();
-        url = id == 1 ? 'getEntrantsSubmitDocuments' :'getEntrantsList';
-
+    $(".getResultList").click( function(){
         this_ = $(this);
         result = ".resultList";
 
+        _url = $('.list_type').val() == '1' ? 'getEntrantsSubmitDocuments' :'getEntrantsList';
         _branch = $('.branch').val();
         _speccode = $('.speccode').val();
         _skillid = $('.speccode_'+_speccode).attr("rel");
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val();
-        _krim = $('.krim').is(':checked') ? 1 : 0;
-        alert(_speccode)
-        $(this_).parent().append("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        _krim = $('.krim').val();
+        if(!validate()) {
+            alert("Необходимо выбрать все поля!")
+            return false;
+        }
+        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
-            url : "/ratings/"+ url,
+            url : "/ratings/"+ _url,
             data : {
                 branch : _branch,
                 skillid : _skillid,
@@ -63,4 +63,22 @@ $(document).ready(function() {
 
         return false;
     });
+
+    $('.reset_financeform').live("change", function(){
+        $('.financeform').val("-1")
+    })
+
 });
+function validate(){
+    result = 0
+    $.each($('.rating_box select'), function(key, value) {
+        if(($(this).val()) == '-1') {
+            $(this).addClass('error')
+            result++;
+        }
+        else {
+            $(this).removeClass('error')
+        }
+    });
+    return result == 0
+}
