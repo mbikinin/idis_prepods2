@@ -21,6 +21,9 @@
                             <th>ФИО</th>
                             <th>Общее<br/> количество баллов</th>
                             <th>Дисциплины</th>
+                           <!-- <th>Математика</th>
+                            <th>Обществознание</th>
+                            <th>Русский язык</th>-->
                             <th>Количество баллов<br/> по индивидуальным достижениям</th>
                             <th>Оригинал аттестата/диплома</th>
                             <th>Заявление о <br/>согласии на обучение</th>
@@ -57,10 +60,27 @@
             <td><xsl:value-of select="privelege" /></td>
         </tr>
     </xsl:template>
-    <xsl:template match="EntrantsList/item/extExamScores/item">
+   <xsl:template match="EntrantsList/item/extExamScores/item">
         <tr>
             <td><xsl:value-of select = "disciplineName" /></td>
             <td><xsl:value-of select = "score" /></td>
         </tr>
     </xsl:template>
+    <!-- <xsl:template match="EntrantsList/item/extExamScores/item">
+            <td>
+                <xsl:if test="contains(disciplineName, 'Математика')">
+                    <xsl:value-of select = "score" />
+                </xsl:if>
+            </td>
+            <td>
+                <xsl:if test="contains(disciplineName, 'Обществознание')">
+                    <xsl:value-of select = "score" />
+                </xsl:if>
+            </td>
+            <td>
+                <xsl:if test="contains(disciplineName, 'я')">
+                    <xsl:value-of select = "score" />
+                </xsl:if>
+            </td>
+    </xsl:template>-->
 </xsl:stylesheet>
