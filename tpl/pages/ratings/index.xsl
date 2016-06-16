@@ -18,44 +18,43 @@
 			<form name="get_rating" method="post">
 				<p><xsl:value-of select ="message" /></p>
 				<select  name="branch" class="branch reset_financeform" required="required">
-					<option value="-1">--Выберите филиал</option>
+					<option value="-1">Выберите филиал</option>
 					<option value = "1">Казань</option>
 					<xsl:apply-templates select="filials/item" />
 				</select>
 				<select name="studyform" class="studyform reset_financeform" required="required">
-					<option value="-1">--Выберите форму обучения</option>
+					<option value="-1">Выберите форму обучения</option>
 					<option value="2">Очная</option>
 					<option value="1">Заочная</option>
 				</select>
 				<select name="skillvalue" class="skillvalue reset_financeform" required="required">
-					<option value="-1">--Выберите уровень образования</option>
+					<option value="-1">Выберите уровень образования</option>
 					<option value="1">Бакалавриат</option>
 					<option value="2">Магистратура</option>
 					<option value="3">Аспирантура</option>
 					<option value="4">Колледж</option>
 				</select>
 				<select name="financeform" class="financeform getRatingEducPlans" required="required">
-					<option value="-1">--Выберите форму финансирования</option>
+					<option value="-1">Выберите форму финансирования</option>
 					<option value="0">Места по договорам об оказании платных образовательных услуг</option>
 					<option value="1">Бесплатные места</option>
 					<option value="2">Бюджетные места</option>
 				</select>
 				<div class="resultEducPlans">
 					<select name="speccode" class="speccode" required="required">
-						<option value="-1">--Выберите направление подготовки</option>
+						<option value="-1">Выберите направление подготовки</option>
 					</select>
 				</div>
-				<select name="krim" class="krim" required="required">
-					<option value="-1">--Проживаю в республике Крым?</option>
-					<option value="1">Да</option>
-					<option value="0">Нет</option>
-				</select>
-
 				<select name="list_type" class="list_type" required="required">
-					<option value="-1">--Выберите результат</option>
+					<option value="-1">Выберите результат</option>
 					<option value="1">Cписок лиц, подавших документы</option>
 					<option value="2">Cписок поступающих</option>
 				</select>
+				<div class="clearfix"></div>
+				<div class="krim_box">
+					<input type="checkbox" name="krim" class="krim" />
+					<span>Отношусь к числу лиц постоянно<br/> проживающих в республике Крым</span>
+				</div>
 				<br/>
 				<div class="progress_box"></div>
 				<br/>

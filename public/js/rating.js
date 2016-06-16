@@ -39,7 +39,7 @@ $(document).ready(function() {
         _skillid = $('.speccode_'+_speccode).attr("rel");
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val();
-        _krim = $('.krim').val();
+        _krim = $('.krim').is(":checked") ? 1 : 0;
         if(!validate()) {
             alert("Необходимо выбрать все поля!")
             return false;

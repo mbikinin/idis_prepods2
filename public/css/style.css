@@ -422,3 +422,18 @@ table.result th
 .progress_box{
 	height: 10px;
 }
+
+.krim_box{
+	line-height: 12px;
+	display: inline-block;
+}
+
+.krim_box span {
+	padding-left: 3px;
+	display: inline-block;
+}
+
+.krim_box input[type=checkbox]{
+	display: inline-block;
+	margin-top: -12px;
+}
