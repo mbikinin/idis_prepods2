@@ -37,6 +37,7 @@ $(document).ready(function() {
         _branch = $('.branch').val();
         _speccode = $('.speccode').val();
         _skillid = $('.speccode_'+_speccode).attr("rel");
+        _skillvalue = $('.skillvalue').val();
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val();
         _krim = $('.krim').is(":checked") ? 1 : 0;
@@ -51,6 +52,7 @@ $(document).ready(function() {
             data : {
                 branch : _branch,
                 skillid : _skillid,
+                skillvalue : _skillvalue,
                 speccode : _speccode,
                 studyform : _studyform,
                 financeform : _financeform,

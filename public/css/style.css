@@ -437,3 +437,29 @@ table.result th
 	display: inline-block;
 	margin-top: -12px;
 }
+
+.rating_box tr:nth-child(2n) {
+	background: #f0f0f0; /* Цвет фона */
+}
+
+.rating_box table.result tbody{
+	counter-reset: numeric-row;
+}
+.rating_box table.result tbody tr {
+	counter-increment: numeric-row;
+}
+
+.rating_box table.result tbody tr:before {
+	display: inline-block;
+	height: 100%;
+	padding: 9px;
+	font-size: 12px;
+	content: counter(numeric-row);
+}
+.rating_box table.result thead tr:before,
+.rating_box table.result thead table tr:before,
+.rating_box table.result tbody table tr:before
+{
+	content: "";
+	padding: 0;
+}
