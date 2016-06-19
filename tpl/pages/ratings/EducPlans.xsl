@@ -11,7 +11,7 @@
 
 	<xsl:template match="content">
 		<select name="speccode" class="speccode">
-			<option value="-1">--Выберите направление подготовки</option>
+			<option value="-1">Выберите направление подготовки</option>
 			<xsl:apply-templates select="EducPlans/item" />
 		</select>
 	</xsl:template>
