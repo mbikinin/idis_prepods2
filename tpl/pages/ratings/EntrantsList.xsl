@@ -37,7 +37,7 @@
     </xsl:template>
 
     <xsl:template match="EntrantsList/item">
-        <tr>
+        <tr class="num">
             <td>
                 <xsl:value-of select="familyname" /> &#160;
                 <xsl:value-of select="firstname" /> &#160;

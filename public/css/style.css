@@ -438,14 +438,14 @@ table.result th
 	margin-top: -12px;
 }
 
-.rating_box tr:nth-child(2n) {
+.rating_box tr.num:nth-child(2n) {
 	background: #f0f0f0; /* Цвет фона */
 }
 
 .rating_box table.result tbody{
 	counter-reset: numeric-row;
 }
-.rating_box table.result tbody tr {
+.rating_box table.result tbody tr.num {
 	counter-increment: numeric-row;
 }
 
