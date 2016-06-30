@@ -91,8 +91,8 @@ class ratings_Page extends View
                     "resultScore" => $res->resultScore,
                     "privelege" => $res->privelege,
                     "status" => $res->status,
-                    "achivScore" => $res->achivScore,
-                    "condition" => $res->condition,
+                    "achivScore" =>  isset($res->achivScore) ? $res->achivScore : "",
+                    "condition" => isset($res->condition) ? $res->condition : null,
                 );
 			}
 			self::$page['content'] = array();
