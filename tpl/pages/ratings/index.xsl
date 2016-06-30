@@ -26,6 +26,7 @@
 					<option value="-1">Выберите форму обучения</option>
 					<option value="2">Очная</option>
 					<option value="1">Заочная</option>
+					<option value="3">Вечерняя</option>
 				</select>
 				<select name="skillvalue" class="skillvalue reset_financeform" required="required">
 					<option value="-1">Выберите уровень образования</option>
