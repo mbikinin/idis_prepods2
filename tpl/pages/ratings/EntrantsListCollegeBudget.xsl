@@ -37,17 +37,17 @@
     <xsl:template match="EntrantsList/item">
         <tr class="num">
             <td>
-                <xsl:value-of select="familyname" /> &#160;
-                <xsl:value-of select="firstname" /> &#160;
+                <xsl:value-of select="familyname" />&#160;
+                <xsl:value-of select="firstname" />&#160;
                 <xsl:value-of select="secondname " />
             </td>
             <td><xsl:value-of select="averagescore" /></td>
             <td>
                 <xsl:if test="count(schoolDiscScore/item) != 0 ">
                     <table>
-                        <thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
                         <tbody>
-                            <xsl:apply-templates select="schoolDiscScore/item" />
+                            <tr><xsl:apply-templates select="schoolDiscScore/item" /></tr>
+                            <tr><xsl:apply-templates select="schoolDiscScore2/item" /></tr>
                         </tbody>
                     </table>
                 </xsl:if>
@@ -57,26 +57,10 @@
     </xsl:template>
 
    <xsl:template match="EntrantsList/item/schoolDiscScore/item">
-        <tr>
-            <td><xsl:value-of select = "disciplineName" /></td>
-            <td><xsl:value-of select = "score" /></td>
-        </tr>
+       <td><xsl:value-of select = "disciplineName" /></td>
     </xsl:template>
-    <!-- <xsl:template match="EntrantsList/item/extExamScores/item">
-            <td>
-                <xsl:if test="contains(disciplineName, 'Математика')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-            <td>
-                <xsl:if test="contains(disciplineName, 'Обществознание')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-            <td>
-                <xsl:if test="contains(disciplineName, 'я')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-    </xsl:template>-->
+    <xsl:template match="EntrantsList/item/schoolDiscScore2/item">
+        <td><xsl:value-of select = "score" /></td>
+    </xsl:template>
 </xsl:stylesheet>
+

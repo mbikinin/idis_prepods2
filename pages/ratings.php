@@ -149,11 +149,13 @@ class ratings_Page extends View
                     "docOriginal" => !empty($res->docOriginal) ? $res->docOriginal : null,
                     "averagescore" => !empty($res->averagescore) ? $res->averagescore : null,
                     "extExamScores" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
-                    "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array()
+                    "extExamScores2" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
+                    "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array(),
+                    "schoolDiscScore2" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array()
                 );
 			}
 			self::$page['content'] = array();
-			self::$page['content']['EntrantsList'] = $array;
+			self::$page['content']['EntrantsList'] =  $array;
             self::$page['content']['current_date'] = date('d.m.Y');
 		}
     else {
@@ -198,8 +200,8 @@ class ratings_Page extends View
     private static function getSchoolDiscScoreArray($schoolDiscScore)
     {
         $schoolDiscScoreArray = array();
-        if (isset($schoolDiscScore) && !empty($schoolDiscScore)) {
-            for ($ii = 0; $ii < count($schoolDiscScoreArray); $ii++) {
+        if (!empty($schoolDiscScore)) {
+            for ($ii = 0; $ii < count($schoolDiscScore); $ii++) {
                 $res2 = count($schoolDiscScore) == 1 ? $schoolDiscScore : $schoolDiscScore[$ii];
                 $schoolDiscScoreArray[$ii] = array(
                     "disciplineName" => $res2->disciplineName,
