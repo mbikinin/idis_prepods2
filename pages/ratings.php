@@ -135,17 +135,18 @@ class ratings_Page extends View
             $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
 
 				unset($extExamScoreArray);
-				$extExamScoreArray = self::getExamScoreArray($res->extExamScore);
-				$schoolDiscScoreArray = self::getSchoolDiscScoreArray($res->schoolDiscScore);
+                unset($schoolDiscScoreArray);
+				$extExamScoreArray = !empty($res->extExamScore) ? self::getExamScoreArray($res->extExamScore) : null;
+				$schoolDiscScoreArray = !empty($res->schoolDiscScore) ? self::getSchoolDiscScoreArray($res->schoolDiscScore) : null;
 				$array[$i] = array(
                     "familyname" => $res->familyname,
                     "firstname" => $res->firstname,
                     "secondname" => $res->secondname,
                     "resultScore" => $res->resultScore,
                     "privelege" => $res->privelege,
-                    "consentEnrollment" => $res->consentEnrollment,
+                    "consentEnrollment" => !empty($res->consentEnrollment) ? $res->consentEnrollment : null,
                     "achivScore" => $res->achivScore,
-                    "docOriginal" => $res->docOriginal,
+                    "docOriginal" => !empty($res->docOriginal) ? $res->docOriginal : null,
                     "averagescore" => $res->averagescore,
                     "extExamScores" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
                     "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array()
@@ -197,9 +198,9 @@ class ratings_Page extends View
     private static function getSchoolDiscScoreArray($schoolDiscScore)
     {
         $schoolDiscScoreArray = array();
-        if (isset($schoolDiscScoreArray) && !empty($schoolDiscScoreArray)) {
+        if (isset($schoolDiscScore) && !empty($schoolDiscScore)) {
             for ($ii = 0; $ii < count($schoolDiscScoreArray); $ii++) {
-                $res2 = count($schoolDiscScoreArray) == 1 ? $schoolDiscScoreArray : $schoolDiscScoreArray[$ii];
+                $res2 = count($schoolDiscScore) == 1 ? $schoolDiscScore : $schoolDiscScore[$ii];
                 $schoolDiscScoreArray[$ii] = array(
                     "disciplineName" => $res2->disciplineName,
                     "entranceDisciplineId" => $res2->entranceDisciplineId,
