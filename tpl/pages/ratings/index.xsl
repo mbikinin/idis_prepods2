@@ -19,8 +19,14 @@
 				<p><xsl:value-of select ="message" /></p>
 				<select  name="branch" class="branch reset_financeform" required="required">
 					<option value="-1">Город поступления</option>
-					<option value = "1">Казань</option>
-					<xsl:apply-templates select="filials/item" />
+					<option value = "181">Казань</option>
+					<option value = "224">Набережные Челны</option>
+					<option value = "266">Чистополь</option>
+					<option value = "268">Новочебоксарск</option>
+					<option value = "323">Зеленодольск</option>
+					<option value = "343">Альметьевск</option>
+					<option value = "373">Бугульма</option>
+					<option value = "1587">Крым</option>
 				</select>
 				<select name="studyform" class="studyform reset_financeform" required="required">
 					<option value="-1">Выберите форму обучения</option>
