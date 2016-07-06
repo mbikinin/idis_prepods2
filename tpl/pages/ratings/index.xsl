@@ -18,7 +18,7 @@
 			<form name="get_rating" method="post">
 				<p><xsl:value-of select ="message" /></p>
 				<select  name="branch" class="branch reset_financeform" required="required">
-					<option value="-1">Выберите филиал</option>
+					<option value="-1">Город поступления</option>
 					<option value = "1">Казань</option>
 					<xsl:apply-templates select="filials/item" />
 				</select>

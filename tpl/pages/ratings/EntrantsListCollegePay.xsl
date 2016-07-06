@@ -15,6 +15,7 @@
                 <p>Нет данных!</p>
             </xsl:when>
             <xsl:otherwise>
+                <div class="current_date">Последнее обновление данных: <strong><xsl:value-of select="current_date"/></strong></div>
                 <table class="result EntrantsSubmitDocuments_box">
                     <thead>
                         <tr>
@@ -29,7 +30,7 @@
     </xsl:template>
 
     <xsl:template match="EntrantsList/item">
-        <tr>
+        <tr class="num">
             <td>
                 <xsl:value-of select="familyname" /> &#160;
                 <xsl:value-of select="firstname" /> &#160;

@@ -15,6 +15,7 @@
                 <p>Нет данных!</p>
             </xsl:when>
             <xsl:otherwise>
+                <div class="current_date">Последнее обновление данных: <strong><xsl:value-of select="current_date"/></strong></div>
                 <table class="result EntrantsSubmitDocuments_box">
                     <thead>
                         <tr>
