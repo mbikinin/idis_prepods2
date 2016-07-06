@@ -19,8 +19,18 @@
 				<p><xsl:value-of select ="message" /></p>
 				<select  name="branch" class="branch reset_financeform" required="required">
 					<option value="-1">Город поступления</option>
-					<option value = "181">Казань</option>
-					<option value = "224">Набережные Челны</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "1">Казань</option>
+					<option value = "181">Набережные Челны</option>
+					<option value = "224">Нижнекамск</option>
 					<option value = "266">Чистополь</option>
 					<option value = "268">Новочебоксарск</option>
 					<option value = "323">Зеленодольск</option>
