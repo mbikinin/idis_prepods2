@@ -145,9 +145,9 @@ class ratings_Page extends View
                     "resultScore" => $res->resultScore,
                     "privelege" => $res->privelege,
                     "consentEnrollment" => !empty($res->consentEnrollment) ? $res->consentEnrollment : null,
-                    "achivScore" => $res->achivScore,
+                    "achivScore" => !empty($res->achivScore) ? $res->achivScore : null,
                     "docOriginal" => !empty($res->docOriginal) ? $res->docOriginal : null,
-                    "averagescore" => $res->averagescore,
+                    "averagescore" => !empty($res->averagescore) ? $res->averagescore : null,
                     "extExamScores" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
                     "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array()
                 );
