@@ -97,6 +97,7 @@ class ratings_Page extends View
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EntrantsSubmitDocuments'] = $array;
+            self::$page['content']['current_date'] = date('d.m.Y');
 		}
 		else {
         self::$page['content']['error'] = "нет данных";
@@ -152,6 +153,7 @@ class ratings_Page extends View
 			}
 			self::$page['content'] = array();
 			self::$page['content']['EntrantsList'] = $array;
+            self::$page['content']['current_date'] = date('d.m.Y');
 		}
     else {
         self::$page['content']['error'] = "нет данных";
