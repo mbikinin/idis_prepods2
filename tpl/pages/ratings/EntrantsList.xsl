@@ -40,17 +40,17 @@
     <xsl:template match="EntrantsList/item">
         <tr class="num">
             <td>
-                <xsl:value-of select="familyname" /> &#160;
-                <xsl:value-of select="firstname" /> &#160;
+                <xsl:value-of select="familyname" />&#160;
+                <xsl:value-of select="firstname" />&#160;
                 <xsl:value-of select="secondname " />
             </td>
             <td><xsl:value-of select="resultScore" /></td>
             <td>
                 <xsl:if test="count(extExamScores/item) != 0 ">
                     <table>
-                        <thead><th>Дисциплина</th><th>Кол.баллов</th></thead>
                         <tbody>
-                            <xsl:apply-templates select="extExamScores/item" />
+                            <tr><xsl:apply-templates select="extExamScores/item" /></tr>
+                            <tr><xsl:apply-templates select="extExamScores2/item" /></tr>
                         </tbody>
                     </table>
                 </xsl:if>
@@ -62,10 +62,10 @@
         </tr>
     </xsl:template>
    <xsl:template match="EntrantsList/item/extExamScores/item">
-        <tr>
-            <td><xsl:value-of select = "disciplineName" /></td>
-            <td><xsl:value-of select = "score" /></td>
-        </tr>
+       <td><xsl:value-of select = "disciplineName" /></td>
+    </xsl:template>
+    <xsl:template match="EntrantsList/item/extExamScores2/item">
+        <td><xsl:value-of select = "score" /></td>
     </xsl:template>
     <!-- <xsl:template match="EntrantsList/item/extExamScores/item">
             <td>

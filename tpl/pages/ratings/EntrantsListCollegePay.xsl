@@ -32,8 +32,8 @@
     <xsl:template match="EntrantsList/item">
         <tr class="num">
             <td>
-                <xsl:value-of select="familyname" /> &#160;
-                <xsl:value-of select="firstname" /> &#160;
+                <xsl:value-of select="familyname" />&#160;
+                <xsl:value-of select="firstname" />&#160;
                 <xsl:value-of select="secondname " />
             </td>
             <td><xsl:value-of select="docOriginal" /></td>
