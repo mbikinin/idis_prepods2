@@ -23,11 +23,9 @@
 					<option value = "181">Набережные Челны</option>
 					<option value = "224">Нижнекамск</option>
 					<option value = "266">Чистополь</option>
-					<option value = "268">Новочебоксарск</option>
 					<option value = "323">Зеленодольск</option>
 					<option value = "343">Альметьевск</option>
 					<option value = "373">Бугульма</option>
-					<option value = "1587">Крым</option>
 				</select>
 				<select name="studyform" class="studyform reset_financeform" required="required">
 					<option value="-1">Выберите форму обучения</option>
