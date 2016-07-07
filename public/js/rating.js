@@ -36,7 +36,7 @@ $(document).ready(function() {
         _url = $('.list_type').val() == '1' ? 'getEntrantsSubmitDocuments' :'getEntrantsList';
         _branch = $('.branch').val();
         _speccode = $('.speccode').val();
-        _skillid = $('.speccode_'+_speccode).attr("rel");
+        _skillid = $('.speccode').find(':selected').attr('rel');
         _skillvalue = $('.skillvalue').val();
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val();
