@@ -48,7 +48,7 @@
            <!--Вывод дисциплин-->
            <td><xsl:value-of select="privelege" /></td>
            <td><xsl:value-of select="status" /></td>
-           <td><xsl:value-of select="achiveScore" /></td>
+           <td><xsl:value-of select="achivScore " /></td>
            <td><xsl:value-of select="condition" /></td>
        </tr>
     </xsl:template>
