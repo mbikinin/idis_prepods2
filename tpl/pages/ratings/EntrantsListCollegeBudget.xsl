@@ -26,6 +26,7 @@
                             <th>Обществознание</th>
                             <th>Русский язык</th>-->
                             <th>Оригинал аттестата/диплома</th>
+                            <th>Статус</th>
                         </tr>
                     </thead>
                     <xsl:apply-templates select="EntrantsList/item" />
@@ -53,6 +54,7 @@
                 </xsl:if>
             </td>
             <td><xsl:value-of select="docOriginal" /></td>
+            <td><xsl:value-of select="status" /></td>
         </tr>
     </xsl:template>
 

@@ -29,6 +29,7 @@
                             <th>Оригинал аттестата/диплома</th>
                             <th>Заявление о <br/>согласии на обучение</th>
                             <th>Особые права</th>
+                            <th>Статус</th>
                         </tr>
                     </thead>
                     <xsl:apply-templates select="EntrantsList/item" />
@@ -59,6 +60,7 @@
             <td><xsl:value-of select="docOriginal" /></td>
             <td><xsl:value-of select="consentEnrollment" /></td>
             <td><xsl:value-of select="privelege" /></td>
+            <td><xsl:value-of select="status" /></td>
         </tr>
     </xsl:template>
    <xsl:template match="EntrantsList/item/extExamScores/item">
@@ -67,21 +69,4 @@
     <xsl:template match="EntrantsList/item/extExamScores2/item">
         <td><xsl:value-of select = "score" /></td>
     </xsl:template>
-    <!-- <xsl:template match="EntrantsList/item/extExamScores/item">
-            <td>
-                <xsl:if test="contains(disciplineName, 'Математика')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-            <td>
-                <xsl:if test="contains(disciplineName, 'Обществознание')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-            <td>
-                <xsl:if test="contains(disciplineName, 'я')">
-                    <xsl:value-of select = "score" />
-                </xsl:if>
-            </td>
-    </xsl:template>-->
 </xsl:stylesheet>
