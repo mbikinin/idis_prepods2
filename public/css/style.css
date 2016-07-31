@@ -405,7 +405,9 @@ table.search_teacher tbody td{
 	padding: 0 35px;
 }
 table.result td,
-table.result th
+table.result th,
+table.result_i td,
+table.result_i th
 {
 	border:solid 1px #e1e1e8;
 	padding: 10px;
@@ -462,4 +464,7 @@ table.result th
 {
 	content: "";
 	padding: 0;
+}
+.rating_info_table thead{
+	font-size: 10px;
 }
