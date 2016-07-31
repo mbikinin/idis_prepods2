@@ -70,6 +70,69 @@ $(document).ready(function() {
         $('.financeform').val("-1")
     })
 
+    $('.reset_educplans').live("change", function(){
+        $('.speccode').val("-1")
+    })
+    $('.inf_reset_skill').live("change", function(){
+        $('.skillvalue').val("-1")
+    })
+
+
+    //Get information Educ plans list
+    $(".getInfoEducPlans").live("change", function(){
+        this_ = $(this);
+        result = ".resultEducPlans";
+        _branch = $('.branch').val();
+        _skillvalue = $('.skillvalue').val();
+        if(_branch < 0 ) {
+            alert("Необходимо выбрать город!")
+            return false;
+        }
+        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $.ajax({
+            type : "post",
+            url : "/ratings/getInfoEducPlans",
+            data : {
+                branch : _branch,
+                skillvalue : _skillvalue
+            }
+        }).done(function(data) {
+            this_.parent().find('.resultEducPlans').html(data);
+            $('.loading').remove();
+        });
+        return false;
+    });
+
+    $(".getInfoRatingList").click( function(){
+        this_ = $(this);
+        result = ".resultList";
+
+        _branch = $('.branch').val();
+        _speccode = $('.speccode').find(':selected').attr('rel');
+        _skillvalue = $('.skillvalue').val();
+        if(!validate()) {
+            alert("Необходимо выбрать все поля!")
+            return false;
+        }
+        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $.ajax({
+            type : "post",
+            url : "/ratings/getInformationRating",
+            data : {
+                branch : _branch,
+                speccode : _speccode,
+                skillvalue : _skillvalue
+            }
+        }).done(function(data) {
+            this_.parent().find('.resultList').html(data);
+            $('.loading').remove();
+        });
+
+        return false;
+    });
+
+    //Get information list
+
 });
 function validate(){
     result = 0

@@ -62,11 +62,35 @@ class ratings_Page extends View
 			self::$page['content'] = array();
 			self::$page['content']['EducPlans'] = $array;
 		} else {
+             self::$page['content']['error'] = "нет данных";
+        }
+		self::showXSLT('pages/ratings/EducPlans');
+	}
+    public static function getInfoEducPlansAjaxAction()
+    {
+        $params = new stdClass();
+        $params->branch = $_POST['branch'];
+        $params->year = date('Y');
+        $params->skillvalue = $_POST['skillvalue'];
+
+        $response = self::connectWsdl("educplan?wsdl")->getSpecialities($params);
+        if (!empty($response-> return)) {
+        for ($i = 0; $i < count($response-> return); $i++) {
+            $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
+				$array[$i] = array(
+                    "skillId" => $res->specialityId,
+                    "speccode" => $res->specialityId,
+                    "specialityName" => $res->specialityName
+                );
+			}
+			self::$page['content'] = array();
+			self::$page['content']['EducPlans'] = $array;
+		}
+        else {
         self::$page['content']['error'] = "нет данных";
     }
 		self::showXSLT('pages/ratings/EducPlans');
 	}
-
 
     public static function getEntrantsSubmitDocumentsAjaxAction()
     {
@@ -237,6 +261,67 @@ class ratings_Page extends View
         return $Request;
     }
 
+
+    public static function informationAction(){
+        Session::set("filial", Router::getRouteParam('id'));
+        self::$page['content'] = "";
+        self::$page['content']['filials'] = self::getFilials();
+        self::showXSLT('pages/ratings/information');
+    }
+    public static function getInformationRatingAjaxAction(){
+        $params = new stdClass();
+        $params->branch = $_POST['branch'];
+        $skillvalue = $_POST['skillvalue'];
+        $params->skillvalue = $skillvalue;
+        $params->speccode = $_POST['speccode'];
+        $params->year = date('Y');
+        $response = self::connectWsdl("entrants?wsdl")->getNumberOfApplications($params);
+
+        if (!empty($response-> return)) {
+            for ($i = 0; $i < count($response-> return); $i++) {
+
+                $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
+
+				$array[$i] = array(
+                    "specName" => !empty($res->specName) ? $res->specName : null,
+                    "numberKrimO" => !empty($res->numberKrimO) ? $res->numberKrimO : 0,
+                    "numberKrimZ" => !empty($res->numberKrimZ) ? $res->numberKrimZ : 0,
+                    "numberKrimV" => !empty($res->numberKrimV) ? $res->numberKrimV : 0,
+                    "numberO" => !empty($res->numberO) ? $res->numberO : 0,
+                    "numberZ" => !empty($res->numberZ) ? $res->numberZ : 0,
+                    "numberV" => !empty($res->numberV) ? $res->numberV : 0,
+                    "number9O" => !empty($res->number9O) ? $res->number9O : 0,
+                    "number11O" => !empty($res->number11O) ? $res->number11O : 0,
+                    "number9Z" => !empty($res->number9Z) ? $res->number9Z : 0,
+                    "number11Z" => !empty($res->number11Z) ? $res->number11Z : 0,
+                    "numberBudget9O" => !empty($res->numberBudget9O) ? $res->numberBudget9O : 0,
+                    "numberBudget11O" => !empty($res->numberBudget11O) ? $res->numberBudget11O : 0
+                );
+			}
+			self::$page['content'] = array();
+            self::$page['content']['current_date'] = date('d.m.Y');
+			self::$page['content']['InfoRatingList'] =  $array;
+		}
+        else {
+            self::$page['content']['error'] = "нет данных";
+        }
+
+		switch ($skillvalue) {
+            case 1:
+                self::showXSLT('pages/ratings/info/BakalavrInfo');
+                break;
+            case '2':
+                self::showXSLT('pages/ratings/info/MagistrInfo');
+                break;
+            case '3':
+                self::showXSLT('pages/ratings/info/AspirantInfo');
+                break;
+            case '4':
+                self::showXSLT('pages/ratings/info/KolegeInfo');
+                break;
+
+        }
+    }
     private static function connectWsdl($service)
     {
         $Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials', array('@samigullin', 'mklP54sd'));
