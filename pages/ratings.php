@@ -311,14 +311,24 @@ class ratings_Page extends View
                 self::showXSLT('pages/ratings/info/BakalavrInfo');
                 break;
             case '2':
-                self::showXSLT('pages/ratings/info/MagistrInfo');
+                self::$page['content']['FormType'] = 2;
+                self::showXSLT('pages/ratings/info/Other');
+                break;
+            case '3':
+                self::$page['content']['FormType'] = 3;
+                self::showXSLT('pages/ratings/info/Other');
+                break;
+            case '4':
+                self::showXSLT('pages/ratings/info/KolegeInfo');
+                break;
+             /*   self::showXSLT('pages/ratings/info/MagistrInfo');
                 break;
             case '3':
                 self::showXSLT('pages/ratings/info/AspirantInfo');
                 break;
             case '4':
                 self::showXSLT('pages/ratings/info/KolegeInfo');
-                break;
+                break;*/
 
         }
     }
