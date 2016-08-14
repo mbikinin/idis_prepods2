@@ -17,16 +17,27 @@
 		<div class="rating_box">
 			<form name="get_rating" method="post">
 				<p><xsl:value-of select ="message" /></p>
+
+				<xsl:choose>
+       				<xsl:when test="filial = '343'">
 				<select  name="branch" class="branch reset_financeform" required="required">
-					<option value="-1">Город поступления</option>
-					<option value = "1">Казань</option>
-					<option value = "181">Набережные Челны</option>
-					<option value = "224">Нижнекамск</option>
-					<option value = "266">Чистополь</option>
-					<option value = "323">Зеленодольск</option>
-					<option value = "343">Альметьевск</option>
-					<option value = "373">Бугульма</option>
-				</select>
+                                        <option value="-1">Город поступления</option>
+                                        <option value = "343">Альметьевск</option>
+                                </select>				
+				</xsl:when>
+			        <xsl:otherwise>
+			        <select  name="branch" class="branch reset_financeform" required="required">
+                                        <option value="-1">Город поступления</option>
+                                        <option value = "1">Казань</option>
+                                        <option value = "181">Набережные Челны</option>
+                                        <option value = "224">Нижнекамск</option>
+                                        <option value = "266">Чистополь</option>
+                                        <option value = "323">Зеленодольск</option>
+                                        <option value = "343">Альметьевск</option>
+                                        <option value = "373">Бугульма</option>
+                                </select>
+				</xsl:otherwise>
+				 </xsl:choose>
 				<select name="studyform" class="studyform reset_financeform" required="required">
 					<option value="-1">Выберите форму обучения</option>
 					<option value="2">Очная</option>

@@ -21,8 +21,10 @@ class ratings_Page extends View
 
     public static function indexAction($id)
     {
-        Session::set("filial", Router::getRouteParam('id'));
+	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+        Session::set("filial", $id);	
         self::$page['content'] = "";
+	self::$page['content']['filial'] = Session::get("filial");
         self::$page['content']['filials'] = self::getFilials();
         self::showXSLT('pages/ratings/index');
     }
