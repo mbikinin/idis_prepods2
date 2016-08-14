@@ -13,6 +13,8 @@ class ratings_Page extends View
      */
     public static function initController($action)
     {
+        $id = !empty($_GET['id']) ? trim($_GET['id']) : null;
+        Session::set("branch", $id);
     }
 
     /*
@@ -21,14 +23,18 @@ class ratings_Page extends View
 
     public static function indexAction($id)
     {
-	$id = !empty($_GET['id']) ? trim($_GET['id']) : null;
-        Session::set("filial", $id);	
         self::$page['content'] = "";
-	self::$page['content']['filial'] = Session::get("filial");
+	    self::$page['content']['branch'] = Session::get("branch");
         self::$page['content']['filials'] = self::getFilials();
         self::showXSLT('pages/ratings/index');
     }
 
+    public static function informationAction(){
+        self::$page['content'] = "";
+        self::$page['content']['branch'] = Session::get("branch");
+        self::$page['content']['filials'] = self::getFilials();
+        self::showXSLT('pages/ratings/information');
+    }
     /**
      * @return array|void
      */
@@ -263,13 +269,6 @@ class ratings_Page extends View
         return $Request;
     }
 
-
-    public static function informationAction(){
-        Session::set("filial", Router::getRouteParam('id'));
-        self::$page['content'] = "";
-        self::$page['content']['filials'] = self::getFilials();
-        self::showXSLT('pages/ratings/information');
-    }
     public static function getInformationRatingAjaxAction(){
         $params = new stdClass();
         $params->branch = $_POST['branch'];

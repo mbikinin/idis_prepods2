@@ -19,44 +19,74 @@
 				<p><xsl:value-of select ="message" /></p>
 
 				<xsl:choose>
-       				<xsl:when test="filial = '343'">
-				<select  name="branch" class="branch reset_financeform" required="required">
-                                        <option value="-1">Город поступления</option>
-                                        <option value = "343">Альметьевск</option>
-                                </select>				
-				</xsl:when>
+       				<xsl:when test="branch = '343'">
+						<select  name="branch" class="branch reset_financeform" required="required" style="display: none">
+							<option value = "343" selected="selected">Альметьевск</option>
+						</select>
+					</xsl:when>
 			        <xsl:otherwise>
-			        <select  name="branch" class="branch reset_financeform" required="required">
-                                        <option value="-1">Город поступления</option>
-                                        <option value = "1">Казань</option>
-                                        <option value = "181">Набережные Челны</option>
-                                        <option value = "224">Нижнекамск</option>
-                                        <option value = "266">Чистополь</option>
-                                        <option value = "323">Зеленодольск</option>
-                                        <option value = "343">Альметьевск</option>
-                                        <option value = "373">Бугульма</option>
-                                </select>
+						<select  name="branch" class="branch reset_financeform" required="required">
+							<option value="-1">Город поступления</option>
+							<option value = "1">Казань</option>
+							<option value = "181">Набережные Челны</option>
+							<option value = "224">Нижнекамск</option>
+							<option value = "266">Чистополь</option>
+							<option value = "323">Зеленодольск</option>
+							<option value = "343">Альметьевск</option>
+							<option value = "373">Бугульма</option>
+						</select>
 				</xsl:otherwise>
-				 </xsl:choose>
-				<select name="studyform" class="studyform reset_financeform" required="required">
-					<option value="-1">Выберите форму обучения</option>
-					<option value="2">Очная</option>
-					<option value="1">Заочная</option>
-					<option value="3">Вечерняя</option>
-				</select>
-				<select name="skillvalue" class="skillvalue reset_financeform" required="required">
-					<option value="-1">Выберите уровень образования</option>
-					<option value="1">Бакалавриат</option>
-					<option value="2">Магистратура</option>
-					<option value="3">Аспирантура</option>
-					<option value="4">Колледж</option>
-				</select>
-				<select name="financeform" class="financeform getRatingEducPlans" required="required">
-					<option value="-1">Выберите форму финансирования</option>
-					<option value="0">Места по договорам об оказании платных образовательных услуг</option>
-					<option value="1">Бесплатные места</option>
-					<option value="2">Бюджетные места</option>
-				</select>
+				</xsl:choose>
+				<xsl:choose>
+					<xsl:when test="branch = '343'">
+						<select name="studyform" class="studyform reset_financeform" required="required">
+							<option value="-1">Выберите форму обучения</option>
+							<option value="2">Очная</option>
+						</select>
+					</xsl:when>
+					<xsl:otherwise>
+						<select name="studyform" class="studyform reset_financeform" required="required">
+							<option value="-1">Выберите форму обучения</option>
+							<option value="2">Очная</option>
+							<option value="1">Заочная</option>
+							<option value="3">Вечерняя</option>
+						</select>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:choose>
+					<xsl:when test="branch = '343'">
+						<select name="skillvalue" class="skillvalue reset_financeform" required="required">
+							<option value="-1">Выберите уровень образования</option>
+							<option value="4">Колледж</option>
+						</select>
+					</xsl:when>
+					<xsl:otherwise>
+						<select name="skillvalue" class="skillvalue reset_financeform" required="required">
+							<option value="-1">Выберите уровень образования</option>
+							<option value="1">Бакалавриат</option>
+							<option value="2">Магистратура</option>
+							<option value="3">Аспирантура</option>
+							<option value="4">Колледж</option>
+						</select>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:choose>
+					<xsl:when test="branch = '343'">
+						<select name="financeform" class="financeform getRatingEducPlans" required="required">
+							<option value="-1">Выберите форму финансирования</option>
+							<option value="0">Места по договорам об оказании платных образовательных услуг</option>
+						</select>
+					</xsl:when>
+					<xsl:otherwise>
+						<select name="financeform" class="financeform getRatingEducPlans" required="required">
+							<option value="-1">Выберите форму финансирования</option>
+							<option value="0">Места по договорам об оказании платных образовательных услуг</option>
+							<option value="1">Бесплатные места</option>
+							<option value="2">Бюджетные места</option>
+						</select>
+					</xsl:otherwise>
+				</xsl:choose>
+
 				<div class="resultEducPlans">
 					<select name="speccode" class="speccode" required="required">
 						<option value="-1">Выберите направление подготовки</option>
