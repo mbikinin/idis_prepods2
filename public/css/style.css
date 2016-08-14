@@ -468,3 +468,12 @@ table.result_i th
 .rating_info_table thead{
 	font-size: 10px;
 }
+.bg{
+	left: 0;
+	top: 0;
+	position: fixed;
+	background: #e1e1e1;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+}

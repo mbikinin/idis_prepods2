@@ -10,7 +10,7 @@ $(document).ready(function() {
         _skillvalue = $('.skillvalue').val();
         _financeform = $('.financeform').val();
 
-        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
             url : "/ratings/getEducPlans",
@@ -45,7 +45,7 @@ $(document).ready(function() {
             alert("Необходимо выбрать все поля!")
             return false;
         }
-        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
             url : "/ratings/"+ _url,
@@ -88,7 +88,7 @@ $(document).ready(function() {
             alert("Необходимо выбрать город!")
             return false;
         }
-        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
             url : "/ratings/getInfoEducPlans",
@@ -114,7 +114,7 @@ $(document).ready(function() {
             alert("Необходимо выбрать все поля!")
             return false;
         }
-        $('.progress_box').html("<div class='loading'><img src = '/public/images/loader.gif'/></div>");
+        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
         $.ajax({
             type : "post",
             url : "/ratings/getInformationRating",
