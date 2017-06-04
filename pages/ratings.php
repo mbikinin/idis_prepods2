@@ -52,7 +52,6 @@ class ratings_Page extends View
         $params = new stdClass();
         $params->branch = $_POST['branch'];
         $params->year = date('Y');
-        $params->level = $_POST['level'];
         $params->financeform = $_POST['financeform'];
         $params->studyform = $_POST['studyform'];
         $params->skillvalue = $_POST['skillvalue'];
@@ -102,6 +101,7 @@ class ratings_Page extends View
 
     public static function getEntrantsSubmitDocumentsAjaxAction()
     {
+        //branch=1&speccode=1000590&skillid=62&studyform=2&year=2017&financeform=0
         $params = new stdClass();
         $skillvalue = $_POST['skillvalue'];
         $params->branch = $_POST['branch'];
@@ -110,7 +110,7 @@ class ratings_Page extends View
         $params->studyform = $_POST['studyform'];
         $params->year = date('Y');
         $params->financeform = $_POST['financeform'];
-        $params->krim = $_POST['krim'];
+
         $response = self::connectWsdl("entrants?wsdl")->getEntrantsSubmitDocuments($params);
 
         if (!empty($response-> return)) {
@@ -132,8 +132,8 @@ class ratings_Page extends View
             self::$page['content']['current_date'] = date('d.m.Y');
 		}
 		else {
-        self::$page['content']['error'] = "нет данных";
-    }
+            self::$page['content']['error'] = "нет данных";
+        }
 		switch ($skillvalue) {
             case '4':
                 self::showXSLT('pages/ratings/EntrantsDocumentsCollege');
@@ -150,14 +150,16 @@ class ratings_Page extends View
 
         $financeform = $_POST['financeform'];
         $skillvalue = $_POST['skillvalue'];
-
+        $kvota= $_POST['kvota'];
+        //?branch=1&speccode=1000590&skillid=62&studyform=2&year=2017&financeform=0&kvota=0
         $params->branch = $_POST['branch'];
         $params->skillid = $_POST['skillid'];
         $params->speccode = $_POST['speccode'];
         $params->studyform = $_POST['studyform'];
         $params->year = date('Y');
         $params->financeform = $financeform;
-        $params->krim = $_POST['krim'];
+        $params->kvota = $kvota;
+
         $response = self::connectWsdl("entrants?wsdl")->getEntrantsList($params);
         $extExamScoreArray = array();
         $schoolDiscScoreArray = array();

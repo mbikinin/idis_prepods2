@@ -7,7 +7,7 @@ $(document).ready(function() {
 		});
 		return false;
 	}
-	$('.showBudget').live("click", function(){
+	/*$('.showBudget').live("click", function(){
 		if($(this).parents('.phase').find('.s2').hasClass('hideBlock')){
 			$(this).parents('.phase').find('.s2').removeClass('hideBlock');
 			$(this).parents('.phase').find('.s2').addClass('showBlock');
@@ -18,7 +18,7 @@ $(document).ready(function() {
 			$(this).parents('.phase').find('.s2').removeClass('showBlock');
 		}
 		return false;
-	});
+	});*/
 	
 
 

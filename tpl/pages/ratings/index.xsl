@@ -96,12 +96,16 @@
 					<option value="-1">Выберите результат</option>
 					<option value="1">Cписок лиц, подавших документы</option>
 					<option value="2">Cписок поступающих</option>
+					<option value="3">Результаты вступительных испытаний</option>
+					<option value="4">Приказы о зачислении</option>
+				</select>
+				<select name="kvota_type" class="hide kvota_type">
+					<option value="-1">Выберите тип квоты</option>
+					<option value="1">Список поступающих по особой квоте</option>
+					<option value="0">Список поступающих по основному конкурсу</option>
+					<option value="2">Список поступающих по целевой квоте</option>
 				</select>
 				<div class="clearfix"></div>
-				<div class="krim_box">
-					<input type="checkbox" name="krim" class="krim" />
-					<span>Отношусь к числу лиц постоянно<br/> проживающих в республике Крым</span>
-				</div>
 				<br/>
 				<div class="progress_box"></div>
 				<br/>

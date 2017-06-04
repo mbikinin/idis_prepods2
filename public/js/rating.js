@@ -1,6 +1,9 @@
 // Выполнение после загрузки на всех страницах
+function loading(){
+    $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
+}
 $(document).ready(function() {
-    $(".getRatingEducPlans").live("change", function(){
+    $('body').on("change", ".getRatingEducPlans", function(){
         this_ = $(this);
         result = ".resultEducPlans";
 
@@ -8,9 +11,10 @@ $(document).ready(function() {
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val()
         _skillvalue = $('.skillvalue').val();
-        _financeform = $('.financeform').val();
+        //$('.speccode').addClass('hide')
+        $('.resultEducPlans').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
 
-        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
+        //loading();
         $.ajax({
             type : "post",
             url : "/ratings/getEducPlans",
@@ -18,34 +22,45 @@ $(document).ready(function() {
                 branch : _branch,
                 studyform : _studyform,
                 financeform : _financeform,
-                skillvalue : _skillvalue,
-                financeform : _financeform
+                skillvalue : _skillvalue
             }
         }).done(function(data) {
             this_.parent().find('.resultEducPlans').html(data);
             $('.loading').remove();
         });
-
         return false;
     });
 
     $(".getResultList").click( function(){
         this_ = $(this);
         result = ".resultList";
+        var list_type = $('.list_type').val();
+        switch(list_type){
+            case "1":
+                _url = 'getEntrantsSubmitDocuments';
+                break;
+            case "2":
+                _url = 'getEntrantsList';
+                break;
+        }
 
-        _url = $('.list_type').val() == '1' ? 'getEntrantsSubmitDocuments' :'getEntrantsList';
         _branch = $('.branch').val();
         _speccode = $('.speccode').val();
         _skillid = $('.speccode').find(':selected').attr('rel');
         _skillvalue = $('.skillvalue').val();
         _studyform = $('.studyform').val();
         _financeform = $('.financeform').val();
-        _krim = $('.krim').is(":checked") ? 1 : 0;
+        _kvota = $('.kvota_type').val();
+
         if(!validate()) {
-            alert("Необходимо выбрать все поля!")
+            $.alert({
+                title: 'Внимание!',
+                content: "Необходимо выбрать все поля",
+            });
             return false;
         }
-        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
+
+        loading();
         $.ajax({
             type : "post",
             url : "/ratings/"+ _url,
@@ -56,39 +71,53 @@ $(document).ready(function() {
                 speccode : _speccode,
                 studyform : _studyform,
                 financeform : _financeform,
-                krim : _krim
+                kvota : _kvota
             }
         }).done(function(data) {
             this_.parent().find('.resultList').html(data);
             $('.loading').remove();
         });
-
         return false;
     });
 
-    $('.reset_financeform').live("change", function(){
+    $('body').on("change", 'select', function(){
+        $(this).val() != -1 ?
+            $(this).removeClass('error') :
+            $(this).addClass('error')
+    });
+    $('body').on("change", '.reset_financeform', function(){
         $('.financeform').val("-1")
-    })
+    });
 
-    $('.reset_educplans').live("change", function(){
+    $('body').on("change", '.reset_educplans', function(){
         $('.speccode').val("-1")
-    })
-    $('.inf_reset_skill').live("change", function(){
+    });
+
+    $('body').on("change", '.inf_reset_skill', function(){
         $('.skillvalue').val("-1")
+    });
+
+    $('body').on("change", '.list_type', function(){
+        $(this).val() == 2 ?
+            $('.kvota_type').removeClass('hide'):
+            $('.kvota_type').addClass('hide')
     })
 
 
     //Get information Educ plans list
-    $(".getInfoEducPlans").live("change", function(){
+    $('body').on("change", ".getInfoEducPlans", function(){
         this_ = $(this);
         result = ".resultEducPlans";
         _branch = $('.branch').val();
         _skillvalue = $('.skillvalue').val();
         if(_branch < 0 ) {
-            alert("Необходимо выбрать город!")
+            $.alert({
+                title: 'Внимание!',
+                content: "Необходимо выбрать город",
+            });
             return false;
         }
-        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
+
         $.ajax({
             type : "post",
             url : "/ratings/getInfoEducPlans",
@@ -111,10 +140,13 @@ $(document).ready(function() {
         _speccode = $('.speccode').find(':selected').attr('rel');
         _skillvalue = $('.skillvalue').val();
         if(!validate()) {
-            alert("Необходимо выбрать все поля!")
+            $.alert({
+                title: 'Внимание!',
+                content: "Необходимо выбрать все поля!",
+            });
             return false;
         }
-        $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
+        loading();
         $.ajax({
             type : "post",
             url : "/ratings/getInformationRating",
@@ -131,13 +163,14 @@ $(document).ready(function() {
         return false;
     });
 
+
     //Get information list
 
 });
 function validate(){
     result = 0
     $.each($('.rating_box select'), function(key, value) {
-        if(($(this).val()) == '-1') {
+        if(($(this).val()) == '-1' && $(this).is(':not(:hidden)')) {
             $(this).addClass('error')
             result++;
         }

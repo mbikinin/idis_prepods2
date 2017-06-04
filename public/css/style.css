@@ -5,7 +5,9 @@
 }
 .loading{
 	display: inline-block;
-	margin-left:46px;
+}
+.loading img{
+	width: 100px;
 }
 tr.pcolor1 td{
 	background: #98FB98;
@@ -413,16 +415,22 @@ table.result_i th
 	padding: 10px;
 }
 .resultEducPlans {
+	width: 250px;
 	display: inline-block;
+	text-align: center;
 }
 .rating_box select{
-	width: 200px;
+	height: auto;
+	width: 250px;
+	padding: 8px;
+	margin-left: 4px;
 }
 .rating_box select.error{
 	border: solid 1px #b80000;
 }
 .progress_box{
-	height: 10px;
+	padding: 10px;
+	text-align: center;
 }
 
 .krim_box{
@@ -476,4 +484,8 @@ table.result_i th
 	width: 100%;
 	height: 100%;
 	opacity: 0.1;
+}
+
+.jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
+	width: 50%;
 }

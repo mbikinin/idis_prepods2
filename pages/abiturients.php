@@ -10,7 +10,7 @@ class abiturients_Page extends View {
 	/*
 	 * Инициализация контроллера
 	 */
-	private static $_year = 2015;
+	private static $_year = 2017;
 	
 	public static function initController($action) {
 
@@ -43,7 +43,7 @@ class abiturients_Page extends View {
 		$params -> year = self::$_year;
 		$params -> level = $_POST['level'];
 		$params -> budget = $_POST['budget'];
-		$params -> free = $_POST['free'];
+		#$params -> free = $_POST['free'];
 
 		$response = self::connectWsdl("studyform?wsdl") -> getStudyForms($params) ? self::connectWsdl("studyform?wsdl") -> getStudyForms($params) : null;
 
@@ -61,30 +61,25 @@ class abiturients_Page extends View {
 		self::showXSLT('pages/abiturients/StudyForms');
 	}
 
-	public static function getEducPlansAjaxAction() {
+    /**
+     * @return array|void
+     */
+    public static function getEducPlansAjaxAction() {
 		$params = new stdClass();
 		$params -> branch = Session::get("filial") ? Session::get("filial") : "1";
-		$params -> year = self::$_year;
-		$params -> level = $_POST['level'];
-		$params -> budget = $_POST['budget'];
-		$params -> studyform = $_POST['studyform'];
-		$params -> free = $_POST['free'];
+        $params -> studyform = 2;
+        $params -> skillvalue = 1;
+        $params -> year = self::$_year;
+		$params -> financeform = 1;
 		
 		$response = self::connectWsdl("educplan?wsdl") -> getEducPlans($params);
-
 		if(isset($response -> return) && count($response -> return) == 1){
 			$array[] = array(
-				"id" => $response -> return -> id, 
-				"skillId" => $response -> return -> skillId, 
-				"budget" => $_POST['budget'],
-				"free" => $_POST['free'],
-				"specialityName" => $response -> return -> specialityName,
-				"budgetplaces"=> !empty($response -> return -> budgetplaces) ? $response -> return -> budgetplaces : null,
-				"kvotaplaces"=> !empty($response -> return -> kvotaplaces) ? $response -> return -> kvotaplaces : null,
-				"freeplaces"=> !empty($response -> return -> freeplaces) ? $response -> return -> freeplaces : null,
-				"bplaces"=> !empty($res -> bplaces) ? $res -> bplaces : null,
-				"kplaces"=> !empty($res -> kplaces) ? $res -> kplaces : null,
-				"fplaces"=> !empty($res -> fplaces) ? $res -> fplaces : null,
+				"skillId"=> $response -> return -> skillId,
+				"specialityId" => $response -> return -> specialityId,
+				"specialityName"=> $response -> return -> specialityName,
+                "studyFormId"=> $response -> return -> studyFormId,
+
 				"dateNow" => date('d/m/Y',  time()));
 		}
 		else if (!empty($response -> return) && count($response -> return) > 1) {
@@ -157,7 +152,8 @@ class abiturients_Page extends View {
 			self::$page['content'] = array();
 			self::$page['content']['getStages'] = $array;
 			self::$page['content']['level'] = $_POST['level'];
-		} else {
+		}
+		else {
 			self::$page['content']['error'] = "нет данных";
 		}
 		self::showXSLT('pages/abiturients/getStages');
@@ -165,7 +161,7 @@ class abiturients_Page extends View {
 
 	public static function getEntrantsInfoAjaxAction() {
 		$params = new stdClass();
-		$params -> free = $_POST["free"];
+		#$params -> free = $_POST["free"];
 		$params -> planid = $_POST["plan"];
 		$params -> stageid = $_POST['stage'];
 		$params -> phase = $_POST['phase'];
@@ -335,9 +331,11 @@ class abiturients_Page extends View {
 	}
 
 	private static function connectWsdl($service) {
-		$Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials', array('@samigullin', 'mklP54sd'));
+		$Headers = new SoapHeader('http://idis.ieml.ru/ws/person', 'UserCredentials',
+            array('@samigullin', 'mklP54sd'));
 
-		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service, array('encoding' => 'utf-8', "exceptions" => 0));
+		$client = new SoapClient("https://idis.ieml.ru/Education/services/" . $service,
+            array('encoding' => 'utf-8', "exceptions" => 1));
 		$client -> __setSoapHeaders($Headers);
 		return $client;
 	}
