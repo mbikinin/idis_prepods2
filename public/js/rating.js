@@ -42,6 +42,9 @@ $(document).ready(function() {
             case "2":
                 _url = 'getEntrantsList';
                 break;
+            case "3":
+                _url = 'getExamsList';
+                break;
         }
 
         _branch = $('.branch').val();
@@ -98,7 +101,7 @@ $(document).ready(function() {
     });
 
     $('body').on("change", '.list_type', function(){
-        $(this).val() == 2 ?
+        $(this).val() == 2 && $('.financeform').val() == 2 ?
             $('.kvota_type').removeClass('hide'):
             $('.kvota_type').addClass('hide')
     })

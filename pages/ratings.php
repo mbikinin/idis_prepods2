@@ -143,6 +143,46 @@ class ratings_Page extends View
         }
 	}
 
+    public static function getExamsListAjaxAction()
+    {
+        //branch=1&speccode=1000594&skillid=62&studyform=2&year=2017&financeform=0
+        $params = new stdClass();
+        $params->branch = $_POST['branch'];
+        $params->skillid = $_POST['skillid'];
+        $params->speccode = $_POST['speccode'];
+        $params->studyform = $_POST['studyform'];
+        $params->year = date('Y');
+        $params->financeform = $_POST['financeform'];
+
+        $response = self::connectWsdl("entrants?wsdl")->getExamsList($params);
+        $extExamScoreArray = array();
+        if (!empty($response-> return)) {
+            for ($i = 0; $i < count($response-> return); $i++) {
+
+                $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
+
+                    unset($extExamScoreArray);
+                    $extExamScoreArray = !empty($res->extExamScore) ? self::getExamScoreArray($res->extExamScore) : null;
+                    $array[$i] = array(
+                        "familyname" => $res->familyname,
+                        "firstname" => $res->firstname,
+                        "secondname" => $res->secondname,
+                        "resultScore" => $res->resultScore,
+                        "extExamScores" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
+                        "extExamScores2" => !empty($extExamScoreArray) ? $extExamScoreArray : array()
+                    );
+			}
+			self::$page['content'] = array();
+			self::$page['content']['ExamsList'] =  $array;
+            self::$page['content']['current_date'] = date('d.m.Y');
+		}
+
+		else {
+            self::$page['content']['error'] = "нет данных";
+        }
+        self::showXSLT('pages/ratings/ExamsList');
+	}
+
 
     public static function getEntrantsListAjaxAction()
     {
