@@ -45,6 +45,9 @@ $(document).ready(function() {
             case "3":
                 _url = 'getExamsList';
                 break;
+            case "4":
+                _url = 'getOrders';
+                break;
         }
 
         _branch = $('.branch').val();

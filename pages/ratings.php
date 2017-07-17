@@ -183,6 +183,41 @@ class ratings_Page extends View
         self::showXSLT('pages/ratings/ExamsList');
 	}
 
+    public static function getOrdersAjaxAction()
+    {
+        //branch=1&speccode=1000594&skillid=62&studyform=2&year=2017&financeform=0
+        //branch=1&speccode=1000590&skillid=62&studyform=2&year=2017&financeform=0
+        $params = new stdClass();
+        $params->branch = $_POST['branch'];
+        $params->skillid = $_POST['skillid'];
+        $params->speccode = $_POST['speccode'];
+        $params->studyform = $_POST['studyform'];
+        $params->year = date('Y');
+        $params->financeform = $_POST['financeform'];
+
+        $response = self::connectWsdl("entrants?wsdl")->getOrders($params);
+        if (!empty($response-> return)) {
+            for ($i = 0; $i < count($response-> return); $i++) {
+
+                $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
+                $array[$i] = array(
+                    "familyname" => $res->familyname,
+                    "firstname" => $res->firstname,
+                    "secondname" => $res->secondname,
+                    "resultScore" => $res->resultScore,
+                    "status" => $res->status,
+                );
+            }
+            self::$page['content'] = array();
+            self::$page['content']['ExamsList'] =  $array;
+            self::$page['content']['current_date'] = date('d.m.Y');
+		}
+
+		else {
+        self::$page['content']['error'] = "нет данных";
+    }
+        self::showXSLT('pages/ratings/Orders');
+	}
 
     public static function getEntrantsListAjaxAction()
     {
