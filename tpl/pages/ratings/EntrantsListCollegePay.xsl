@@ -21,6 +21,7 @@
                         <tr>
                             <th>ФИО</th>
                             <th>Оригинал аттестата/диплома</th>
+                            <th>Средний балл по аттестату</th>
                             <th>Статус</th>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                 <xsl:value-of select="secondname " />
             </td>
             <td><xsl:value-of select="docOriginal" /></td>
+            <td><xsl:value-of select="averagescore" /></td>
             <td><xsl:value-of select="status" /></td>
         </tr>
     </xsl:template>
