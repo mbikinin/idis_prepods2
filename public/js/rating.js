@@ -104,7 +104,7 @@ $(document).ready(function() {
     });
 
     $('body').on("change", '.list_type', function(){
-        $(this).val() == 2 && $('.financeform').val() == 2 ?
+        $(this).val() == 2 && $('.financeform').val() == 2 && $('.skillvalue').val() != 4 ?
             $('.kvota_type').removeClass('hide'):
             $('.kvota_type').addClass('hide')
     })
