@@ -93,6 +93,7 @@ $(document).ready(function() {
     });
     $('body').on("change", '.reset_financeform', function(){
         $('.financeform').val("-1")
+        $('.list_type').val("-1")
     });
 
     $('body').on("change", '.reset_educplans', function(){
