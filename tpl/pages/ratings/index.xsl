@@ -111,6 +111,8 @@
 				<br/>
 				<input type="button" class="getResultList" value="Получить список" />
 				<br/><br/>
+				<input style="display: none;" type="text" id="search" placeholder="Поиск по фамилии"/>
+				<br/><br/>
 				<div class="resultList"></div>
 			</form>
 		</div>

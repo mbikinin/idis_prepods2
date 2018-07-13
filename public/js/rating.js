@@ -2,7 +2,18 @@
 function loading(){
     $('.progress_box').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
 }
+
 $(document).ready(function() {
+    $("#search").on('keyup',function(){
+        var f = $(this).val();
+        $("table.result tr").each(function(){
+            if ($(this).text().search(new RegExp(f, "i")) < 0) {
+                $(this).fadeOut();
+            } else {
+                $(this).show();
+            }
+        });
+    });
     $('body').on("change", ".getRatingEducPlans", function(){
         this_ = $(this);
         result = ".resultEducPlans";
@@ -80,6 +91,7 @@ $(document).ready(function() {
                 kvota : _kvota
             }
         }).done(function(data) {
+            $('#search').show();
             this_.parent().find('.resultList').html(data);
             $('.loading').remove();
         });
