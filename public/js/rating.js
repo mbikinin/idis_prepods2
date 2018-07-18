@@ -6,7 +6,7 @@ function loading(){
 $(document).ready(function() {
     $("#search").on('keyup',function(){
         var f = $(this).val();
-        $("table.result tr").each(function(){
+        $("table.result tbody tr").each(function(){
             if ($(this).text().search(new RegExp(f, "i")) < 0) {
                 $(this).fadeOut();
             } else {

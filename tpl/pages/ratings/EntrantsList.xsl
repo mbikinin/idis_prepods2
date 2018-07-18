@@ -27,12 +27,14 @@
                             <th>Русский язык</th>-->
                             <th>Количество баллов<br/> по индивидуальным достижениям</th>
                             <th>Оригинал аттестата/диплома</th>
-                            <th>Заявление о <br/>согласии на обучение</th>
+                            <th>Заявление о <br/>согласии на зачисление</th>
                             <th>Особые права</th>
                             <th>Статус</th>
                         </tr>
                     </thead>
-                    <xsl:apply-templates select="EntrantsList/item" />
+                    <tbody>
+                        <xsl:apply-templates select="EntrantsList/item" />
+                    </tbody>
                 </table>
             </xsl:otherwise>
         </xsl:choose>

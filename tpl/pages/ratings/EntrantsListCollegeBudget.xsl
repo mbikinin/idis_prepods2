@@ -29,7 +29,9 @@
                             <th>Статус</th>
                         </tr>
                     </thead>
-                    <xsl:apply-templates select="EntrantsList/item" />
+                    <tbody>
+                        <xsl:apply-templates select="EntrantsList/item" />
+                    </tbody>
                 </table>
             </xsl:otherwise>
         </xsl:choose>

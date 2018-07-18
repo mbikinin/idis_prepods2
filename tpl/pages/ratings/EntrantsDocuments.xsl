@@ -31,7 +31,9 @@
                         <th>Условия приема</th>
                     </tr>
                 </thead>
-                <xsl:apply-templates select="EntrantsSubmitDocuments/item" />
+                <tbody>
+                    <xsl:apply-templates select="EntrantsSubmitDocuments/item" />
+                </tbody>
             </table>
         </xsl:otherwise>
         </xsl:choose>
