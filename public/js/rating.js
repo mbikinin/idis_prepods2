@@ -54,7 +54,7 @@ $(document).ready(function() {
                 _url = 'getEntrantsList';
                 break;
             case "3":
-                _url = 'getExamsList';
+                _url = 'getEntrantsList';
                 break;
             case "4":
                 _url = 'getOrders';
