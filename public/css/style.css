@@ -452,7 +452,7 @@ table.result_i th
 	background: #f0f0f0; /* Цвет фона */
 }
 
-.rating_box table.result tbody{
+/*.rating_box table.result tbody{
 	counter-reset: numeric-row;
 }
 .rating_box table.result tbody tr.num {
@@ -465,7 +465,7 @@ table.result_i th
 	padding: 9px;
 	font-size: 12px;
 	content: counter(numeric-row);
-}
+}*/
 .rating_box table.result thead tr:before,
 .rating_box table.result thead table tr:before,
 .rating_box table.result tbody table tr:before

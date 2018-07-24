@@ -19,6 +19,7 @@
                 <table class="result EntrantsSubmitDocuments_box">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>ФИО</th>
                             <th>Оригинал аттестата/диплома</th>
                             <th>Средний балл по аттестату</th>
@@ -35,6 +36,7 @@
 
     <xsl:template match="EntrantsList/item">
         <tr class="num">
+            <td><xsl:value-of select="position()" /></td>
             <td>
                 <xsl:value-of select="familyname" />&#160;
                 <xsl:value-of select="firstname" />&#160;

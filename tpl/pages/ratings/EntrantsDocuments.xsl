@@ -22,6 +22,7 @@
             <table class="result EntrantsSubmitDocuments_box">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>ФИО</th>
                         <th>Общее количество <br/>баллов</th>
                         <!--Вывод дисциплин-->
@@ -41,6 +42,7 @@
 
     <xsl:template match="EntrantsSubmitDocuments/item">
        <tr class="num">
+           <td><xsl:value-of select="position()" /></td>
            <td>
                <xsl:value-of select="familyname" />&#160;
                <xsl:value-of select="firstname" />&#160;
