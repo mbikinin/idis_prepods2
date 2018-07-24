@@ -470,7 +470,6 @@ table.result_i th
 .rating_box table.result thead table tr:before,
 .rating_box table.result tbody table tr:before
 {
-	content: "";
 	padding: 0;
 }
 .rating_info_table thead{
