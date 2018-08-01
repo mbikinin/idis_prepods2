@@ -20,9 +20,9 @@ $(document).ready(function() {
 
         _branch = $('.branch').val();
         _studyform = $('.studyform').val();
-        _financeform = $('.financeform').val()
+        _financeform = $('.financeform').val();
         _skillvalue = $('.skillvalue').val();
-        //$('.speccode').addClass('hide')
+
         $('.resultEducPlans').html("<div class='loading'><div class='bg'></div><img src = '/public/images/loader.gif'/></div>");
 
         //loading();
@@ -77,6 +77,7 @@ $(document).ready(function() {
             return false;
         }
 
+
         loading();
         $.ajax({
             type : "post",
@@ -93,6 +94,30 @@ $(document).ready(function() {
         }).done(function(data) {
             $('#search').show();
             this_.parent().find('.resultList').html(data);
+            if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
+                _speccode == "1001533" && _studyform == "2" && _financeform == "2" && _kvota == "0"){
+                $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 1 этапе - 8.<p>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
+                _speccode == "1001424" && _studyform == "2" && _financeform == "2" && _kvota == "0") {
+                $("<div style='padding: 10px 0'>Количество мест: всего - 14, для зачисления в 1 этапе - 12.<p>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "51" && _skillvalue == "4" &&
+                _speccode == "1000424" && _studyform == "2" && _financeform == "2" && _kvota == "-1"){
+                $("<div style='padding: 10px 0'>Количество мест: 15<p>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "51" && _skillvalue == "4" &&
+                _speccode == "0601" && _studyform == "2" && _financeform == "2" && _kvota == "-1") {
+                $("<div style='padding: 10px 0'>Количество мест: 20<p>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "51" && _skillvalue == "4" &&
+                _speccode == "1000285" && _studyform == "2" && _financeform == "2" && _kvota == "-1") {
+                $("<div style='padding: 10px 0'>Количество мест: 20<p>").insertAfter("#search");
+            }
+            else if(_branch == "224" && _skillid == "51" && _skillvalue == "4" &&
+                _speccode == "1000285" && _studyform == "2" && _financeform == "2" && _kvota == "-1") {
+                $("<div style='padding: 10px 0'>Количество мест: 20<p>").insertAfter("#search");
+            }
             $('.loading').remove();
         });
         return false;
