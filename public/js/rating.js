@@ -118,6 +118,18 @@ $(document).ready(function() {
                 _speccode == "1000285" && _studyform == "2" && _financeform == "2" && _kvota == "-1") {
                 $("<div style='padding: 10px 0'>Количество мест: 20</div>>").insertAfter("#search");
             }
+            else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
+                _speccode == "1001527" && _studyform == "2" && _financeform == "1") {
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
+                _speccode == "1001844" && _studyform == "2" && _financeform == "1") {
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>>").insertAfter("#search");
+            }
+            else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
+                _speccode == "1001324" && _studyform == "2" && _financeform == "1") {
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>>").insertAfter("#search");
+            }
             $('.loading').remove();
         });
         return false;
