@@ -94,6 +94,7 @@ $(document).ready(function() {
         }).done(function(data) {
             $('#search').show();
             this_.parent().find('.resultList').html(data);
+            $("#search").next("div").remove();
             if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001533" && _studyform == "2" && _financeform == "2" && _kvota == "0"){
                 $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 1 этапе - 8.</div>").insertAfter("#search");
