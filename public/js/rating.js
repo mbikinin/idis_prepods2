@@ -97,11 +97,11 @@ $(document).ready(function() {
             $("#search").next("div").remove();
             if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001533" && _studyform == "2" && _financeform == "2" && _kvota == "0"){
-                $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 1 этапе - 8.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 2 этапе - 1.</div>").insertAfter("#search");
             }
             else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001424" && _studyform == "2" && _financeform == "2" && _kvota == "0") {
-                $("<div style='padding: 10px 0'>Количество мест: всего - 14, для зачисления в 1 этапе - 12.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего - 14, для зачисления в 2 этапе - 2.</div>").insertAfter("#search");
             }
             else if(_branch == "1" && _skillid == "51" && _skillvalue == "4" &&
                 _speccode == "1000424" && _studyform == "2" && _financeform == "2" && _kvota == "-1"){
@@ -121,15 +121,15 @@ $(document).ready(function() {
             }
             else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001527" && _studyform == "2" && _financeform == "1") {
-                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 2 этапе - 1.</div>").insertAfter("#search");
             }
             else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001844" && _studyform == "2" && _financeform == "1") {
-                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 2 этапе - 1.</div>").insertAfter("#search");
             }
             else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001324" && _studyform == "2" && _financeform == "1") {
-                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 1 этапе - 4.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего - 5, для зачисления в 2 этапе - 1.</div>").insertAfter("#search");
             }
             $('.loading').remove();
         });

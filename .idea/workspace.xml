@@ -27,18 +27,18 @@
       <file leaf-file-name="rating.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/rating.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+            <state relative-caret-position="726">
+              <caret line="131" column="104" selection-start-line="131" selection-start-column="104" selection-end-line="131" selection-end-column="104" />
               <folding>
-                <marker date="1533202853762" expanded="true" signature="3280:3295" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="3613:3628" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="3950:3965" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="4245:4260" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="4543:4558" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="4843:4858" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="5123:5138" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="5441:5456" ph="..." />
-                <marker date="1533202853762" expanded="true" signature="5759:5774" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="3280:3295" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="3613:3628" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="3949:3964" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="4244:4259" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="4542:4557" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="4842:4857" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="5122:5137" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="5440:5455" ph="..." />
+                <marker date="1533294297899" expanded="true" signature="5758:5773" ph="..." />
               </folding>
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="teachers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/teachers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="1034">
               <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
               <folding />
             </state>
@@ -89,7 +89,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="10340">
               <caret line="470" column="46" selection-start-line="470" selection-start-column="46" selection-end-line="470" selection-end-column="46" />
               <folding />
             </state>
@@ -99,7 +99,7 @@
       <file leaf-file-name="ratings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
+            <state relative-caret-position="2222">
               <caret line="101" column="41" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
@@ -112,7 +112,7 @@
       <file leaf-file-name="EntrantsList.xsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/EntrantsList.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="484">
               <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding />
             </state>
@@ -486,14 +486,15 @@
       <workItem from="1531983131318" duration="717000" />
       <workItem from="1532413564540" duration="1371000" />
       <workItem from="1533112262872" duration="5936000" />
+      <workItem from="1533293957671" duration="349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37388000" />
+    <option name="totallyTimeSpent" value="37737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1936" height="1038" extended-state="1" />
+    <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23983316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -856,7 +857,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
+        <state relative-caret-position="10340">
           <caret line="470" column="46" selection-start-line="470" selection-start-column="46" selection-end-line="470" selection-end-column="46" />
           <folding />
         </state>
@@ -882,7 +883,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/EntrantsList.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="484">
           <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding />
         </state>
@@ -890,7 +891,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/teachers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="1034">
           <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
           <folding />
         </state>
@@ -898,7 +899,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="2222">
           <caret line="101" column="41" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
@@ -909,18 +910,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/rating.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+        <state relative-caret-position="726">
+          <caret line="131" column="104" selection-start-line="131" selection-start-column="104" selection-end-line="131" selection-end-column="104" />
           <folding>
-            <marker date="1533202853762" expanded="true" signature="3280:3295" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="3613:3628" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="3950:3965" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="4245:4260" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="4543:4558" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="4843:4858" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="5123:5138" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="5441:5456" ph="..." />
-            <marker date="1533202853762" expanded="true" signature="5759:5774" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="3280:3295" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="3613:3628" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="3949:3964" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="4244:4259" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="4542:4557" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="4842:4857" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="5122:5137" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="5440:5455" ph="..." />
+            <marker date="1533294297899" expanded="true" signature="5758:5773" ph="..." />
           </folding>
         </state>
       </provider>
