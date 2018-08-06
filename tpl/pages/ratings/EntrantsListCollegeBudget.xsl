@@ -28,6 +28,7 @@
                             <th>Русский язык</th>-->
                             <th>Оригинал аттестата/диплома</th>
                             <th>Статус</th>
+                            <th>Индивидуальные достижения</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,6 +60,7 @@
             </td>
             <td><xsl:value-of select="docOriginal" /></td>
             <td><xsl:value-of select="status" /></td>
+            <td><xsl:value-of select="achivScore" /></td>
         </tr>
     </xsl:template>
 

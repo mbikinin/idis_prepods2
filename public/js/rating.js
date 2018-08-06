@@ -97,7 +97,7 @@ $(document).ready(function() {
             $("#search").next("div").remove();
             if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001533" && _studyform == "2" && _financeform == "2" && _kvota == "0"){
-                $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 2 этапе - 1.</div>").insertAfter("#search");
+                $("<div style='padding: 10px 0'>Количество мест: всего 9, для зачисления в 2 этапе - 2.</div>").insertAfter("#search");
             }
             else if(_branch == "1" && _skillid == "62" && _skillvalue == "1" &&
                 _speccode == "1001424" && _studyform == "2" && _financeform == "2" && _kvota == "0") {
