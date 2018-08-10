@@ -24,6 +24,7 @@
                             <th>Оригинал аттестата/диплома</th>
                             <th>Средний балл по аттестату</th>
                             <th>Статус</th>
+                            <th>Дисциплины</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,22 @@
             <td><xsl:value-of select="docOriginal" /></td>
             <td><xsl:value-of select="averagescore" /></td>
             <td><xsl:value-of select="status" /></td>
+            <td>
+                <xsl:if test="count(extExamScores/item) != 0 ">
+                    <table>
+                        <tbody>
+                            <tr><xsl:apply-templates select="extExamScores/item" /></tr>
+                            <tr><xsl:apply-templates select="extExamScores2/item" /></tr>
+                        </tbody>
+                    </table>
+                </xsl:if>
+            </td>
         </tr>
+    </xsl:template>
+    <xsl:template match="EntrantsList/item/extExamScores/item">
+        <td><xsl:value-of select = "disciplineName" /></td>
+    </xsl:template>
+    <xsl:template match="EntrantsList/item/extExamScores2/item">
+        <td><xsl:value-of select = "score" /></td>
     </xsl:template>
 </xsl:stylesheet>

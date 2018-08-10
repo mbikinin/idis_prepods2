@@ -268,11 +268,25 @@ class ratings_Page extends View
 			self::$page['content']['EntrantsList'] =  $array;
             self::$page['content']['current_date'] = date('d.m.Y');
 		}
-        else {
-            self::$page['content']['error'] = "нет данных";
-        }
+    else {
+        self::$page['content']['error'] = "нет данных";
+    }
 
-		self::showXSLT('pages/ratings/EntrantsList');
+		switch ($skillvalue) {
+            case '4':
+                switch ($financeform) {
+                    case '2':
+                        self::showXSLT('pages/ratings/EntrantsListCollegeBudget');
+                        break;
+                    case '0':
+                        self::showXSLT('pages/ratings/EntrantsListCollegePay');
+                        break;
+                }
+                break;
+            default:
+                self::showXSLT('pages/ratings/EntrantsList');
+
+        }
 	}
 
 
