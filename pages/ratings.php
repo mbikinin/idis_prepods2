@@ -233,6 +233,7 @@ class ratings_Page extends View
         $params->studyform = $_POST['studyform'];
         $params->year = date('Y');
         $params->financeform = $financeform;
+        $params->krim = 0;
         $params->kvota = $kvota;
 
         $response = self::connectWsdl("entrants?wsdl")->getEntrantsList($params);
