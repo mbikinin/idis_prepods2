@@ -264,7 +264,7 @@ class ratings_Page extends View
                     "extExamScores2" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
                     "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array(),
                     "schoolDiscScore2" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array(),
-                    "status" => isset($res->status) ? $res->status : null
+                    "status" =>$res->status
                 );
 			}
 			self::$page['content'] = array();
