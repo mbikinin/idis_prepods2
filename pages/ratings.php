@@ -238,7 +238,6 @@ class ratings_Page extends View
         $params->kvota = $kvota;
 
         $response = self::connectWsdl("entrants?wsdl")->getEntrantsList($params);
-        Debug::dump($params);
 
         $extExamScoreArray = array();
         $schoolDiscScoreArray = array();

@@ -86,8 +86,8 @@
       <file leaf-file-name="ratings.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-242">
-              <caret line="229" column="97" selection-start-line="229" selection-start-column="97" selection-end-line="229" selection-end-column="97" />
+            <state relative-caret-position="0">
+              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
               </folding>
@@ -475,12 +475,12 @@
       <workItem from="1533293957671" duration="2388000" />
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
-      <workItem from="1534233633725" duration="5126000" />
+      <workItem from="1534233633725" duration="5466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48206000" />
+    <option name="totallyTimeSpent" value="48546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="15" y="0" width="1845" height="1098" extended-state="1" />
@@ -903,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="229" column="97" selection-start-line="229" selection-start-column="97" selection-end-line="229" selection-end-column="97" />
+        <state relative-caret-position="0">
+          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
           </folding>
