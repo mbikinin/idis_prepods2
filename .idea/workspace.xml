@@ -77,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="266" column="43" selection-start-line="266" selection-start-column="43" selection-end-line="266" selection-end-column="43" />
+              <caret line="266" column="73" selection-start-line="266" selection-start-column="73" selection-end-line="266" selection-end-column="73" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
                 <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
@@ -454,12 +454,12 @@
       <workItem from="1533293957671" duration="2388000" />
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
-      <workItem from="1534233633725" duration="7486000" />
+      <workItem from="1534233633725" duration="7590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50566000" />
+    <option name="totallyTimeSpent" value="50670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="15" y="0" width="1845" height="1098" extended-state="0" />
@@ -883,7 +883,7 @@
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="266" column="43" selection-start-line="266" selection-start-column="43" selection-end-line="266" selection-end-column="43" />
+          <caret line="266" column="73" selection-start-line="266" selection-start-column="73" selection-end-line="266" selection-end-column="73" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
             <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
