@@ -87,8 +87,8 @@
       <file leaf-file-name="ratings.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
+            <state relative-caret-position="107">
+              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
                 <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
@@ -477,15 +477,15 @@
       <workItem from="1533293957671" duration="2388000" />
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
-      <workItem from="1534233633725" duration="3046000" />
+      <workItem from="1534233633725" duration="3397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46126000" />
+    <option name="totallyTimeSpent" value="46477000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="0" width="1845" height="1098" extended-state="0" />
+    <frame x="15" y="0" width="1845" height="1098" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25123152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -905,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
+        <state relative-caret-position="107">
+          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
             <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
