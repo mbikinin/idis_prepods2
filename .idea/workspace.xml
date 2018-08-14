@@ -76,12 +76,22 @@
       <file leaf-file-name="ratings.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="266" column="73" selection-start-line="266" selection-start-column="73" selection-end-line="266" selection-end-column="73" />
+            <state relative-caret-position="308">
+              <caret line="237" column="55" selection-start-line="237" selection-start-column="55" selection-end-line="237" selection-end-column="55" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
                 <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.xsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/index.xsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -454,12 +464,12 @@
       <workItem from="1533293957671" duration="2388000" />
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
-      <workItem from="1534233633725" duration="7590000" />
+      <workItem from="1534233633725" duration="7860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50670000" />
+    <option name="totallyTimeSpent" value="50940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="15" y="0" width="1845" height="1098" extended-state="0" />
@@ -773,14 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/index.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2486">
-          <caret line="113" column="46" selection-start-line="113" selection-start-column="46" selection-end-line="113" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10340">
@@ -880,10 +882,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/index.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="266" column="73" selection-start-line="266" selection-start-column="73" selection-end-line="266" selection-end-column="73" />
+        <state relative-caret-position="308">
+          <caret line="237" column="55" selection-start-line="237" selection-start-column="55" selection-end-line="237" selection-end-column="55" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
             <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />

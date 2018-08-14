@@ -235,7 +235,7 @@ class ratings_Page extends View
         $params->year = date('Y');
         $params->financeform = $financeform;
         $params->krim = 0;
-        $params->kvota = $kvota;
+        $params->kvota = $skillvalue == 4 ? 0 : $kvota;
 
         $response = self::connectWsdl("entrants?wsdl")->getEntrantsList($params);
 
