@@ -227,6 +227,7 @@ class ratings_Page extends View
         $skillvalue = $_POST['skillvalue'];
         $kvota= $_POST['kvota'];
         //?branch=1&speccode=1000590&skillid=62&studyform=2&year=2017&financeform=0&kvota=0
+        //branch=1&speccode=1000424&skillid=51&studyform=2&year=2018&financeform=2&krim=0&kvota=0
         $params->branch = $_POST['branch'];
         $params->skillid = $_POST['skillid'];
         $params->speccode = $_POST['speccode'];
@@ -272,7 +273,7 @@ class ratings_Page extends View
             self::$page['content']['current_date'] = date('d.m.Y');
 		}
     else {
-        self::$page['content']['error'] = "нет данных";
+        self::$page['content']['error'] = Debug::dump($params);
     }
 
 		switch ($skillvalue) {
