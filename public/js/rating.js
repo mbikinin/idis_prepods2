@@ -42,29 +42,6 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".getNumberOfApplicationLink").click( function(){
-        this_ = $(this);
-        _branch = $('.branch').val();
-        _skillid = $('.speccode').find(':selected').attr('rel');
-
-        loading();
-        $.ajax({
-            type : "post",
-            url : "/ratings/getNumberOfApplications3",
-            data : {
-                branch : _branch,
-                skillid : _skillid
-            }
-        }).done(function(data) {
-            $('#search').show();
-            this_.parent().find('.resultList').html(data);
-            $("#search").next("div").remove();
-
-            $('.loading').remove();
-        });
-        return false;
-    });
-
     $(".getResultList").click( function(){
         this_ = $(this);
         result = ".resultList";
@@ -162,12 +139,6 @@ $(document).ready(function() {
         return false;
     });
 
-    //2019
-    $('body').on("change", '.skillvalue', function(){
-        $('.getNumberOfApplicationLink').show()
-    });
-
-    //end 2019
     $('body').on("change", 'select', function(){
         $(this).val() != -1 ?
             $(this).removeClass('error') :
