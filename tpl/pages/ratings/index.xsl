@@ -70,6 +70,8 @@
 						</select>
 					</xsl:otherwise>
 				</xsl:choose>
+				<a href="#" class="getNumberOfApplicationLink">
+					Количество поданных заявлений</a>
 				<xsl:choose>
 					<xsl:when test="branch = '343'">
 						<select name="financeform" class="financeform getRatingEducPlans" required="required">

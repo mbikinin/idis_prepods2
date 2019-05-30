@@ -488,3 +488,14 @@ table.result_i th
 .jconfirm.jconfirm-white .jconfirm-box, .jconfirm.jconfirm-light .jconfirm-box {
 	width: 50%;
 }
+.getNumberOfApplicationLink{
+	vertical-align: top;
+	padding: 9px;
+	max-width: 250px;
+	border: solid 1px #ccc;
+	border-radius: 4px;
+	margin: 0px 10px;
+	display: inline-block;
+	height: 16px;
+	display: none;
+}

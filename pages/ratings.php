@@ -294,8 +294,6 @@ class ratings_Page extends View
 
     public static function getNumberOfApplications3AjaxAction()
     {
-        //branch=1&speccode=1000594&skillid=62&studyform=2&year=2017&financeform=0
-        //branch=1&speccode=1000590&skillid=62&studyform=2&year=2017&financeform=0
         $params = new stdClass();
         $params->branch = $_POST['branch'];
         $params->skillid = $_POST['skillid'];
