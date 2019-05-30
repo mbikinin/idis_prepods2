@@ -321,7 +321,7 @@ class ratings_Page extends View
 		else {
             self::$page['content']['error'] = "нет данных";
         }
-        self::showXSLT('pages/ratings/GetNumberOfApplication');
+        self::showXSLT('pages/ratings/NumberOfApplication');
 	}
 
 

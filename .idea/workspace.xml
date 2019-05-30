@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl" afterPath="$PROJECT_DIR$/tpl/pages/ratings/NumberOfApplication.xsl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ratings.php" afterPath="$PROJECT_DIR$/pages/ratings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl" afterPath="$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl" />
     </list>
     <ignored path="idis_prepods.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,15 +45,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ratings.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ratings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/ratings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="315" column="45" selection-start-line="315" selection-start-column="45" selection-end-line="315" selection-end-column="45" />
+            <state relative-caret-position="362">
+              <caret line="323" column="60" selection-start-line="323" selection-start-column="60" selection-end-line="323" selection-end-column="60" />
               <folding>
                 <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
                 <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
                 <element signature="n#getExamScoreArray#0;n#ratings_Page#0;n#!!top" expanded="false" />
+                <element signature="n#getSchoolDiscScoreArray#0;n#ratings_Page#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetNumberOfAppliction.xsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl">
+      <file leaf-file-name="NumberOfApplication.xsl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/NumberOfApplication.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="28" column="76" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="76" />
+            <state relative-caret-position="198">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -175,8 +177,8 @@
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/tpl/pages/ratings/index.xsl" />
         <option value="$PROJECT_DIR$/public/js/rating.js" />
-        <option value="$PROJECT_DIR$/pages/ratings.php" />
         <option value="$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl" />
+        <option value="$PROJECT_DIR$/pages/ratings.php" />
       </list>
     </option>
   </component>
@@ -300,32 +302,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ratings" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prepod.ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prepod.ru" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ratings" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="info" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -500,12 +476,12 @@
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
       <workItem from="1534233633725" duration="7860000" />
-      <workItem from="1559247289412" duration="4439000" />
+      <workItem from="1559247289412" duration="5373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55379000" />
+    <option name="totallyTimeSpent" value="56313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -904,14 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/GetNumberOfAppliction.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="28" column="76" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/rating.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -932,13 +900,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="315" column="45" selection-start-line="315" selection-start-column="45" selection-end-line="315" selection-end-column="45" />
+        <state relative-caret-position="362">
+          <caret line="323" column="60" selection-start-line="323" selection-start-column="60" selection-end-line="323" selection-end-column="60" />
           <folding>
             <element signature="n#getExamsListAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
             <element signature="n#getOrdersAjaxAction#0;n#ratings_Page#0;n#!!top" expanded="false" />
             <element signature="n#getExamScoreArray#0;n#ratings_Page#0;n#!!top" expanded="false" />
+            <element signature="n#getSchoolDiscScoreArray#0;n#ratings_Page#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/NumberOfApplication.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
