@@ -94,13 +94,14 @@
 				</div>
 				<select name="list_type" class="list_type" required="required">
 					<option value="-1">Выберите результат</option>
+					<option value="5">Количество поданных заявлений</option>
 					<option value="1">Cписок лиц, подавших документы</option>
 					<option value="2">Cписок поступающих</option>
 					<option value="3">Результаты вступительных испытаний</option>
 					<option value="4">Приказы о зачислении</option>
 				</select>
 				<select name="kvota_type" class="hide kvota_type">
-					<option value="-1">Выберите тип квоты</option>
+					<option value="-1">Выберите условия поступления</option>
 					<option value="1">Список поступающих по особой квоте</option>
 					<option value="0">Список поступающих по основному конкурсу</option>
 					<option value="2">Список поступающих по целевой квоте</option>

@@ -59,6 +59,9 @@ $(document).ready(function() {
             case "4":
                 _url = 'getOrders';
                 break;
+            case "5":
+                _url = 'getNumberOfApplications3';
+                break;
         }
 
         _branch = $('.branch').val();
