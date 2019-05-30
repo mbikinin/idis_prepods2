@@ -301,9 +301,9 @@ class ratings_Page extends View
 
         $response = self::connectWsdl("entrants?wsdl")->getNumberOfApplications3($params);
         if (!empty($response-> return)) {
-        for ($i = 0; $i < count($response-> return); $i++) {
+            for ($i = 0; $i < count($response-> return); $i++) {
 
-            $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
+                $res = count($response-> return) == 1 ? $response-> return : $response-> return [$i];
                 $array[$i] = array(
                     "specName" => $res->specName,
                     "all" => $res->all,
@@ -312,14 +312,15 @@ class ratings_Page extends View
                     "ochnZaochn" => $res->ochnZaochn,
                 );
             }
+
             self::$page['content'] = array();
             self::$page['content']['GetNumberOfApplicationsList'] =  $array;
             self::$page['content']['current_date'] = date('d.m.Y');
 		}
 
 		else {
-        self::$page['content']['error'] = "нет данных";
-    }
+            self::$page['content']['error'] = "нет данных";
+        }
         self::showXSLT('pages/ratings/GetNumberOfApplication');
 	}
 
