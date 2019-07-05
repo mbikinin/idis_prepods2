@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/pages/ratings/index.xsl" afterPath="$PROJECT_DIR$/tpl/pages/ratings/index.xsl" />
-    </list>
+    <list default="true" id="19a15228-eab4-464b-b401-e1af7cfe3c60" name="Default" comment="" />
     <ignored path="idis_prepods.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -23,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="rating.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rating.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/rating.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1140">
@@ -93,16 +91,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
               <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.xsl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpl/pages/ratings/index.xsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="114" column="98" selection-start-line="114" selection-start-column="98" selection-end-line="114" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -191,8 +179,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="-85" />
+    <option name="y" value="23" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -474,18 +462,18 @@
       <workItem from="1533551359100" duration="1017000" />
       <workItem from="1533886418365" duration="2287000" />
       <workItem from="1534233633725" duration="7860000" />
-      <workItem from="1559247289412" duration="5486000" />
+      <workItem from="1559247289412" duration="6090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56426000" />
+    <option name="totallyTimeSpent" value="57030000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
-    <editor active="true" />
+    <frame x="-85" y="23" width="1938" height="1048" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25104168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25104168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -870,24 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/rating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
-          <folding>
-            <marker date="1559251326107" expanded="true" signature="3378:3393" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="3711:3726" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="4047:4062" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="4342:4357" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="4640:4655" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="4940:4955" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="5220:5235" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="5538:5553" ph="..." />
-            <marker date="1559251326107" expanded="true" signature="5856:5871" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/ratings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -914,6 +884,24 @@
         <state relative-caret-position="298">
           <caret line="114" column="98" selection-start-line="114" selection-start-column="98" selection-end-line="114" selection-end-column="98" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/rating.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="135" column="15" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
+          <folding>
+            <marker date="1559251326107" expanded="true" signature="3378:3393" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="3711:3726" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="4047:4062" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="4342:4357" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="4640:4655" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="4940:4955" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="5220:5235" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="5538:5553" ph="..." />
+            <marker date="1559251326107" expanded="true" signature="5856:5871" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
