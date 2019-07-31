@@ -71,6 +71,6 @@
        <td><xsl:value-of select = "disciplineName" /></td>
     </xsl:template>
     <xsl:template match="EntrantsList/item/extExamScores2/item">
-        <td><xsl:value-of select = "score" /></td>
+        <td><xsl:value-of select = "score" /><small>&#160;<xsl:value-of select = "score_type" /></small></td>
     </xsl:template>
 </xsl:stylesheet>

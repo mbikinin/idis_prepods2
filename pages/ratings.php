@@ -264,7 +264,7 @@ class ratings_Page extends View
                     "extExamScores2" => !empty($extExamScoreArray) ? $extExamScoreArray : array(),
                     "schoolDiscScore" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array(),
                     "schoolDiscScore2" => !empty($schoolDiscScoreArray) ? $schoolDiscScoreArray : array(),
-                    "status" => isset($res->status) ? $res->status : null
+                    "status" => isset($res->status) ? $res->status : null,
                 );
 			}
 			self::$page['content'] = array();
@@ -335,7 +335,9 @@ class ratings_Page extends View
                     "disciplineName" => $res2->disciplineName,
                     "entranceDisciplineId" => $res2->entranceDisciplineId,
                     "priority" => $res2->priority,
-                    "score" => $res2->score
+                    "score" => $res2->score,
+                    "score_type" => $res2->score_type,
+
                 );
             }
         }
